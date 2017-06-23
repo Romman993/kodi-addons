@@ -27,7 +27,11 @@ if [ $FOR_SYS == "aml" ]; then
               plugin.video.zona.mobi \
               repository.dandy.kodi \
               plugin.video.hdrezka.ae \
-              repository.exodus"
+              plugin.video.exodus \
+              script.exodus.artwork \
+              script.exodus.metadata \
+              script.module.urlresolver \
+              script.module.metahandler"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
   ADDON_LIST="script.module.torrent.ts \
@@ -36,7 +40,11 @@ elif [ $FOR_SYS == "rpi" ]; then
               plugin.video.zona.mobi \
               repository.dandy.kodi \
               plugin.video.hdrezka.ae \
-              repository.exodus"
+              plugin.video.exodus \
+              script.exodus.artwork \
+              script.exodus.metadata \
+              script.module.urlresolver \
+              script.module.metahandler"
 fi
 
 PY_GEN="generator.py"

@@ -31,7 +31,8 @@ if [ $FOR_SYS == "aml" ]; then
               script.exodus.artwork \
               script.exodus.metadata \
               script.module.urlresolver \
-              script.module.metahandler"
+              script.module.metahandler \
+              repository.evgen_dev"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
   ADDON_LIST="script.module.torrent.ts \
@@ -44,7 +45,8 @@ elif [ $FOR_SYS == "rpi" ]; then
               script.exodus.artwork \
               script.exodus.metadata \
               script.module.urlresolver \
-              script.module.metahandler"
+              script.module.metahandler \
+              repository.evgen_dev"
 fi
 
 PY_GEN="generator.py"

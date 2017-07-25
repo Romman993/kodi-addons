@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-	<addon id="plugin.video.zona.mobi"
-       name="Zona.Mobi"
+	<addon id="plugin.video.zona.mobi.ae"
+       name="Zona.Mobi AE"
        version="0.1.0"
        provider-name="Evgenii Devisok aka evgen_dev (Alex@ELEC)">
 	<requires>

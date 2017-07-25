@@ -24,7 +24,7 @@ if [ $FOR_SYS == "aml" ]; then
   ADDON_LIST="script.module.torrent.ts \
               script.module.xbmcup \
               script.torrent-tv.ae \
-              plugin.video.zona.mobi \
+              plugin.video.zona.mobi.ae \
               repository.dandy.kodi \
               plugin.video.hdrezka.ae \
               plugin.video.exodus \
@@ -38,7 +38,7 @@ elif [ $FOR_SYS == "rpi" ]; then
   ADDON_LIST="script.module.torrent.ts \
               script.module.xbmcup \
               script.torrent-tv.ae \
-              plugin.video.zona.mobi \
+              plugin.video.zona.mobi.ae \
               repository.dandy.kodi \
               plugin.video.hdrezka.ae \
               plugin.video.exodus \

@@ -176,6 +176,7 @@ class HdrezkaTV():
 
         xbmcplugin.setContent(self.handle, 'movies')
         xbmcplugin.endOfDirectory(self.handle, True)
+        xbmc.log('HDREZKA: end index', xbmc.LOGNOTICE)
 
     def selectQuality(self, links, title, image, subtitles = None):
         if self.quality != 'select': 
@@ -353,7 +354,7 @@ class HdrezkaTV():
 
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
-            "Referer": mainurl
+            "Referer": 'http://google.com'
         }
         request = urllib2.Request(url, "", headers)
         request.get_method = lambda: 'GET'

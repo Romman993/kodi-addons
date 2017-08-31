@@ -27,7 +27,8 @@ if [ $FOR_SYS == "aml" ]; then
               plugin.video.zona.mobi.ae \
               plugin.video.hdrezka.ae \
               repository.dandy.kodi \
-              repository.evgen_dev"
+              repository.evgen_dev \
+              repository.smash"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
   ADDON_LIST="script.module.torrent.ts \
@@ -36,7 +37,8 @@ elif [ $FOR_SYS == "rpi" ]; then
               plugin.video.zona.mobi.ae \
               plugin.video.hdrezka.ae \
               repository.dandy.kodi \
-              repository.evgen_dev"
+              repository.evgen_dev \
+              repository.smash"
 fi
 
 PY_GEN="generator.py"

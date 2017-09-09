@@ -26,6 +26,7 @@ if [ $FOR_SYS == "aml" ]; then
               script.torrent-tv.ae \
               plugin.video.zona.mobi.ae \
               plugin.video.hdrezka.ae \
+              plugin.video.filmix.net.dev \
               repository.dandy.kodi \
               repository.evgen_dev \
               repository.smash"
@@ -36,6 +37,7 @@ elif [ $FOR_SYS == "rpi" ]; then
               script.torrent-tv.ae \
               plugin.video.zona.mobi.ae \
               plugin.video.hdrezka.ae \
+              plugin.video.filmix.net.dev \
               repository.dandy.kodi \
               repository.evgen_dev \
               repository.smash"

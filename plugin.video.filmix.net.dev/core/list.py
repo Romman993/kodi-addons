@@ -141,30 +141,54 @@ class SearchList(AbstactList):
         if(len(history) >= req_count):
             SQL.set('DELETE FROM search WHERE `id` = (SELECT MIN(id) FROM search)')
 
-        #page_url = "search/index/index/usersearch/"+params['usersearch']
+        '''
         page_url = "/engine/ajax/sphinx_search.php?story=%s&search_start=%s" % (params['usersearch'], page+1)
         md5 = hashlib.md5()
-        #md5.update(page_url+'/page/'+str(page))
         md5.update(params['usersearch'].encode('utf8')+'?v='+xbmcup.app.addon['version'])
         response = CACHE(str(md5.hexdigest()), self.get_movies, page_url, page, '', False, usersearch)
+        '''
+
+        post_data={'search_word' : params['vsearch'] , 'from' : 'https://filmix.me/'}
+        post_result = self.ajax('https://filmix.me/api/search/suggest',post_data)
+        json_result = json.loads(post_result)
+        response = {'page': {}, 'data': []}
+        re_info = re.compile('<.*?>')
+        for m in json_result['message']:
+            year_info = ''
+            if(m['year'] != ''):
+                year_info = m['year']+', '
+            year_info += re.sub(re_info, '', m['categories'])
+            
+            response['data'].append({
+                    'name': m['title'].strip(),
+                    'img': m['poster'].replace('/w40/','/w220/'),
+                    'url': m['link'],
+                    'not_movie': False,
+                    'year': '[COLOR white]['+year_info+'][/COLOR]',
+                    'quality': '',
+                    'id': m['id']
+                })
 
         if(is_united_search == 0):
             self.item(u'[COLOR yellow]'+xbmcup.app.lang[30108]+'[/COLOR]', self.link('search'), folder=True, cover=cover.search)
             self.item('[COLOR blue]['+xbmcup.app.lang[30109]+': '+vsearch+'][/COLOR]',
                   self.link('null'), folder=False, cover=cover.info)
 
+        '''
         if(is_united_search==0 and response['page']['pagenum'] > 1):
             params['page'] = page-1
             self.item('[COLOR green]'+xbmcup.app.lang[30106]+'[/COLOR]', self.replace('search', params), cover=cover.prev, folder=True)
             params['page'] = page+1
+        '''
 
         self.add_movies(response)
 
+        '''
         params['page'] = page+1
         if(is_united_search == 0):
             if(response['page']['maxpage'] >= response['page']['pagenum']+1):
                 self.item(u'[COLOR green]'+xbmcup.app.lang[30107]+'[/COLOR]', self.replace('search', params), cover=cover.next, folder=True)
-
+        '''
 
 class BookmarkList(AbstactList):
 

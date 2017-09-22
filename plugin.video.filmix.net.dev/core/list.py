@@ -148,7 +148,7 @@ class SearchList(AbstactList):
         response = CACHE(str(md5.hexdigest()), self.get_movies, page_url, page, '', False, usersearch)
         '''
 
-        post_data={'search_word' : params['vsearch'] , 'from' : 'https://filmix.me/'}
+        post_data={'search_word' : params['vsearch']}
         post_result = self.ajax('https://filmix.me/api/search/suggest',post_data)
         json_result = json.loads(post_result)
         response = {'page': {}, 'data': []}

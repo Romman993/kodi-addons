@@ -250,7 +250,8 @@ class QualityList(xbmcup.app.Handler, HttpData, Render):
 
     def handle(self):
         self.params = self.argv[0]
-        #print self.argv[0]
+        print 'line 254 list py'
+        print self.argv[0]
         try:
             self.movieInfo = self.params['movieInfo']
         except:
@@ -325,11 +326,13 @@ class QualityList(xbmcup.app.Handler, HttpData, Render):
                                         'movieInfo' : self.movieInfo
                                     }
                            ),
-                           folder=True
+                           folder=True,
+                           cover = self.movieInfo['cover']
                 )
                 i = i+1
         else:
-            self.item(u'[COLOR red]['+self.movieInfo['no_files'].decode('utf-8')+'][/COLOR]', self.link('null'), folder=False)
+            self.item(u'[COLOR red]['+self.movieInfo['no_files'].decode('utf-8')+'][/COLOR]', self.link('null'), folder=False, cover=cover.info)
+
 
     def show_episodes(self):
         show_first_quality = False
@@ -376,9 +379,29 @@ class QualityList(xbmcup.app.Handler, HttpData, Render):
                 cover=self.get_icon(str(movie))
             )
 
+    def get_info(self):
+        return {
+                'Genre'     : self.movieInfo['genres'],
+                'year'      : self.movieInfo['year'],
+                'director'  : self.movieInfo['director'],
+                'rating'    : self.movieInfo['ratingValue'],
+                'duration'  : self.movieInfo['durarion'],
+                'votes'     : self.movieInfo['ratingCount'],
+                'plot'      : self.movieInfo['description'],
+                'title'     : self.movieInfo['title'],
+                'originaltitle' : self.movieInfo['title']
+                # 'playcount' : 1,
+                # 'date': '%d.%m.%Y',
+                # 'count' : 12
+            }
+
+
     def add_playable_item(self, movie):
         self.item(os.path.basename(str(movie)),
                            movie,
                            folder=False,
-                           media='video'
+                           media='video',
+                           info=self.get_info(),
+                           cover = self.movieInfo['cover'],
+                           fanart = self.movieInfo['fanart']
                     )

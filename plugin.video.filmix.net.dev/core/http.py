@@ -293,7 +293,7 @@ class HttpData:
              #   break
             #print movieInfo['movies']
 
-            movieInfo['title'] = soup.find('div', class_='name').get_text()
+            movieInfo['title'] = soup.find('h1', class_='name').get_text()
             try:
                 movieInfo['originaltitle'] = soup.find('div', class_='origin-name').get_text().strip()
             except:
@@ -309,13 +309,13 @@ class HttpData:
             except:
                 movieInfo['fanart'] = ''
             try:
-                movieInfo['cover'] = soup.find('img', class_='poster').get('src')
+                movieInfo['cover'] = soup.find('img', class_='poster poster-tooltip').get('src')
             except:
                 movieInfo['cover'] = ''
 
             try:
                 movieInfo['genres'] = []
-                genres = soup.find('div', class_='category').find_all('a')
+                genres = soup.find('div', class_='item category').find_all('a')
                 for genre in genres:
                    movieInfo['genres'].append(genre.get_text().strip())
                 movieInfo['genres'] = ' / '.join(movieInfo['genres']).encode('utf-8')
@@ -323,12 +323,12 @@ class HttpData:
                 movieInfo['genres'] = ''
 
             try:
-                movieInfo['year'] = soup.find('div', class_='year').find('a').get_text()
+                movieInfo['year'] = soup.find('div', class_='item year').find('a').get_text()
             except:
                 movieInfo['year'] = ''
 
             try:
-                movieInfo['durarion'] = soup.find('div', class_='durarion').get('content')
+                movieInfo['durarion'] = soup.find('div', class_='item durarion').get('content')
                 movieInfo['durarion'] = int(movieInfo['durarion'])*60
             except:
                 movieInfo['durarion'] = ''
@@ -345,7 +345,7 @@ class HttpData:
 
             try:
                 movieInfo['director'] = []
-                directors = soup.find('div', class_='directors').findAll('a')
+                directors = soup.find('div', class_='item directors').findAll('a')
                 for director in directors:
                    movieInfo['director'].append(director.get_text().strip())
                 movieInfo['director'] = ', '.join(movieInfo['director']).encode('utf-8')

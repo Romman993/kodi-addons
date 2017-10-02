@@ -21,8 +21,6 @@ try:
 except:
     pass
 
-from videohosts import moonwalk
-
 QUALITY_TYPES = (360, 480, 720, 1080)
 
 class HdrezkaTV():
@@ -350,23 +348,49 @@ class HdrezkaTV():
     def get_video_link_from_iframe(self, url, mainurl):
 
         playlist_domain = 'streamblast.cc'
-        playlist_domain2 = 's1.cdnapponline.com'
+        playlist_domain2 = 's4.cdnapponline.com'
 
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
-            "Referer": 'http://google.com'
+            "Referer": mainurl
         }
         request = urllib2.Request(url, "", headers)
         request.get_method = lambda: 'GET'
         response = urllib2.urlopen(request).read()
 
+        src_urljs = response.split('<script src="')[-1].split('"></script>')[0]
+        video_token = response.split("video_token: '")[-1].split("',")[0]
+        partner_id = response.split("partner_id: ")[-1].split(",")[0] 
+        domain_id = response.split("domain_id: ")[-1].split(",")[0]
+        user_token = response.split("user_token: '")[-1].split("',")[0]
+
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+            "Referer": url
+        }
+        request = urllib2.Request(src_urljs, "", headers)
+        request.get_method = lambda: 'GET'
+        response = urllib2.urlopen(request).read()
+
+        values = {}
+        attrs = {}
+
+        attrs['purl'] = "/manifests/video/" + video_token + "/all"
+        attrs['X-Access-Level'] = user_token
+
+        values['mw_key'] = response.split('var e={mw_key:"')[-1].split('",')[0] 
+        values['video_token'] = video_token
+        values['mw_pid'] = partner_id
+        values['p_domain_id'] = domain_id
+        values['ad_attr'] = '0'
+
+        key = response.split(values['mw_key'] + '",')[-1].split(':"')[0]
+        value = response.split(key + ':"')[-1].split('",')[0]
+        values[key] = value
+
         subtitles = None
         if "var subtitles = JSON.stringify(" in response:
             subtitles = response.split("var subtitles = JSON.stringify(")[-1].split(");")[0]
-
-        ###################################################
-        values, attrs = moonwalk.get_access_attrs(response)
-        ###################################################
 
         headers = {
             "Host": playlist_domain2,
@@ -378,6 +402,7 @@ class HdrezkaTV():
         headers.update(attrs)
 
         request = urllib2.Request('http://' + playlist_domain2 + attrs["purl"], urllib.urlencode(values), headers)
+        request.get_method = lambda: 'POST'
         response = urllib2.urlopen(request).read()
 
         data = json.loads(response.decode('unicode-escape'))
@@ -510,7 +535,7 @@ class HdrezkaTV():
                     uri = sys.argv[0] + '?mode=show&url=%s' % urllib.quote(link)
                     item = xbmcgui.ListItem("%s [COLOR=55FFFFFF][%s][/COLOR]" % (title, description), iconImage=image, thumbnailImage=image)
                     item.setInfo(type='Video', infoLabels={'title': title})
-                    if (self.quality != 'select') and (not ('/series/' in link)) and (not ('/show/' in link)):
+                    if (self.quality != 'select') and (not ('/series/' in link)) and (not ('/show/' in link)) and (not ('/cartoons/' in link)):
                         item.setProperty('IsPlayable', 'true')
                         xbmcplugin.addDirectoryItem(self.handle, uri, item, False)
                     else:

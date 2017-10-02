@@ -358,7 +358,7 @@ class HdrezkaTV():
         request.get_method = lambda: 'GET'
         response = urllib2.urlopen(request).read()
 
-        src_urljs = response.split('<script src="')[-1].split('"></script>')[0]
+        src_urljs = "http://" + playlist_domain2 + response.split('<script src="')[-1].split('"></script>')[0]
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]

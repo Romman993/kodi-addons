@@ -356,6 +356,8 @@ class HdrezkaTV():
         response = urllib2.urlopen(request).read()
 
         src_urljs = "http://" + playlist_domain2 + response.split('<script src="')[-1].split('"></script>')[0]
+        key = response.split('window.')[-1].split(' ')[0]
+        value = response.split(key + " = '")[-1].split("';")[0]
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]
@@ -375,14 +377,11 @@ class HdrezkaTV():
         attrs['purl'] = "/manifests/video/" + video_token + "/all"
         attrs['X-Access-Level'] = user_token
 
-        values['mw_key'] = response.split('var e={mw_key:"')[-1].split('",')[0] 
+        values['mw_key'] = response.split('mw_key:"')[-1].split('",')[0] 
         values['video_token'] = video_token
         values['mw_pid'] = partner_id
         values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
-
-        key = response.split('iframe_version:"2.1",')[-1].split(':"')[0]
-        value = response.split(key + ':"')[-1].split('"},')[0]
         values[key] = value
 
         subtitles = None
@@ -396,7 +395,6 @@ class HdrezkaTV():
             "Referer": "http://" + playlist_domain2 + "/video/" + video_token + "/iframe",
             "X-Requested-With": "XMLHttpRequest",
         }
-        headers.update(attrs)
 
         request = urllib2.Request('http://' + playlist_domain2 + attrs["purl"], urllib.urlencode(values), headers)
         request.get_method = lambda: 'POST'

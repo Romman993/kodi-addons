@@ -1,10 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#
-# Writer (c) 2012-2017, MrStealth, dandy
-# Rev. 2.1.0
 
-import os, urllib, urllib2, sys #, socket, cookielib, errno
+import os, urllib, urllib2, sys
 import xbmc, xbmcplugin,xbmcgui,xbmcaddon
 import re, json
 from operator import itemgetter
@@ -384,8 +381,8 @@ class HdrezkaTV():
         values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
 
-        key = response.split(values['mw_key'] + '",')[-1].split(':"')[0]
-        value = response.split(key + ':"')[-1].split('",')[0]
+        key = response.split('iframe_version:"2.1",')[-1].split(':"')[0]
+        value = response.split(key + ':"')[-1].split('"},')[0]
         values[key] = value
 
         subtitles = None
@@ -396,7 +393,7 @@ class HdrezkaTV():
             "Host": playlist_domain2,
             "Origin": "http://" + playlist_domain2,
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
-            "Referer": url,
+            "Referer": "http://" + playlist_domain2 + "/video/" + video_token + "/iframe",
             "X-Requested-With": "XMLHttpRequest",
         }
         headers.update(attrs)

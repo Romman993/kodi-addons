@@ -356,8 +356,8 @@ class HdrezkaTV():
         response = urllib2.urlopen(request).read()
 
         src_urljs = "http://" + playlist_domain2 + response.split('<script src="')[-1].split('"></script>')[0]
-        key = response.split('window.')[-1].split(' ')[0]
-        value = response.split(key + " = '")[-1].split("';")[0]
+        wkey = response.split('window.')[-1].split(' ')[0]
+        value = response.split(wkey + " = '")[-1].split("';")[0]
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]
@@ -382,11 +382,12 @@ class HdrezkaTV():
         values['mw_pid'] = partner_id
         values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
+        key = response.split('iframe_version:"2.1",')[-1].split(':')[0]
         values[key] = value
 
         subtitles = None
-        if "var subtitles = JSON.stringify(" in response:
-            subtitles = response.split("var subtitles = JSON.stringify(")[-1].split(");")[0]
+        if 'subtitles: {"master_vtt":"' in response:
+            subtitles = response.split('subtitles: {"master_vtt":"')[-1].split('"')[0]
 
         headers = {
             "Host": playlist_domain2,

@@ -28,7 +28,8 @@ if [ $FOR_SYS == "aml" ]; then
               plugin.video.hdrezka.ae \
               repository.dandy.kodi \
               repository.evgen_dev \
-              repository.smash"
+              repository.smash \
+              service.hyperion"
 elif [ $FOR_SYS == "rpi" ]; then
   REPO_DIR="repo-rpi"
   ADDON_LIST="script.module.torrent.ts \
@@ -76,6 +77,9 @@ for addon in $ADDON_LIST; do
   cp -P $addon/*.png $REPO_DIR/$addon 2>/dev/null || true
   cp -P $addon/*.jpg $REPO_DIR/$addon 2>/dev/null || true
   cp -P $addon/*.txt $REPO_DIR/$addon 2>/dev/null || true
+  if [ $addon == "service.hyperion" ]; then
+      cp -a $addon/resources $REPO_DIR/$addon 2>/dev/null || true
+  fi
   echo -e "${COL_YELLOW}     create md5sum's:${COL_MAGENTA} $addon-$addon_ver.zip.md5${COL_RESET}"
   ( cd $REPO_DIR/$addon
     md5sum -t $addon-$addon_ver.zip > $addon-$addon_ver.zip.md5;

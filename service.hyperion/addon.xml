@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="service.hyperion"
+       name="Hyperion"
+       version="2.3.1"
+       provider-name="AlexELEC">
+  <requires>
+    <import addon="os.alexelec" version="2.3"/>
+    <import addon="xbmc.python" version="2.1.0"/>
+
+  </requires>
+  <extension point="xbmc.service" library="default.py">
+    <provides></provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Hyperion: an AmbiLight controller</summary>
+    <description>
+Hyperion is an modern opensource AmbiLight implementation.
+    </description>
+    <disclaimer>
+
+    </disclaimer>
+    <platform>all</platform>
+    <news>
+2.3.1
+- initial AlexELEC version
+    </news>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.png</fanart>
+<screenshot>resources/screenshot-01.jpg</screenshot>
+<screenshot>resources/screenshot-02.jpg</screenshot>
+<screenshot>resources/screenshot-03.jpg</screenshot>
+
+    </assets>
+  </extension>
+</addon>

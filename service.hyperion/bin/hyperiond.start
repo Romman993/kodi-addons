@@ -1,0 +1,17 @@
+#!/bin/sh
+################################################################################
+#      This file is part of Alex@ELEC - http://www.alexelec.ru
+#      Copyright (C) 2011-present Alexandr Zuyev (alex@alexelec.ru)
+################################################################################
+
+. /etc/profile
+
+oe_setup_addon service.hyperion
+
+if [ ! -f "$ADDON_HOME/hyperion.config.json" ]; then
+  mkdir -p $ADDON_HOME
+  cp $ADDON_DIR/config/hyperion.config.json.sample $ADDON_HOME/hyperion.config.json
+fi
+
+exec hyperiond $ADDON_HOME/hyperion.config.json &
+echo $! > /run/hyperiond.pid

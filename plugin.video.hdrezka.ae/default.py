@@ -382,7 +382,7 @@ class HdrezkaTV():
         values['mw_pid'] = partner_id
         values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
-        key = response.split('iframe_version:"2.1"};n.')[-1].split('=')[0]
+        key = response.split('iframe_version:"2.1",adb:e._mw_adb};n.')[-1].split('=')[0]
         values[key] = value
 
         subtitles = None

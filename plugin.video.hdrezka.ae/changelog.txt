@@ -1,3 +1,6 @@
+2.2.6
+[fix] changes on the site
+
 2.2.5
 [fix] changes on the site
 

@@ -345,7 +345,7 @@ class HdrezkaTV():
     def get_video_link_from_iframe(self, url, mainurl):
 
         playlist_domain = 'streamblast.cc'
-        playlist_domain2 = 's4.cdnapponline.com'
+        playlist_domain2 = 's9.cdnapponline.com'
 
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
@@ -382,7 +382,9 @@ class HdrezkaTV():
         values['mw_pid'] = partner_id
         values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
-        key = response.split('iframe_version:"2.1",adb:e._mw_adb};n.')[-1].split('=')[0]
+        keydom = response.split('mw_pid:this.options.partner_id,')[-1].split(':this.options.domain_id')[0]
+        key = response.split('adb:e._mw_adb};n["')[-1].split('"]')[0]
+        values[keydom] = domain_id
         values[key] = value
 
         subtitles = None

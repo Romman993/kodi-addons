@@ -383,7 +383,7 @@ class HdrezkaTV():
         values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
         keydom = response.split('mw_pid:this.options.partner_id,')[-1].split(':this.options.domain_id')[0]
-        key = response.split('adb:e._mw_adb};n["')[-1].split('"]')[0]
+        key = response.split('adb:e._mw_adb};n.')[-1].split('=')[0]
         values[keydom] = domain_id
         values[key] = value
 

@@ -383,7 +383,8 @@ class HdrezkaTV():
         values['adb'] = 'true'
         keydom = response.split('mw_pid:this.options.partner_id,')[-1].split(':this.options.domain_id')[0]
         key = response.split('adb:e._mw_adb};n.')[-1].split('=')[0]
-        key_ext = response.split('=r,n.')[-1].split('=')[0]
+        spl = response.split('e0b66a4f36b8406c47bf964c10fc1e8f')[-1].split('.')[0]
+        key_ext = response.split(spl + '.')[-1].split('=')[0]
         ext_val = response.split(key_ext + '="')[-1].split('"')[0]
         values[keydom] = domain_id
         values[key] = value

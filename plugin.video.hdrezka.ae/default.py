@@ -378,14 +378,16 @@ class HdrezkaTV():
         attrs['X-Access-Level'] = user_token
 
         values['mw_key'] = response.split('mw_key:"')[-1].split('",')[0] 
-        values['video_token'] = video_token
         values['mw_pid'] = partner_id
-        values['p_domain_id'] = domain_id
         values['ad_attr'] = '0'
+        values['adb'] = 'true'
         keydom = response.split('mw_pid:this.options.partner_id,')[-1].split(':this.options.domain_id')[0]
         key = response.split('adb:e._mw_adb};n.')[-1].split('=')[0]
+        key_ext = response.split('=r,n.')[-1].split('=')[0]
+        ext_val = response.split(key_ext + '="')[-1].split('"')[0]
         values[keydom] = domain_id
         values[key] = value
+        values[key_ext] = ext_val
 
         subtitles = None
         if 'subtitles: {"master_vtt":"' in response:

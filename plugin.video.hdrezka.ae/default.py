@@ -357,7 +357,6 @@ class HdrezkaTV():
 
         src_urljs = "http://" + playlist_domain2 + response.split('<script src="')[-1].split('"></script>')[0]
         wkey = response.split("window['")[-1].split("']")[0]
-        value = response.split(wkey + "'] = '")[-1].split("';")[0]
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]
@@ -382,13 +381,15 @@ class HdrezkaTV():
         values['ad_attr'] = '0'
         values['adb'] = 'true'
         keydom = response.split('mw_pid:this.options.partner_id,')[-1].split(':this.options.domain_id')[0]
-        key = response.split('adb:e._mw_adb};n.')[-1].split('=')[0]
-        spl = response.split('e0b66a4f36b8406c47bf964c10fc1e8f')[-1].split('.')[0]
-        key_ext = response.split(spl + '.')[-1].split('=')[0]
-        ext_val = response.split(key_ext + '="')[-1].split('"')[0]
+        spl_1 = response.split('iframe_version:"2.1",')[-1].split('.')[0] + '.' + response.split('iframe_version:"2.1",')[-1].split('.')[1] + '.'
+        key_1 = response.split(spl_1)[-1].split('=')[0]
+        key_value_1 = response.split(wkey + '"]="')[-1].split('"')[0]
+        spl_2 = response.split('e0b66a4f36b8406c47bf964c10fc1e8f')[-1].split('.')[0]
+        key_2 = response.split(spl_2 + '.')[-1].split('=')[0]
+        key_value_2 = response.split(key_2 + '="')[-1].split('"')[0]
         values[keydom] = domain_id
-        values[key] = value
-        values[key_ext] = ext_val
+        values[key_1] = key_value_1
+        values[key_2] = key_value_2
 
         subtitles = None
         if 'subtitles: {"master_vtt":"' in response:

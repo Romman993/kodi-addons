@@ -12,6 +12,10 @@ common = XbmcHelpers
 import Translit as translit
 translit = translit.Translit()
 
+from binascii import unhexlify
+from base64 import b64encode
+from M2Crypto.EVP import Cipher
+
 try:
     sys.path.append(os.path.dirname(__file__)+ '/../plugin.video.unified.search')
     from unified_search import UnifiedSearch
@@ -207,6 +211,7 @@ class HdrezkaTV():
 
     def selectTranslator(self, content, post_id):
         iframe0 = common.parseDOM(content, 'iframe', ret='src')[0]
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
         try:
             playlist0 = common.parseDOM(content, "ul", attrs={"class": "b-simple_episodes__list clearfix"})
         except:
@@ -229,7 +234,7 @@ class HdrezkaTV():
         headers = {
             "Host": self.domain,
             "Origin": self.url,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+            "User-Agent": usr_agent,
             "X-Requested-With": "XMLHttpRequest"
         }
 
@@ -309,13 +314,14 @@ class HdrezkaTV():
             return { 'rating' : '', 'description' : '' }
 
         url = self.url + '/engine/ajax/quick_content.php'
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
 
         headers = {
             "Accept" : "text/plain, */*; q=0.01",
             "Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
             "Host" : self.domain,
             "Referer" : referer,
-            "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:27.0) Gecko/20100101 Firefox/27.0",
+            "User-Agent": usr_agent,
             "X-Requested-With" : "XMLHttpRequest"
         }
 
@@ -346,9 +352,10 @@ class HdrezkaTV():
 
         playlist_domain = 'streamblast.cc'
         playlist_domain2 = 's9.cdnapponline.com'
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
 
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+            "User-Agent": usr_agent,
             "Referer": mainurl
         }
         request = urllib2.Request(url, "", headers)
@@ -357,13 +364,14 @@ class HdrezkaTV():
 
         src_urljs = "http://" + playlist_domain2 + response.split('<script src="')[-1].split('"></script>')[0]
         wkey = response.split("window['")[-1].split("']")[0]
+        wvalue = response.split(wkey + "'] = '")[-1].split("';")[0]
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]
         user_token = response.split("user_token: '")[-1].split("',")[0]
 
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+            "User-Agent": usr_agent,
             "Referer": url
         }
         request = urllib2.Request(src_urljs, "", headers)
@@ -373,23 +381,16 @@ class HdrezkaTV():
         values = {}
         attrs = {}
 
-        attrs['purl'] = "/manifests/video/" + video_token + "/all"
+        attrs['purl'] = "/vs"
         attrs['X-Access-Level'] = user_token
 
-        values['mw_key'] = response.split('mw_key:"')[-1].split('",')[0] 
-        values['mw_pid'] = partner_id
-        values['ad_attr'] = '0'
-        values['adb'] = 'true'
-        keydom = response.split('mw_pid:this.options.partner_id,')[-1].split(':this.options.domain_id')[0]
-        spl_1 = response.split('iframe_version:"2.1",')[-1].split('.')[0] + '.' + response.split('iframe_version:"2.1",')[-1].split('.')[1] + '.'
-        key_1 = response.split(spl_1)[-1].split('=')[0]
-        key_value_1 = response.split(wkey + '"]="')[-1].split('"')[0]
-        spl_2 = response.split('e0b66a4f36b8406c47bf964c10fc1e8f')[-1].split('.')[0]
-        key_2 = response.split(spl_2 + '.')[-1].split('=')[0]
-        key_value_2 = response.split(key_2 + '="')[-1].split('"')[0]
-        values[keydom] = domain_id
-        values[key_1] = key_value_1
-        values[key_2] = key_value_2
+        passkey = unhexlify(response.split('getVideoManifests:function(){var e="')[-1].split('"')[0])
+        ivkey = unhexlify(response.split('navigator.userAgent},n="')[-1].split('"')[0])
+
+        msg = '{"a":%s,"b":"%s","c":true,"d":"%s","e":"%s","f":"%s"}' % (partner_id, domain_id, wvalue, video_token, usr_agent)
+        cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)
+        ciphertext = cipher.update(msg) + cipher.final()
+        values['q'] = b64encode(ciphertext)
 
         subtitles = None
         if 'subtitles: {"master_vtt":"' in response:
@@ -398,9 +399,9 @@ class HdrezkaTV():
         headers = {
             "Host": playlist_domain2,
             "Origin": "http://" + playlist_domain2,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+            "User-Agent": usr_agent,
             "Referer": "http://" + playlist_domain2 + "/video/" + video_token + "/iframe",
-            "X-Requested-With": "XMLHttpRequest",
+            "X-Requested-With": "XMLHttpRequest"
         }
 
         request = urllib2.Request('http://' + playlist_domain2 + attrs["purl"], urllib.urlencode(values), headers)
@@ -408,12 +409,12 @@ class HdrezkaTV():
         response = urllib2.urlopen(request).read()
 
         data = json.loads(response.decode('unicode-escape'))
-        playlisturl = data['mans']['manifest_m3u8']
+        playlisturl = data['m3u8']
 
         headers = {
             "Host": playlist_domain,
             "Origin": "http://" + playlist_domain2,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+            "User-Agent": usr_agent
         }
 
         request = urllib2.Request(playlisturl, "", headers)
@@ -429,13 +430,14 @@ class HdrezkaTV():
 
     def get_video_link(self, referer, post_id):
         url = self.url + '/ajax/getvideo.php'
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
 
         headers = {
             "Accept" : "text/plain, */*; q=0.01",
             "Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
             "Host" : self.domain,
             "Referer" : referer,
-            "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:27.0) Gecko/20100101 Firefox/27.0",
+            "User-Agent": usr_agent,
             "X-Requested-With" : "XMLHttpRequest"
         }
 
@@ -452,13 +454,14 @@ class HdrezkaTV():
 
     def get_seaons_link(self, referer, video_id, season, episode):
         url = self.url + '/engine/ajax/getvideo.php'
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
 
         headers = {
             "Accept" : "text/plain, */*; q=0.01",
             "Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
             "Host" : self.domain,
             "Referer" : referer,
-            "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:27.0) Gecko/20100101 Firefox/27.0",
+            "User-Agent": usr_agent,
             "X-Requested-With" : "XMLHttpRequest"
         }
 

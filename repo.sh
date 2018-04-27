@@ -1,7 +1,7 @@
 #!/bin/sh
 ################################################################################
 #      This file is part of Alex@ELEC - http://www.alexelec.in.ua
-#      Copyright (C) 2011-2017 Alexandr Zuyev (alex@alexelec.in.ua)
+#      Copyright (C) 2011-present Alexandr Zuyev (alex@alexelec.in.ua)
 ################################################################################
 
 ################################################################################
@@ -30,16 +30,15 @@ if [ $FOR_SYS == "aml" ]; then
               repository.evgen_dev \
               repository.smash \
               service.hyperion"
-elif [ $FOR_SYS == "rpi" ]; then
-  REPO_DIR="repo-rpi"
+elif [ $FOR_SYS == "pc" ]; then
+  REPO_DIR="repo-pc"
   ADDON_LIST="script.module.torrent.ts \
               script.module.xbmcup \
               script.torrent-tv.ae \
               plugin.video.zona.mobi.ae \
               plugin.video.hdrezka.ae \
               repository.dandy.kodi \
-              repository.evgen_dev \
-              repository.smash"
+              repository.evgen_dev"
 fi
 
 PY_GEN="generator.py"

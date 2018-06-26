@@ -28,7 +28,7 @@ if [ $FOR_SYS == "aml" ]; then
               plugin.video.hdrezka.ae \
               repository.dandy.kodi \
               repository.evgen_dev \
-              repository.smash \
+              skin.aeon.nox.ae \
               service.hyperion"
 elif [ $FOR_SYS == "pc" ]; then
   REPO_DIR="repo-pc"

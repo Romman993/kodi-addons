@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<include>DialogOpenCloseAnimation</include>
+	<controls>
+		<control type="grouplist" id="9000">
+			<left>705</left>
+			<width>510</width>
+			<height>1080</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<align>center</align>
+			<control type="image" id="1">
+				<width>510</width>
+				<height>34</height>
+				<texture border="30,20,30,2">dialog_top2.png</texture>
+			</control>
+			<control type="button" id="3">
+				<description>Shutdown button</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>Powerdown()</onclick>
+				<visible>System.CanPowerDown</visible>
+				<font>font14</font>
+				<label>13016</label>
+                <align>center</align>
+			</control>
+			<control type="button" id="4">
+				<description>Custom Shutdown Timer</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
+				<font>font14</font>
+				<label>20150</label>
+				<visible>!System.HasAlarm(shutdowntimer)</visible>
+				<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+                <align>center</align>
+			</control>
+			<control type="button" id="5">
+				<description>Cancel Shutdown Timer</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>CancelAlarm(shutdowntimer)</onclick>
+				<font>font14</font>
+				<label>$LOCALIZE[20151] [B]$INFO[System.Alarmpos][/B]</label>
+				<visible>System.HasAlarm(shutdowntimer)</visible>
+                <align>center</align>
+			</control>
+			<control type="button" id="6">
+				<description>Suspend button</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>Suspend()</onclick>
+				<visible>System.CanSuspend</visible>
+				<font>font14</font>
+				<label>13011</label>
+                <align>center</align>
+			</control>
+			<control type="button" id="7">
+				<description>Hibernate button</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>Hibernate()</onclick>
+				<visible>System.CanHibernate</visible>
+				<font>font14</font>
+				<label>13010</label>
+                <align>center</align>
+			</control>
+			<control type="button" id="14">
+				<description>Settings</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>Dialog.Close(all,true)</onclick>
+				<onclick>ActivateWindow(settings)</onclick>
+				<font>font14</font>
+				<label>$LOCALIZE[5]</label>
+                <align>center</align>
+			</control>
+			<control type="button" id="15">
+				<description>Favorites</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>ActivateWindow(favourites)</onclick>
+				<font>font14</font>
+				<label>1036</label>
+                <align>center</align>
+			</control>
+			<control type="button" id="16">
+				<description>Reboot button</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>Reset()</onclick>
+				<visible>System.CanReboot</visible>
+				<font>font14</font>
+				<label>13013</label>
+                <align>center</align>
+			</control>
+			<control type="image" id="16">
+				<width>510</width>
+				<height>34</height>
+				<texture border="30,2,30,20">dialog_bottom2.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

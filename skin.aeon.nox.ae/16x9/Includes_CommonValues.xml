@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- Constants -->
+	<constant name="FanartCrossfadeTime">500</constant>
+	<constant name="IconCrossfadeTime">400</constant>
+	<constant name="MaxDepth">0.30</constant>
+	<constant name="MinDepth">-0.80</constant>
+	<!-- Defaults -->
+	<include name="FullscreenDimensions">
+		<width>100%</width>
+		<height>1080</height>
+	</include>
+	<include name="HiddenObject">
+		<left>-300</left>
+		<top>-300</top>
+		<width>1</width>
+		<height>1</height>
+		<texturefocus />
+		<texturenofocus />
+		<label />
+		<font />
+	</include>
+	<include name="HiddenList">
+		<left>-100</left>
+		<top>-100</top>
+		<width>100</width>
+		<height>100</height>
+		<itemlayout height="100" width="100" />
+		<focusedlayout height="100" width="100" />
+	</include>
+	<!-- Buttons -->
+	<include name="ButtonTopbarCommonvalues">
+		<height>60</height>
+		<width>60</width>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsety>3</textoffsety>
+		<font>IconSmall</font>
+		<textcolor>grey</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<shadowcolor>ff000000</shadowcolor>
+	</include>
+	<include name="ButtonCommonValues">
+		<width>400</width>
+		<height>60</height>
+		<textoffsetx>15</textoffsetx>
+		<textcolor>grey</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<textwidth>300</textwidth>
+		<aligny>center</aligny>
+		<font>font13</font>
+		<radioposx>340</radioposx>
+	</include>
+	<include name="SettingsButtonCommonValues">
+		<width>1401</width>
+		<height>81</height>
+		<textoffsetx>30</textoffsetx>
+		<font>font15</font>
+	</include>
+	<include name="SettingsTextboxValues">
+		<left>467</left>
+		<top>890</top>
+		<width>1341</width>
+		<height>130</height>
+		<font>font16bold_textbox</font>
+		<textcolor>grey2</textcolor>
+		<align>justify</align>
+	</include>
+	<include name="ButtonInfoDialogsCommonValues">
+		<height>60</height>
+		<width>254</width>
+		<textoffsetx>0</textoffsetx>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font15</font>
+		<textcolor>grey</textcolor>
+		<focusedcolor>white</focusedcolor>
+	</include>
+	<include name="Objects_KeyOff">
+		<textoffsety>32</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font15</font>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<selectedcolor>grey2</selectedcolor>
+	</include>
+	<include name="Objects_DoubleKeyOff">
+		<left>-123</left>
+		<width>320</width>
+		<height>80</height>
+		<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="4">listselect_fo.png</texturefocus>
+		<texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
+		<alttexturenofocus border="4">thumbs/panel_border.png</alttexturenofocus>
+		<include>Objects_KeyOff</include>
+	</include>
+	<include name="Objects_SingleKeyOff">
+		<width>80</width>
+		<height>80</height>
+		<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="4">listselect_fo.png</texturefocus>
+		<texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
+		<include>Objects_KeyOff</include>
+	</include>
+	<include name="ShowCaseInfoPanelButtonsValues">
+		<height>85</height>
+		<width>501</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>font14</font>
+		<textcolor>white2</textcolor>
+		<focusedcolor>white2</focusedcolor>
+	</include>
+	<include name="NewInfoPanelButtonsValues">
+		<height>90</height>
+		<width>1200</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>font14</font>
+		<textcolor>white2</textcolor>
+		<focusedcolor>white2</focusedcolor>
+	</include>
+	<include name="DefaultButtonsValues">
+		<height>90</height>
+		<width>501</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>font14</font>
+		<textcolor>grey</textcolor>
+		<focusedcolor>grey</focusedcolor>
+	</include>
+	<include name="SettingsPanelButtonsValues">
+		<height>90</height>
+		<width>1256</width>
+		<textoffsetx>15</textoffsetx>
+		<textoffsety>-4</textoffsety>
+		<aligny>top</aligny>
+		<font>font15</font>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>grey2</focusedcolor>
+	</include>
+	<!-- Media Flags -->
+	<include name="MediaFlagValues">
+		<width>135</width>
+		<height>90</height>
+		<aspectratio>keep</aspectratio>
+		<fadetime>250</fadetime>
+		<colordiffuse>grey</colordiffuse>
+		<animation effect="fade" time="200">VisibleChange</animation>
+	</include>
+	<!-- TV Shows Next Aired script -->
+	<include name="TVNextAiredListCommonLayout">
+		<left>437</left>
+		<top>32</top>
+		<width>1401</width>
+		<height>810</height>
+		<onup>60</onup>
+		<ondown>60</ondown>
+		<onleft>9000</onleft>
+		<orientation>horizontal</orientation>
+		<scrolltime tween="quadratic">300</scrolltime>
+		<pagecontrol>60</pagecontrol>
+		<itemlayout height="810" width="467">
+			<control type="image">
+				<left>30</left>
+				<top>20</top>
+				<width>405</width>
+				<height>237</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Art(clearlogo))]</texture>
+			</control>
+			<control type="textbox">
+				<left>15</left>
+				<top>230</top>
+				<width>435</width>
+				<height>185</height>
+				<label>$LOCALIZE[31010]:[CR][COLOR grey2]$INFO[ListItem.Property(NextNumber),[B], [/B]]$INFO[ListItem.Property(NextTitle),[CR]][/COLOR]</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<font>font15</font>
+				<autoscroll>false</autoscroll>
+			</control>
+			<control type="textbox">
+				<left>15</left>
+				<top>420</top>
+				<width>435</width>
+				<height>185</height>
+				<label>$LOCALIZE[31011]:[CR][COLOR grey2]$INFO[ListItem.Property(LatestDate),[B], [/B][CR]]$INFO[ListItem.Property(LatestTitle)][/COLOR]</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<font>font15</font>
+				<autoscroll>false</autoscroll>
+			</control>
+			<control type="label">
+				<top>620</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$LOCALIZE[126]:</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+			<control type="label">
+				<top>665</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$INFO[ListItem.Property(Status)]</label>
+				<textcolor>grey2</textcolor>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+			<control type="label">
+				<top>715</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$LOCALIZE[31012]:</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+			<control type="label">
+				<top>760</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(Network), @ ]</label>
+				<textcolor>grey2</textcolor>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+		</itemlayout>
+		<focusedlayout height="840" width="467">
+			<control type="image">
+				<width>467</width>
+				<height>810</height>
+				<texture colordiffuse="$VAR[HighlightBarColor]" border="4">listselect_fo.png</texture>
+				<visible>ControlGroup(9001).HasFocus()</visible>
+				<include>VisibleFadeAnimation</include>
+			</control>
+			<control type="image">
+				<left>30</left>
+				<top>20</top>
+				<width>405</width>
+				<height>237</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Art(clearlogo))]</texture>
+			</control>
+			<control type="textbox">
+				<left>15</left>
+				<top>230</top>
+				<width>435</width>
+				<height>185</height>
+				<label>$LOCALIZE[31010]:[CR][COLOR white]$INFO[ListItem.Property(NextNumber),[B], [/B]]$INFO[ListItem.Property(NextTitle),[CR]][/COLOR]</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<font>font15</font>
+				<autoscroll>false</autoscroll>
+			</control>
+			<control type="textbox">
+				<left>15</left>
+				<top>420</top>
+				<width>435</width>
+				<height>185</height>
+				<label>$LOCALIZE[31011]:[CR][COLOR white]$INFO[ListItem.Property(LatestDate),[B], [/B][CR]]$INFO[ListItem.Property(LatestTitle)][/COLOR]</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<font>font15</font>
+				<autoscroll>false</autoscroll>
+			</control>
+			<control type="label">
+				<top>620</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$LOCALIZE[126]:</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+			<control type="label">
+				<top>665</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$INFO[ListItem.Property(Status)]</label>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+			<control type="label">
+				<top>715</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$LOCALIZE[31012]:</label>
+				<textcolor>$VAR[ThemeLabelColor]</textcolor>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+			<control type="label">
+				<top>760</top>
+				<width>445</width>
+				<height>45</height>
+				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(Network), @ ]</label>
+				<textoffsetx>15</textoffsetx>
+				<font>font15</font>
+			</control>
+		</focusedlayout>
+	</include>
+	<!-- PARAM -->
+	<include name="ExtendedInfoListLayout">
+		<param name="PanelID" />
+		<param name="listVisible" />
+		<param name="overlayVisibility">true</param>
+		<param name="label1" default="$INFO[ListItem.Label]" />
+		<param name="label2" default="$INFO[ListItem.Year]" />
+		<param name="texture" default="$VAR[PosterVar]" />
+		<param name="content" />
+		<param name="sortby" />
+		<definition>
+			<left>15</left>
+			<width>1196</width>
+			<height>420</height>
+			<orientation>horizontal</orientation>
+			<preloaditems>2</preloaditems>
+			<scrolltime tween="quadratic" easing="out">300</scrolltime>
+			<visible>$PARAM[listVisible]</visible>
+			<itemlayout height="420" width="299">
+				<control type="image">
+					<left>-15</left>
+					<top>-10</top>
+					<width>320</width>
+					<height>450</height>
+					<bordersize>20</bordersize>
+					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
+					<aspectratio aligny="top">scale</aspectratio>
+					<texture background="true">$PARAM[texture]</texture>
+				</control>
+				<control type="image">
+					<left>5</left>
+					<width>282</width>
+					<height>420</height>
+					<texture>poster_bottom_fade.png</texture>
+				</control>
+				<control type="label">
+					<left>8</left>
+					<top>340</top>
+					<width>274</width>
+					<height>43</height>
+					<align>center</align>
+					<font>font14</font>
+					<shadowcolor>shadow</shadowcolor>
+					<textcolor>white2</textcolor>
+					<label>$PARAM[label1]</label>
+				</control>
+				<control type="label">
+					<left>8</left>
+					<top>375</top>
+					<width>274</width>
+					<height>43</height>
+					<align>center</align>
+					<font>font14</font>
+					<shadowcolor>shadow</shadowcolor>
+					<textcolor>white2</textcolor>
+					<label>$PARAM[label2]</label>
+				</control>
+				<control type="image">
+					<left>232</left>
+					<top>10</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>overlays/addons/enabled.png</texture>
+					<visible>$PARAM[overlayVisibility]</visible>
+					<visible>!String.IsEmpty(ListItem.DBID) | !String.IsEmpty(ListItem.Property(DBID))</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout height="420" width="299">
+				<control type="group">
+					<animation type="Focus" reversible="false">
+						<effect type="zoom" start="95" end="100" time="300" tween="sine" easing="inout" center="auto" />
+					</animation>
+					<control type="image">
+						<left>-15</left>
+						<top>-10</top>
+						<width>320</width>
+						<height>450</height>
+						<bordersize>20</bordersize>
+						<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
+						<aspectratio aligny="top">scale</aspectratio>
+						<texture background="true">$PARAM[texture]</texture>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<width>282</width>
+						<height>420</height>
+						<texture>poster_bottom_fade.png</texture>
+					</control>
+					<control type="label">
+						<left>8</left>
+						<top>340</top>
+						<width>274</width>
+						<height>43</height>
+						<align>center</align>
+						<font>font14</font>
+						<shadowcolor>shadow</shadowcolor>
+						<textcolor>$VAR[ThemeLabelColor]</textcolor>
+						<label>$PARAM[label1]</label>
+						<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus($PARAM[PanelID])">Conditional</animation>
+					</control>
+					<control type="label">
+						<left>8</left>
+						<top>375</top>
+						<width>274</width>
+						<height>43</height>
+						<align>center</align>
+						<font>font14</font>
+						<shadowcolor>shadow</shadowcolor>
+						<textcolor>$VAR[ThemeLabelColor]</textcolor>
+						<label>$PARAM[label2]</label>
+						<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus($PARAM[PanelID])">Conditional</animation>
+					</control>
+					<control type="image">
+						<left>232</left>
+						<top>10</top>
+						<width>60</width>
+						<height>60</height>
+						<texture>overlays/addons/enabled.png</texture>
+						<visible>$PARAM[overlayVisibility]</visible>
+						<visible>!String.IsEmpty(ListItem.DBID)</visible>
+					</control>
+				</control>
+			</focusedlayout>
+			<content sortby="$PARAM[sortby]" target="videos">$PARAM[content]</content>
+		</definition>
+	</include>
+	<include name="VideoCastItem">
+		<param name="CastListItemID" />
+		<definition>
+			<item>
+				<label>$INFO[Container(50).ListItemAbsolute($PARAM[CastListItemID]).Label]</label>
+				<label2>$INFO[Container(50).ListItemAbsolute($PARAM[CastListItemID]).Label2]</label2>
+				<icon>$INFO[Container(50).ListItemAbsolute($PARAM[CastListItemID]).Icon]</icon>
+				<onclick>SetProperty(ActorID,$PARAM[CastListItemID])</onclick>
+				<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute($PARAM[CastListItemID]).Label])</onclick>
+				<onclick>ActivateWindow(1129)</onclick>
+				<visible>!String.IsEmpty(Container(50).ListItemAbsolute($PARAM[CastListItemID]).Label)</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="TVGuideItem">
+		<param name="TVGuideItemID" />
+		<param name="TVGuideDayID" />
+		<definition>
+			<item id="$PARAM[TVGuideItemID]">
+				<label>$INFO[Window(Home).Property(NextAired.$PARAM[TVGuideDayID].Wday)]$INFO[Container($PARAM[TVGuideDayID]).NumItems, (,)]</label>
+				<label2>$INFO[Window(Home).Property(NextAired.$PARAM[TVGuideDayID].Date)]</label2>
+				<icon />
+				<visible>!String.IsEmpty(Window(Home).Property(NextAired.$PARAM[TVGuideDayID].Wday))</visible>
+			</item>
+		</definition>
+	</include>
+	<include name="CustomColorRadioButton">
+		<param name="ColorStringVar" />
+		<definition>
+			<width>1401</width>
+			<height>90</height>
+			<textoffsetx>30</textoffsetx>
+			<font>font15</font>
+			<textureradioonfocus colordiffuse="$PARAM[ColorStringVar]">color_swatch.png</textureradioonfocus>
+			<textureradioonnofocus colordiffuse="$PARAM[ColorStringVar]">color_swatch.png</textureradioonnofocus>
+			<textureradioofffocus colordiffuse="$PARAM[ColorStringVar]">color_swatch.png</textureradioofffocus>
+			<textureradiooffnofocus colordiffuse="$PARAM[ColorStringVar]">color_swatch.png</textureradiooffnofocus>
+			<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="1">listselect_fo.png</texturefocus>
+		</definition>
+	</include>
+	<!-- EXP -->
+	<expression name="HasVerticalMenuWithExtended">String.IsEqual(Skin.String(MainMenu.Layout),vertical) + [String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus] | [String.Contains(Container(9000).ListItem.Property(widgetStyle.2),Extended) + ControlGroup(90020).HasFocus]</expression>
+	<expression name="WidgetFanartVisible">[[String.IsEmpty(Container(9000).ListItem.Property(widgetDisableFanart)) + ControlGroup(90010).HasFocus] | [String.IsEmpty(Container(9000).ListItem.Property(widgetDisableFanart.2)) + ControlGroup(90020).HasFocus]]</expression>
+</includes>

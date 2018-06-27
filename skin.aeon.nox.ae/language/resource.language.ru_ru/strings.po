@@ -1522,7 +1522,7 @@ msgstr "При включении все виджеты будут скрыты 
 
 msgctxt "#31393"
 msgid "Ends at"
-msgstr "Заканчивается на"
+msgstr "Закончится в"
 
 msgctxt "#31394"
 msgid "Replace default info with Netflix style"

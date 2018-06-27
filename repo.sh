@@ -76,11 +76,8 @@ for addon in $ADDON_LIST; do
   cp -P $addon/*.png $REPO_DIR/$addon 2>/dev/null || true
   cp -P $addon/*.jpg $REPO_DIR/$addon 2>/dev/null || true
   cp -P $addon/*.txt $REPO_DIR/$addon 2>/dev/null || true
-  if [ $addon == "service.hyperion" ]; then
+  if [ $addon == "service.hyperion" -o $addon == "skin.aeon.nox.ae" ]; then
       cp -a $addon/resources $REPO_DIR/$addon 2>/dev/null || true
-  elif [ $addon == "skin.aeon.nox.ae" ]; then
-      cp -P $addon/resources/*.png $REPO_DIR/$addon 2>/dev/null || true
-      cp -P $addon/resources/*.jpg $REPO_DIR/$addon 2>/dev/null || true
   fi
   echo -e "${COL_YELLOW}     create md5sum's:${COL_MAGENTA} $addon-$addon_ver.zip.md5${COL_RESET}"
   ( cd $REPO_DIR/$addon

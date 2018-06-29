@@ -351,7 +351,7 @@ class HdrezkaTV():
     def get_video_link_from_iframe(self, url, mainurl):
 
         playlist_domain = 'streamblast.cc'
-        playlist_domain2 = 's9.cdnapponline.com'
+        playlist_domain2 = 'herotowe.org'
         usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
 
         headers = {
@@ -384,8 +384,8 @@ class HdrezkaTV():
         attrs['purl'] = "/vs"
         attrs['X-Access-Level'] = user_token
 
-        passkey = unhexlify(response.split('getVideoManifests:function(){var e="')[-1].split('"')[0])
-        ivkey = unhexlify(response.split('navigator.userAgent},n="')[-1].split('"')[0])
+        passkey = unhexlify('7316d0c4' + response.split('getVideoManifests:function(){var e="')[-1].split('"')[0])
+        ivkey = unhexlify('e080ee12a6b39ad18309bc89d5097b77')
 
         msg = '{"a":%s,"b":"%s","c":true,"d":"%s","e":"%s","f":"%s"}' % (partner_id, domain_id, wvalue, video_token, usr_agent)
         cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)

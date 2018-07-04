@@ -385,7 +385,7 @@ class HdrezkaTV():
         attrs['X-Access-Level'] = user_token
 
         passkey = unhexlify('7316d0c4' + response.split('getVideoManifests:function(){var e="')[-1].split('"')[0])
-        ivkey = unhexlify('e080ee12a6b39ad18309bc89d5097b77')
+        ivkey = unhexlify(response.split('},i="')[-1].split('"')[0])
 
         msg = '{"a":%s,"b":"%s","c":true,"d":"%s","e":"%s","f":"%s"}' % (partner_id, domain_id, wvalue, video_token, usr_agent)
         cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)

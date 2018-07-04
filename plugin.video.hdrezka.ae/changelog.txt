@@ -1,5 +1,8 @@
+2.3.2
+[fix] changes on moonwalk
+
 2.3.1
-[fix] changes on moonwalk (temp)
+[fix] changes on moonwalk
 
 2.3.0
 [fix] changes on the site; add M2Crypto 

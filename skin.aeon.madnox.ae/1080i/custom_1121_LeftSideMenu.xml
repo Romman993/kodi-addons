@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1121">
+	<defaultcontrol always="true">9011</defaultcontrol>
+	<onload>Dialog.Close(111)</onload>
+	<onload condition="String.IsEmpty(Window(home).Property(viewtypeselect)) + !Integer.IsGreater(Container(9011).NumItems,0)">Close</onload>
+	<onunload>ClearProperty(quicknavsetup,home)</onunload>
+	<onunload>ClearProperty(viewtypeselect,home)</onunload>
+	<animation type="WindowClose">
+		<effect type="slide" end="-460,0" time="320" easing="in" tween="cubic" />
+	</animation>
+	<animation type="WindowOpen">
+		<effect type="fade" end="100" delay="320" time="160" />
+	</animation>
+	<controls>
+		<control type="image">
+			<texture>common/bgcolor.png</texture>
+			<include>FullscreenDimensions</include>
+			<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+			<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+			<include>Animation_VisibleChange400</include>
+			<animation effect="fade" end="100" time="560">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
+		</control>
+		<control type="group">
+			<visible>Window.IsActive(skinsettings) | Window.IsActive(1115) | Window.IsActive(settings) | Window.IsActive(systeminfo) | Window.IsActive(PlayerSettings) | Window.IsActive(systemsettings) | Window.IsActive(MediaSettings) | Window.IsActive(servicesettings) | Window.IsActive(InterfaceSettings) | Window.IsActive(profiles) | Window.IsActive(filemanager) | Window.IsActive(pvrsettings) | Window.IsActive(home)</visible>
+			<animation type="WindowClose">
+				<effect type="slide" end="-490" time="320" easing="in" tween="cubic" />
+			</animation>
+			<animation type="WindowOpen">
+				<effect type="slide" start="-450" end="0" time="320" tween="cubic" />
+			</animation>
+			<control type="image">
+				<left>-42</left>
+				<width>462</width>
+				<height>1080</height>
+				<texture colordiffuse="$VAR[DialogColorVar]">dialogs/context_middle.png</texture>
+				<animation type="Conditional" condition="Window.IsActive(1121)">
+					<effect type="zoom" end="66,100" time="320" easing="in" tween="cubic" />
+					<effect type="slide" end="-49" time="320" easing="in" tween="cubic" />
+				</animation>
+			</control>
+			<control type="group">
+				<left>380</left>
+				<animation type="Conditional" condition="Window.IsActive(1121)">
+					<effect type="slide" end="-180" time="320" easing="in" tween="cubic" />
+				</animation>
+				<include>Neon_VerticalBar</include>
+			</control>
+		</control>
+		<control type="list" id="9011">
+			<!-- viewtype selection including config-->
+			<width>450</width>
+			<height>1020</height>
+			<visible>!String.IsEmpty(Window(home).Property(viewtypeselect))</visible>
+			<orientation>vertical</orientation>
+			<onleft>Dialog.CLose(1121)</onleft>
+			<onup>9011</onup>
+			<ondown>9012</ondown>
+			<onright>Dialog.CLose(1121)</onright>
+			<itemlayout width="219" height="60">
+				<control type="image">
+					<width>219</width>
+					<height>60</height>
+					<texture border="3">settings/listselect_nf.png</texture>
+				</control>
+				<control type="label">
+					<left>15</left>
+					<width>219</width>
+					<height>60</height>
+					<font>Font_Reg30_2</font>
+					<textcolor>grey2</textcolor>
+					<info>ListItem.Label</info>
+					<visible>!String.IsEqual(ListItem.Label,Container.Viewmode)</visible>
+				</control>
+				<control type="label">
+					<left>15</left>
+					<width>219</width>
+					<height>60</height>
+					<font>Font_Reg30_2</font>
+					<info>ListItem.Label</info>
+					<visible>String.IsEqual(ListItem.Label,Container.Viewmode)</visible>
+				</control>
+				<control type="image">
+					<width>219</width>
+					<height>60</height>
+					<aspectratio>keep</aspectratio>
+					<texture>close.png</texture>
+					<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="219" height="60">
+				<control type="image">
+					<width>219</width>
+					<height>60</height>
+					<texture border="3">settings/listselect_nf.png</texture>
+					<visible>!Control.HasFocus(9011)</visible>
+				</control>
+				<control type="image">
+					<width>219</width>
+					<height>60</height>
+					<texture colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texture>
+					<include>PanelGlowFade</include>
+					<visible>Control.HasFocus(9011)</visible>
+				</control>
+				<control type="label">
+					<left>15</left>
+					<width>219</width>
+					<height>60</height>
+					<font>Font_Reg30_2</font>
+					<info>ListItem.Label</info>
+					<textcolor>grey2</textcolor>
+					<visible>!Control.HasFocus(9011)</visible>
+				</control>
+				<control type="label">
+					<left>15</left>
+					<width>219</width>
+					<height>60</height>
+					<font>Font_Reg30_2</font>
+					<info>ListItem.Label</info>
+					<visible>Control.HasFocus(9011)</visible>
+				</control>
+				<control type="image">
+					<width>219</width>
+					<height>60</height>
+					<aspectratio>keep</aspectratio>
+					<texture>close.png</texture>
+					<visible>!String.IsEmpty(ListItem.Thumb)</visible>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<label>$LOCALIZE[535]</label>
+					<onclick>Container.SetViewMode(50)</onclick>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31477]</label>
+					<onclick>Container.SetViewMode(52)</onclick>
+					<visible>[Window.IsActive(videos) | Window.IsActive(programs) | Window.IsActive(videoplaylist)] + !Container.Content(addons)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableTriPanelVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31477]</label>
+					<onclick>Container.SetViewMode(53)</onclick>
+					<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsActive(music)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31153]</label>
+					<onclick>Container.SetViewMode(511)</onclick>
+					<visible>Window.IsActive(videos) + String.IsEmpty(Skin.String(DisableLowListVL))</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>31233</label>
+					<onclick>Container.SetViewMode(550)</onclick>
+					<visible>String.IsEmpty(Skin.String(DisablePanelVL))</visible>
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>31381</label>
+					<onclick>Container.SetViewMode(518)</onclick>
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons)</visible>
+					<visible>String.IsEmpty(Skin.String(DisableInfoPanelVL))</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31153]</label>
+					<onclick>Container.SetViewMode(506)</onclick>
+					<visible>Window.IsVisible(music) | Window.IsVisible(musicplaylist)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31283]</label>
+					<onclick>Container.SetViewMode(512)</onclick>
+					<visible>!String.IsEmpty(Container.FolderPath)</visible>
+					<visible>!Container.Content(years)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableInfoWallVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31234]</label>
+					<onclick>Container.SetViewMode(500)</onclick>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableWallVL))] + [!String.IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31076]</label>
+					<onclick>Container.SetViewMode(499)</onclick>
+					<visible>[[[Window.IsActive(videos) + [Container.Content(Movies) | Container.Content(sets) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)]] | [Window.IsActive(videos) + Container.Content(genres)] | [Window.IsActive(pictures) + String.Contains(Container.FolderPath,\comics\)] | String.Contains(Container.FolderPath,videodb://recentlyaddedepisodes/) | Container.Content(musicvideos)] + !Container.Content(addons)] | Window.IsActive(videoplaylist)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableWallLargeVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31077]</label>
+					<onclick>Container.SetViewMode(700)</onclick>
+					<visible>Container.Content(Movies) | Container.Content(sets) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableRightListVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31078]</label>
+					<onclick>Container.SetViewMode(507)</onclick>
+					<visible>Container.Content(movies) | Container.Content(Seasons) | Container.Content(TVShows)| Container.Content(episodes)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableFanartListVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31079]</label>
+					<onclick>Container.SetViewMode(505)</onclick>
+					<visible>Container.Content(TVShows) | Container.Content(movies) | Container.Content(sets)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableBannerInfoVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<!-- MAD - New KodiFlix View - WIP -->
+				<item>
+					<label>$LOCALIZE[31133]</label>
+					<onclick>Container.SetViewMode(800)</onclick>
+					<visible>Container.Content(Movies) | Container.Content(Sets)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableKodiFlixVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31133]</label>
+					<onclick>Container.SetViewMode(820)</onclick>
+					<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableKodiFlixVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<!-- MAD - New ViewSets - WIP -->
+				<item>
+					<label>Sets</label>
+					<onclick>Container.SetViewMode(900)</onclick>
+					<visible>Container.Content(Sets)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableKodiFlixVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<!-- MAD - New Directory - WIP -->
+				<!--item>
+                    <label>Directory</label>
+                    <onclick>Container.SetViewMode(950)</onclick>
+                    <visible>Container.Content(movies)</visible>
+                    <visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisabledirectoryViewVL))]</visible>
+                    <visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+                </item-->
+				<!-- MAD - New Walls - WIP -->
+				<!--item>
+                    <label>Walls</label>
+                    <onclick>Container.SetViewMode(850)</onclick>
+                    <visible>Container.Content(movies)</visible>
+                    <visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableWallsVL))]</visible>
+                    <visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+                </item-->
+				<!-- MAD - New Shelf - WIP -->
+				<item>
+					<label>Shelf 3D</label>
+					<onclick>Container.SetViewMode(750)</onclick>
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableShelfVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>Shelf 3D Right</label>
+					<onclick>Container.SetViewMode(708)</onclick>
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableShelf3DVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>MusicFlix</label>
+					<onclick>Container.SetViewMode(810)</onclick>
+					<visible>Container.Content(albums)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableMusicFlixVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31236]</label>
+					<onclick>Container.SetViewMode(508)</onclick>
+					<visible>Container.Content(TVShows) | Container.Content(movies) | Container.Content(seasons)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableBannersVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31291]</label>
+					<onclick>Container.SetViewMode(516)</onclick>
+					<visible>Window.IsActive(videos) + [Container.Content(seasons) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(genres) | Container.Content(sets)]</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableBigFanVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31380]</label>
+					<onclick>Container.SetViewMode(517)</onclick>
+					<visible>Window.IsActive(pictures) + !String.Contains(Container.FolderPath,\comics\)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[20359]</label>
+					<onclick>Container.SetViewMode(514)</onclick>
+					<visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(music)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableEpisodeVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31150]</label>
+					<onclick>Container.SetViewMode(503)</onclick>
+					<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(artists)]</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableLandscapeVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31271]</label>
+					<onclick>Container.SetViewMode(510)</onclick>
+					<visible>Window.IsActive(videos) + !String.IsEmpty(Container.FolderPath) + !Container.Content(addons) + [!Container.Content(episodes) | String.Contains(Container.FolderPath,videodb://recentlyaddedepisodes/)] + !Container.Content(years)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisablePostersVL))]</visible>
+					<visible>!Container.Content(countries)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31235]</label>
+					<onclick>Container.SetViewMode(57)</onclick>
+					<visible>[[Window.IsActive(music) | Window.IsActive(musicplaylist) | Window.isActive(programs) | Window.isActive(addonbrowser) | [Window.IsActive(videos) + [!Container.Content(episodes) | String.Contains(Container.FolderPath,videodb://recentlyaddedepisodes/)]]] + !String.IsEmpty(Container.FolderPath) + !Container.Content(years)] | Window.IsActive(videoplaylist)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableShiftVL))]</visible>
+					<visible>!Container.Content(countries)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31028]</label>
+					<onclick>Container.SetViewMode(501)</onclick>
+					<visible>[[[Window.IsActive(videos) + [Container.Content(Movies) | Container.Content(sets) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)]] | [Window.IsActive(programs) + !Container.Content(addons)] | [Window.IsActive(videos) + Container.Content(genres)] | [Window.IsActive(pictures) + String.Contains(Container.FolderPath,\comics\)] | String.Contains(Container.FolderPath,videodb://recentlyaddedepisodes/) | Container.Content(musicvideos)] + !Container.Content(addons)] | Window.IsActive(videoplaylist)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableShowCaseVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31029]</label>
+					<onclick>Container.SetViewMode(509)</onclick>
+					<visible>[Window.IsActive(music) | Window.IsActive(programs) | [Window.IsActive(pictures) + !String.Contains(Container.FolderPath,\comics\)] | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)] + !Container.Content(years)</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>GamesFlix</label>
+					<onclick>Container.SetViewMode(801)</onclick>
+					<visible>Window.IsActive(programs) + !Container.Content(addons)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableGamesFlixVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>GamesFlixWide</label>
+					<onclick>Container.SetViewMode(804)</onclick>
+					<visible>Window.IsActive(programs) + !Container.Content(addons)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableGamesFlixWideVL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>GamesFlix2</label>
+					<onclick>Container.SetViewMode(803)</onclick>
+					<visible>Window.IsActive(programs) + !Container.Content(addons)</visible>
+					<visible>![Window.IsActive(videos) + !String.IsEmpty(Skin.String(DisableGamesFlix2VL))]</visible>
+					<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>[COLOR grey]$LOCALIZE[535][/COLOR]</label>
+					<onclick>noop</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31477]</label>
+					<thumb>$INFO[Skin.String(DisableTriPanelVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableTriPanelVL))">Skin.SetString(DisableTriPanelVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableTriPanelVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableTriPanelVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31153]</label>
+					<thumb>$INFO[Skin.String(DisableLowListVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableLowListVL))">Skin.SetString(DisableLowListVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableLowListVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableLowListVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>31233</label>
+					<onclick>Container.SetViewMode(550)</onclick>
+					<thumb>$INFO[Skin.String(DisablePanelVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisablePanelVL))">Skin.SetString(DisablePanelVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisablePanelVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisablePanelVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>31381</label>
+					<thumb>$INFO[Skin.String(DisableInfoWallVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableInfoWallVL))">Skin.SetString(DisableInfoWallVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableInfoWallVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableInfoWallVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31283]</label>
+					<thumb>$INFO[Skin.String(DisableInfoPanelVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableInfoPanelVL))">Skin.SetString(DisableInfoPanelVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableInfoPanelVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableInfoPanelVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31234]</label>
+					<thumb>$INFO[Skin.String(DisableWallVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableWallVL))">Skin.SetString(DisableWallVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableWallVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableWallVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+
+				<item>
+					<label>$LOCALIZE[31076]</label>
+					<thumb>$INFO[Skin.String(DisableWallLargeVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableWallLargeVL))">Skin.SetString(DisableWallLargeVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableWallLargeVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableWallLargeVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31077]</label>
+					<thumb>$INFO[Skin.String(DisableRightListVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableRightListVL))">Skin.SetString(DisableRightListVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableRightListVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableRightListVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31078]</label>
+					<thumb>$INFO[Skin.String(DisableFanartListVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableFanartListVL))">Skin.SetString(DisableFanartListVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableFanartListVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableFanartListVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31079]</label>
+					<thumb>$INFO[Skin.String(DisableBannerInfoVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableBannerInfoVL))">Skin.SetString(DisableBannerinfoVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableBannerInfoVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableBannerInfoVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31133]</label>
+					<thumb>$INFO[Skin.String(DisableKodiFlixVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableKodiFlixVL))">Skin.SetString(DisableKodiFlixVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableKodiFlixVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableKodiFlixVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<!--item>
+                    <label>Directory</label>
+                    <thumb>$INFO[Skin.String(DisableDirectoryViewVL)]</thumb>
+                    <onclick condition="String.IsEmpty(Skin.String(DisableDirectoryViewVL))">Skin.SetString(DisableDirectoryViewVL,true)</onclick>
+                    <onclick condition="!String.IsEmpty(Skin.String(DisableDirectoryViewVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableDirectoryViewVL)</onclick>
+                    <visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+                </item-->
+				<!--item>
+                    <label>Walls</label>
+                    <thumb>$INFO[Skin.String(DisableWallsVL)]</thumb>
+                    <onclick condition="String.IsEmpty(Skin.String(DisableWallsVL))">Skin.SetString(DisableWallsVL,true)</onclick>
+                    <onclick condition="!String.IsEmpty(Skin.String(DisableWallsVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableWallsVL)</onclick>
+                    <visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+                </item-->
+				<item>
+					<label>Shelf 3D</label>
+					<thumb>$INFO[Skin.String(DisableShelfVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableShelfVL))">Skin.SetString(DisableShelfVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableShelfVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableShelfVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>Shelf 3D Right</label>
+					<thumb>$INFO[Skin.String(DisableShelf3DVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableShelf3DVL))">Skin.SetString(DisableShelf3DVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableShelf3DVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableShelf3DVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>MusicFlix</label>
+					<thumb>$INFO[Skin.String(DisableMusicFlixVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableMusicFlixVL))">Skin.SetString(DisableMusicFlixVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableMusicFlixVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableMusicFlixVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>GamesFlix</label>
+					<thumb>$INFO[Skin.String(DisableGamesFlixVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableGamesFlixVL))">Skin.SetString(DisableGamesFlixWideVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableGamesFlixWideVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableGamesFlixWideVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>GamesFlix2</label>
+					<thumb>$INFO[Skin.String(DisableGamesFlix2VL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableGamesFlix2VL))">Skin.SetString(DisableGamesFlix2VL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableGamesFlix2VL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableGamesFlix2VL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>GamesFlixWide</label>
+					<thumb>$INFO[Skin.String(DisableGamesFlixWideVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableGamesFlixWideVL))">Skin.SetString(DisableGamesFlixWideVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableGamesFlixWideVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableGamesFlixWideVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+
+				<item>
+					<label>$LOCALIZE[31236]</label>
+					<thumb>$INFO[Skin.String(DisableBannersVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableBannersVL))">Skin.SetString(DisableBannersVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableBannersVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableBannersVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31291]</label>
+					<thumb>$INFO[Skin.String(DisableBigFanVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableBigFanVL))">Skin.SetString(DisableBigFanVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableBigFanVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableBigFanVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[20359]</label>
+					<thumb>$INFO[Skin.String(DisableEpisodeVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableEpisodeVL))">Skin.SetString(DisableEpisodeVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableEpisodeVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableEpisodeVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31150]</label>
+					<thumb>$INFO[Skin.String(DisableLandscapeVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableLandscapeVL))">Skin.SetString(DisableLandscapeVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableLandscapeVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableLandscapeVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31271]</label>
+					<thumb>$INFO[Skin.String(DisablePostersVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisablePostersVL))">Skin.SetString(DisablePostersVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisablePostersVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisablePostersVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31235]</label>
+					<thumb>$INFO[Skin.String(DisableShiftVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableShiftVL))">Skin.SetString(DisableShiftVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableShiftVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableShiftVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31028]</label>
+					<thumb>$INFO[Skin.String(DisableShowcaseVL)]</thumb>
+					<onclick condition="String.IsEmpty(Skin.String(DisableShowcaseVL))">Skin.SetString(DisableShowcaseVL,true)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(DisableShowcaseVL)) + !String.IsEqual(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableShowcaseVL)</onclick>
+					<visible>!String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+				</item>
+			</content>
+		</control>
+		<control type="button" id="810">
+			<include>HiddenObject</include>
+			<onfocus>SetFocus(9011)</onfocus>
+			<onfocus>Action(Close)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9011).ListItem.Property(Type),0) | String.IsEqual(Container(9011).ListItem.Property(Type),1) | String.IsEqual(Container(9011).ListItem.Property(Type),2) | String.IsEqual(Container(9011).ListItem.Property(Type),3)">RunAddon($INFO[Container(9011).ListItem.Property(Path)])</onfocus>
+			<onfocus condition="String.IsEqual(Container(9011).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(9011).ListItem.Property(Path)],return)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9011).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(9011).ListItem.Property(Path)],return)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9011).ListItem.Property(Type),6) | String.IsEqual(Container(9011).ListItem.Property(Type),7)  | String.IsEqual(Container(9011).ListItem.Property(Type),custom)">$INFO[Container(9011).ListItem.Property(Path)]</onfocus>
+			<visible>String.IsEmpty(Window(home).Property(quicknavsetup))</visible>
+		</control>
+		<control type="list" id="9011">
+			<!-- quicknav including config-->
+			<width>450</width>
+			<height>1080</height>
+			<visible>String.IsEmpty(Window(home).Property(viewtypeselect))</visible>
+			<visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
+			<orientation>vertical</orientation>
+			<onleft>Dialog.Close(1121)</onleft>
+			<onup>9011</onup>
+			<ondown>9012</ondown>
+			<onright>Dialog.Close(1121)</onright>
+			<itemlayout width="219" height="115">
+				<control type="image">
+					<width>219</width>
+					<height>115</height>
+					<texture border="0,0,0,4">settings/listselect_nf.png</texture>
+				</control>
+				<control type="image">
+					<left>72</left>
+					<top>5</top>
+					<width>75</width>
+					<height>75</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture colordiffuse="white3">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="label">
+					<top>53</top>
+					<width>219</width>
+					<height>60</height>
+					<align>center</align>
+					<font>Font_Reg26_Caps</font>
+					<textcolor>white3</textcolor>
+					<info>ListItem.Label</info>
+				</control>
+			</itemlayout>
+			<focusedlayout width="219" height="115">
+				<control type="image">
+					<width>219</width>
+					<height>115</height>
+					<texture border="0,0,0,4">settings/listselect_nf.png</texture>
+				</control>
+				<control type="image">
+					<width>219</width>
+					<height>115</height>
+					<texture colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texture>
+					<visible>Control.HasFocus(9011)</visible>
+					<include>PanelGlowFade</include>
+				</control>
+				<control type="image">
+					<left>72</left>
+					<top>5</top>
+					<width>75</width>
+					<height>75</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture colordiffuse="white2">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="label">
+					<top>53</top>
+					<width>219</width>
+					<height>60</height>
+					<align>center</align>
+					<font>Font_Reg26_Caps</font>
+					<info>ListItem.Label</info>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-group-madnox-quicknav</include>
+			</content>
+		</control>
+		<control type="button" id="9012">
+			<top>1040</top>
+			<width>60</width>
+			<height>40</height>
+			<align>center</align>
+			<texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="8" />
+			<label />
+			<textcolor>grey2</textcolor>
+			<onclick condition="String.IsEmpty(Window(home).Property(quicknavsetup))">SetProperty(quicknavsetup,1,home)</onclick>
+			<onclick condition="String.IsEmpty(Window(home).Property(quicknavsetup))">Notification($LOCALIZE[31902],$LOCALIZE[31881])</onclick>
+			<onclick condition="!String.IsEmpty(Window(home).Property(quicknavsetup))">ClearProperty(quicknavsetup,home)</onclick>
+			<onleft>Dialog.Close(1121)</onleft>
+			<onright>9013</onright>
+			<onup>SetFocus(9011,20)</onup>
+			<onup>9011</onup>
+			<ondown>SetFocus(9011,0)</ondown>
+			<ondown>9011</ondown>
+
+		</control>
+		<control type="image">
+			<left>10</left>
+			<top>1043</top>
+			<width>42</width>
+			<height>42</height>
+			<texture>$VAR[QuickConfigIconVar]</texture>
+			<animation effect="fade" start="100" end="75" time="100" condition="!Control.HasFocus(9012)">Conditional</animation>
+			<visible>Control.IsVisible(9012)</visible>
+		</control>
+		<control type="button" id="9013">
+			<left>65</left>
+			<top>1040</top>
+			<width>50</width>
+			<height>40</height>
+			<align>center</align>
+			<texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="8" />
+			<label />
+			<textcolor>grey2</textcolor>
+			<onclick>Action(Close)</onclick>
+			<onclick>Fullscreen</onclick>
+			<onleft>9012</onleft>
+			<onright>9014</onright>
+			<onup>SetFocus(9011,20)</onup>
+			<onup>9011</onup>
+			<ondown>SetFocus(9011,0)</ondown>
+			<ondown>9011</ondown>
+			<visible>String.IsEmpty(Window(home).Property(viewtypeselect)) + Player.HasMedia</visible>
+		</control>
+		<control type="image">
+			<left>65</left>
+			<top>1043</top>
+			<width>42</width>
+			<height>42</height>
+			<texture>BigIcons/Fullscreen2.png</texture>
+			<animation effect="fade" start="100" end="75" time="100" condition="!Control.HasFocus(9013)">Conditional</animation>
+			<visible>Control.IsVisible(9013)</visible>
+		</control>
+		<control type="button" id="9014">
+			<left>110</left>
+			<top>1040</top>
+			<width>50</width>
+			<height>40</height>
+			<align>center</align>
+			<texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="8" />
+			<label />
+			<textcolor>grey2</textcolor>
+			<onclick>Action(Close)</onclick>
+			<onclick>ActivateWindow(musicplaylist)</onclick>
+			<onleft>9013</onleft>
+			<onright>9015</onright>
+			<onup>SetFocus(9011,20)</onup>
+			<onup>9011</onup>
+			<ondown>SetFocus(9011,0)</ondown>
+			<ondown>9011</ondown>
+			<visible>String.IsEmpty(Window(home).Property(viewtypeselect)) + Player.HasAudio + !Window.IsActive(musicplaylist)</visible>
+		</control>
+		<control type="image">
+			<left>115</left>
+			<top>1043</top>
+			<width>42</width>
+			<height>42</height>
+			<texture>BigIcons/Format.png</texture>
+			<animation effect="fade" start="100" end="75" time="100" condition="!Control.HasFocus(9014)">Conditional</animation>
+			<visible>Control.IsVisible(9014)</visible>
+		</control>
+		<control type="button" id="9015">
+			<left>160</left>
+			<top>1040</top>
+			<width>60</width>
+			<height>40</height>
+			<align>center</align>
+			<texturefocus colordiffuse="$VAR[FocusTextureColorVar]" border="8">views/tripanel/listselect_fo.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[FocusTextureColorVar]" border="8" />
+			<label />
+			<textcolor>grey2</textcolor>
+			<onclick>Action(Close)</onclick>
+			<onclick>PlayDVD()</onclick>
+			<onleft>9014</onleft>
+			<onright>Dialog.Close(1121)</onright>
+			<onup>SetFocus(9011,20)</onup>
+			<onup>9011</onup>
+			<ondown>SetFocus(9011,0)</ondown>
+			<ondown>9011</ondown>
+			<visible>String.IsEmpty(Window(home).Property(viewtypeselect)) + System.HasMediadvd</visible>
+		</control>
+		<control type="image">
+			<left>165</left>
+			<top>1043</top>
+			<width>42</width>
+			<height>42</height>
+			<texture>BigIcons/CD-DVD.png</texture>
+			<animation effect="fade" start="100" end="75" time="100" condition="!Control.HasFocus(9015)">Conditional</animation>
+			<visible>Control.IsVisible(9015)</visible>
+		</control>
+	</controls>
+</window>

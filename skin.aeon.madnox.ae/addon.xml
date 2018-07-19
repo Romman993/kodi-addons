@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon id="skin.aeon.madnox.ae" version="1.10.1" name="Aeon Madnox AE" provider-name="AlexELEC">
+  <requires>
+    <import addon="xbmc.gui" version="5.13.0"/>
+    <import addon="script.skinshortcuts" version="1.0.7"/>
+</requires>
+<extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+</extension>
+<extension point="xbmc.addon.metadata">
+    <summary lang="en">Aeon Madnox by Mike_Doc &amp; schimi2k &amp; MeowMoo &amp; AlexELEC</summary>
+    <summary lang="ru">Aeon Madnox. Авторы: Mike_Doc и schimi2k &amp; MeowMoo&amp; AlexELEC</summary>
+    <description lang="en">Aeon Madnox is an artwork-intense XBMC skin with an endless amount of customization possibilites. There are many different views and options to present your media in the way you want it. The home window is fully customizable, you can re-order main menu items, assign submenus and widgets to them or change the overall look with different styles and themes. A skin which perfectly adapts to your needs.It is based on the design of Aeon by djh_. A great deal of textures used are from Aeon and its mods. All credits to the creators of these skins and mods.</description>
+    <description lang="ru">Принципы Aeon Madnox — красивое оформление и возможности настройки. Имеется множество различных представлений и настроек, чтобы представить ваши файлы так, как вы хотите. Главное меню полностью настраиваемое. Можно добавить до пяти настраиваемых пунктов главного меню, каждый с собственным подменю из пяти пунктов. Кроме того, можно изменять внешний вид, используя различные стили и темы, добавлять или удалять виджеты, а также отключать неиспользуемые пункты меню и подменю. Информацию о новых возможностях и изменениях можно найти в списке изменений.</description>
+    <disclaimer lang="en">Only compatible with Kodi 18 Leia. Not recommended for low-end platforms (Raspberry PI, AppleTV, Android devices)</disclaimer>
+    <disclaimer lang="ru">Aeon Madnox — это обложка, основанная на дизайне Aeon. Большое количество текстур взято из обложки Aeon и ее модификаций. Авторство принадлежит создателям этих обложек и модификаций.</disclaimer>
+    <platform>all</platform>
+    <source>https://github.com/mikesilvo164/skin.aeon.madnox</source>
+    <forum>http://forum.kodi.tv/showthread.php?tid=230821</forum>
+    <website>https://github.com/mikesilvo164/skin.aeon.madnox</website>
+    <assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+	</assets>
+</extension>
+</addon>

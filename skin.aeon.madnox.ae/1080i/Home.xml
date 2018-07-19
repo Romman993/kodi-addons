@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2&amp;group=mainmenu|madnox-quicknav)</onload>
+	<onload>Skin.SetString(SkinHelper.RandomFanartDelay,7)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableAddonsLookups)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
+	<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+	<onunload>ClearProperty(SkinHelper.WidgetContainer,home)</onunload>
+	<onunload>ClearProperty(Widget.CaseHome,home)</onunload>
+	<controls>
+		<control type="label" id="4323">
+			<label>$VAR[LibraryStatsVar]</label>
+			<include>HiddenObject</include>
+		</control>
+		<include>PlayListStatsList</include>
+		<!-- Fanart -->
+		<control type="group">
+			<include>LiveBG</include>
+			<control type="multiimage">
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+				<imagepath background="true">$VAR[HomeMenuFanartVar]</imagepath>
+				<fadetime>600</fadetime>
+				<animation effect="fade" time="480">Visible</animation>
+				<animation effect="fade" time="480">Hidden</animation>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" delay="480" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+			</control>
+			<include>skinshortcuts-template-widget.1.autoscrollFanart</include>
+			<include>skinshortcuts-template-widget.2.autoscrollFanart</include>
+			<include>skinshortcuts-template-widget.1.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.1b.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.1c.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.1d.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.2.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.2b.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.2c.backgroundFanart</include>
+			<include>skinshortcuts-template-widget.2d.backgroundFanart</include>
+			<include>skinshortcuts-template-liveBackground</include>
+			<include>CommonMediaPlayingBackground</include>
+		</control>
+		<!-- Hidden button to activate bottom bar-->
+		<control type="button" id="9011">
+			<include>HiddenObject</include>
+			<onfocus>SetFocus(9000)</onfocus>
+			<onfocus>ActivateWindow(1159)</onfocus>
+			<visible>Skin.HasSetting(bottomindicator)</visible>
+		</control>
+
+<!-- NowPlayingBottom -->
+		<control type="group">
+			<include condition="Skin.HasSetting(NowPlayingBottom)">BottomNowPlaying</include>
+		</control>
+
+
+		<!-- Home Fullscreen Video -->
+		<control type="group">
+			<visible>!Skin.HasSetting(DisableGlowbar)</visible>
+			<include>Animation_VisibleChange400</include>
+			<visible>![!String.IsEmpty(Window(home).Property(DisableWidgets)) + !Control.IsVisible(8995)]</visible>
+			<visible>![!String.IsEmpty(Window(home).Property(DisableWidgets)) + Player.HasVideo + Skin.HasSetting(ShowBackgroundVideo)]</visible>
+			<control type="image">
+				<texture colordiffuse="$INFO[Skin.String(BackgroundDarkness)]">common/bgcolor.png</texture>
+				<include>FullscreenDimensions</include>
+			</control>
+			<control type="image">
+				<top>-150</top>
+				<width>1920</width>
+				<height>608</height>
+				<texture colordiffuse="$VAR[ColorDiffuseVar]" flipy="true">views/showcase_glow.png</texture>
+				<include>Animation_WindowFade200</include>
+				<include>Animation_VisibleChange400</include>
+				<animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
+				<visible>Skin.HasSetting(ExtendedGlowMode)</visible>
+			</control>
+			<control type="image">
+				<top>622</top>
+				<width>1920</width>
+				<height>608</height>
+				<texture colordiffuse="$VAR[ColorDiffuseVar]">views/showcase_glow.png</texture>
+				<include>Animation_WindowFade200</include>
+				<include>Animation_VisibleChange400</include>
+				<animation effect="fade" start="100" end="80" time="4000" pulse="true" condition="true">conditional</animation>
+				<visible>Skin.HasSetting(ExtendedGlowMode)</visible>
+			</control>
+		</control>
+		<!-- LiveTV Info -->
+		<control type="group">
+			<visible>Skin.HasSetting(DisableGlowbar)</visible>
+			<include>Animation_VisibleChangeDelayed</include>
+			<include>Animation_WindowFade200</include>
+			<control type="image">
+				<top>480</top>
+				<width>1920</width>
+				<height>600</height>
+				<texture>home/nowplaying_shadow.png</texture>
+				<visible>[Control.IsVisible(8995) + Skin.HasSetting(movenowplayingwidget)] | Control.HasFocus(8000) | Control.HasFocus(8020) | Control.IsVisible(5000)</visible>
+				<include>Animation_VisibleChangeDelayed</include>
+				<animation effect="slide" time="320" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			</control>
+			<control type="image">
+				<width>1920</width>
+				<height>600</height>
+				<texture flipy="true">home/nowplaying_shadow.png</texture>
+				<include>Animation_VisibleChangeDelayed</include>
+				<visible>[Control.IsVisible(8995) + !Skin.HasSetting(movenowplayingwidget)] | Control.HasFocus(7000) | Control.HasFocus(7020) | Control.IsVisible(6000)</visible>
+			</control>
+		</control>
+		<include>RSSPanel</include>
+		<include>MainMenuBottomBar</include>
+		<include>Widget1</include>
+		<include>Widget2</include>
+		<control type="group">
+			<animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !String.IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1115)">Conditional</animation>
+			<animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !String.IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1115)">Conditional</animation>
+			<animation effect="slide" end="0,330" time="480" tween="cubic" delay="160" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + [Window.IsActive(1115) | Window.IsActive(1154)]">Conditional</animation>
+			<control type="group">
+				<top>472</top>
+				<include>LibraryStats</include>
+				<include>TimePanel</include>
+				<include>AlternateTimeAndStats</include>
+			</control>
+			<!-- RSS -->
+			<control type="group">
+				<include>FullscreenDimensions</include>
+				<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+				<include>Animation_OpenCloseZoom</include>
+				<control type="group">
+					<animation effect="zoom" end="80" center="960,520" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+					<!-- Submenu -->
+					<control type="image">
+						<left>935</left>
+						<top>613</top>
+						<width>50</width>
+						<height>15</height>
+						<texture colordiffuse="white">arrowdown.png</texture>
+						<visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + Integer.IsGreater(Container(9010).NumItems,0)</visible>
+						<animation effect="zoom" start="100,0" end="100,100" time="400" delay="160" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
+					</control>
+					<control type="group" id="9001">
+						<left>240</left>
+						<top>609</top>
+						<animation effect="zoom" end="120" center="960,610" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="240" condition="!Control.HasFocus(9010) + ![Integer.IsGreater(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+						<animation effect="slide" end="0,-60" time="240" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![Integer.IsGreater(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
+						<control type="image">
+							<left>70</left>
+							<top>3</top>
+							<width>1300</width>
+							<height>87</height>
+							<texture colordiffuse="$VAR[ExtendedColorVar]">$VAR[SubMenuImageVar]</texture>
+						</control>
+						<include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
+						<include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
+					</control>
+					<!-- Home OSD -->
+					<control type="group">
+						<top>62</top>
+						<width>1920</width>
+						<height>1080</height>
+						<visible>Player.HasMedia + System.IdleTime(8)</visible>
+						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+						<animation effect="fade" end="100" time="600" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
+					</control>
+					<!-- Home Menu Bar -->
+					<control type="image">
+						<top>453</top>
+						<width>1920</width>
+						<height>225</height>
+						<texture colordiffuse="$VAR[DialogColorVar]">$VAR[HomeMenuBackVar]</texture>
+						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+						<animation effect="fade" start="100" end="90" time="40" condition="Skin.HasSetting(glasshome) + ![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+					</control>
+					<control type="group">
+						<animation effect="fade" end="20" time="600" condition="Player.HasMedia + Skin.HasSetting(glasshome)">Conditional</animation>
+						<animation effect="fade" end="30" time="600" condition="Player.HasMedia + !Skin.HasSetting(glasshome)">Conditional</animation>
+						<control type="progress">
+							<left>-5</left>
+							<top>502</top>
+							<width>1920</width>
+							<height>119</height>
+							<info>Player.Progress</info>
+							<texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+							<lefttexture />
+							<midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+							<righttexture />
+							<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>
+							<visible>[Skin.HasSetting(ProgressMainMenu) + !Skin.HasSetting(smallermainmenu)]</visible>
+						</control>
+						<control type="progress">
+							<left>-245</left>
+							<top>502</top>
+							<width>2420</width>
+							<height>119</height>
+							<info>Player.Progress</info>
+							<texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+							<lefttexture />
+							<midtexture border="1">osd/info/osd_progress_mid.png</midtexture>
+							<righttexture />
+							<colordiffuse>$VAR[HomeMenuTextFocusVar]</colordiffuse>
+							<visible>[Skin.HasSetting(ProgressMainMenu) + Skin.HasSetting(smallermainmenu)]</visible>
+						</control>
+					</control>
+					<control type="image">
+						<top>453</top>
+						<width>1920</width>
+						<height>225</height>
+						<texture colordiffuse="$VAR[ColorDiffuseVar]">home/homemenu_back_glow.png</texture>
+						<animation effect="zoom" end="125,100" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+						<include>PanelGlowFade</include>
+						<include>Animation_VisibleChange400</include>
+						<visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(glasshome)] | Skin.HasSetting(classichome)</visible>
+					</control>
+					<!-- Home OSD -->
+					<control type="label">
+						<top>445</top>
+						<width>1920</width>
+						<height>225</height>
+						<align>center</align>
+						<label>$VAR[HomeOSDLabelVar]</label>
+						<font>Font_MainClassic</font>
+						<textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+						<visible>Player.HasMedia + System.IdleTime(8)</visible>
+						<animation effect="fade" end="100" time="840">Visible</animation>
+					</control>
+					<control type="group">
+						<animation effect="zoom" end="125,99" center="960,500" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
+						<include>Furniture_ClassicHomeGradient</include>
+						<include>Neon_Home</include>
+					</control>
+						<include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
+						<include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
+				</control>
+			</control>
+		</control>
+		<!-- Background Fanart Includes -->
+		<include>skinshortcuts-template-backgroundFanart</include>
+		<include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
+		<control type="group">
+			<top>20</top>
+			<visible>!String.IsEmpty(Window(home).Property(DisableWidgets)) + !Player.HasMedia + !Window.IsActive(1115) + !Window.IsActive(1154)</visible>
+			<include>Animation_WindowFade200</include>
+			<animation type="Visible">
+				<effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
+				<effect type="fade" end="100" time="240" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="240" />
+				<effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in" />
+			</animation>
+			<control type="image">
+				<left>-20</left>
+				<top>-20</top>
+				<width>290</width>
+				<height>100</height>
+				<texture colordiffuse="black">home/fade.png</texture>
+				<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<top>6</top>
+				<width>65</width>
+				<height>49</height>
+				<aspectratio aligny="top">scale</aspectratio>
+				<texture colordiffuse="white">BigIcons/ButtonBack.png</texture>
+				<animation effect="zoom" start="80" end="85" delay="400" time="840" center="auto" tween="cubic" easing="out" pulse="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>50</left>
+				<top>10</top>
+				<width>50</width>
+				<height>38</height>
+				<aspectratio aligny="top">scale</aspectratio>
+				<animation effect="fade" start="100" end="80" time="440" delay="800" center="auto" tween="cubic" easing="out" pulse="true" condition="true">Conditional</animation>
+				<texture colordiffuse="white4">BigIcons/widgets.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<control type="image">
+				<texture>common/bgcolor.png</texture>
+				<include>FullscreenDimensions</include>
+				<visible>!String.IsEmpty(Window(home).Property(weatherwidget))</visible>
+				<include>Animation_VisibleChange400</include>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(Window(home).Property(weatherwidget))</visible>
+				<control type="multiimage">
+					<aspectratio>keep</aspectratio>
+					<imagepath>$INFO[Window(weather).Property(MapPath)]</imagepath>
+					<fadetime>0</fadetime>
+					<include>FullscreenDimensions</include>
+					<timeperimage>500</timeperimage>
+					<pauseatend>1000</pauseatend>
+					<randomize>false</randomize>
+				</control>
+				<control type="image">
+					<left>500</left>
+					<top>990</top>
+					<width>920</width>
+					<height>47</height>
+					<texture>weather/whitepanel.png</texture>
+				</control>
+				<control type="image">
+					<left>480</left>
+					<top>992</top>
+					<width>506</width>
+					<height>42</height>
+					<aspectratio>keep</aspectratio>
+					<texture>weather/key1.png</texture>
+				</control>
+				<control type="image">
+					<left>930</left>
+					<top>992</top>
+					<width>506</width>
+					<height>42</height>
+					<aspectratio>keep</aspectratio>
+					<texture>weather/key2.png</texture>
+				</control>
+			</control>
+		</control>
+		<!-- Hidden list for bottom menu in-progress movies -->
+		<control type="wraplist" id="8014">
+			<include>HiddenList</include>
+			<itemlayout height="100" width="100" />
+			<focusedlayout height="100" width="100" />
+			<content>special://skin/extras/Playlists/MoviesInProgress.xsp</content>
+			<autoscroll time="7000" delay="7000" repeat="7000">True</autoscroll>
+		</control>
+	</controls>
+</window>

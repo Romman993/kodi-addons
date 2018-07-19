@@ -1,0 +1,1583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Live backgrounds for homepage -->
+<includes>
+	<include name="PicturePos">
+		<left>64</left>
+		<top>57</top>
+		<width>312</width>
+		<height>312</height>
+	</include>
+	<include name="PolaroidPos">
+		<width>461</width>
+		<height>500</height>
+	</include>
+	<!-- Live DVD/BD Cases -->
+	<include name="LiveBG">
+		<!-- Submenu Playlist -->
+		<control type="wraplist" id="8011">
+			<include>HiddenList</include>
+			<content sortby="random">$INFO[Container(9010).ListItem.Property(backgroundPlaylist)]</content>
+			<autoscroll time="7000" delay="7000" repeat="7000">!String.EndsWith(Container(9010).ListItem.Property(background),.Live)</autoscroll>
+		</control>
+		<control type="group">
+			<visible>[Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + Integer.IsGreater(Container(8011).NumItems,0)] |
+				[String.EndsWith(Container(9000).ListItem.Property(background),.Live) + ![Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),FanartList) + Integer.IsGreater(Container(8011).NumItems,0) + !String.IsEmpty(Container(8011).ListItem.Art(fanart))]] |
+				String.Contains(Control.GetLabel(4322),case)</visible>
+			<!-- Background image -->
+			<control type="image">
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+				<texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$VAR[LiveBGBackground]</texture>
+				<fadetime>600</fadetime>
+				<include>FullscreenDimensions</include>
+				<include>Animation_WindowFade250</include>
+				<animation effect="fade" time="400">Visible</animation>
+				<animation effect="fade" time="400">Hidden</animation>
+			</control>
+			<!-- DVD Cases -->
+			<control type="group">
+				<animation effect="fade" time="600">VisibleChange</animation>
+				<include>Animation_WindowFade250</include>
+				<visible>[Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + Integer.IsGreater(Container(8011).NumItems,0) + String.Contains(Container(9010).ListItem.Property(backgroundCase),DVD)] |
+					[String.EndsWith(Container(9000).ListItem.Property(background),.Live) + ![Control.HasFocus(9010) + [String.EndsWith(Container(9010).ListItem.Property(background),FanartList) | String.EndsWith(Container(9010).ListItem.Property(background),.Live)] + Integer.IsGreater(Container(8011).NumItems,0) + !String.IsEmpty(Container(8011).ListItem.Art(fanart))] + String.Contains(Container(9000).ListItem.Property(backgroundCase),DVD)] |
+					String.StartsWith(Control.GetLabel(4322),dvdcase)</visible>
+				<control type="group">
+					<control type="group">
+						<left>800</left>
+						<top>-150</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG2]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG2Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>580</left>
+						<top>180</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG3]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG3Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>500</left>
+						<top>1170</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="285" end="285" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG5]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG5Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>1950</left>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG6]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG6Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>1550</left>
+						<top>300</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG4]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG4Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>1380</left>
+						<top>650</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG8]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG8Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>1650</left>
+						<top>650</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG7]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG7Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>1100</left>
+						<top>400</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG9]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG9Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>800</left>
+						<top>400</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="16" end="16" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG10]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG10Resolution].png</texture>
+						</control>
+					</control>
+					<control type="group">
+						<left>1100</left>
+						<top>1230</top>
+						<animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>39</left>
+							<top>9</top>
+							<width>223</width>
+							<height>335</height>
+							<fadetime>600</fadetime>
+							<align>center</align>
+							<!-- MikeBZH44 Scale to Stretch for poster -->
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/movieposter_mask.png">$VAR[LiveBG1]</texture>
+						</control>
+						<control type="image">
+							<top>-20</top>
+							<width>276</width>
+							<height>380</height>
+							<texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCases]/$VAR[LiveBG1Resolution].png</texture>
+						</control>
+					</control>
+				</control>
+			</control>
+			<!-- CD Cases -->
+			<control type="group">
+				<animation effect="fade" time="600">VisibleChange</animation>
+				<include>Animation_WindowFade250</include>
+				<visible>[Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + Integer.IsGreater(Container(8011).NumItems,0) + String.Contains(Container(9010).ListItem.Property(backgroundCase),CD)] |
+					[String.EndsWith(Container(9000).ListItem.Property(background),.Live) + ![Control.HasFocus(9010) + [String.EndsWith(Container(9010).ListItem.Property(background),FanartList) | String.EndsWith(Container(9010).ListItem.Property(background),.Live)] + Integer.IsGreater(Container(8011).NumItems,0) + !String.IsEmpty(Container(8011).ListItem.Art(fanart))] + String.Contains(Container(9000).ListItem.Property(backgroundCase),CD)] |
+					String.StartsWith(Control.GetLabel(4322),case)</visible>
+				<control type="group">
+					<left>-200</left>
+					<control type="group">
+						<left>1120</left>
+						<top>700</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG1]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG1]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>700</left>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG2]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG2]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>430</left>
+						<top>150</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG3]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG3]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>1600</left>
+						<top>200</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG4]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG4]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>1000</left>
+						<top>100</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG5]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG5]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>1950</left>
+						<top>-100</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG6]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG6]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>1700</left>
+						<top>800</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG7]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG7]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>1470</left>
+						<top>510</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG8]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG8]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>1050</left>
+						<top>400</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG9]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG9]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+					<control type="group">
+						<left>600</left>
+						<top>400</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<include>LiveCDCasesBGDim1</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG10]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<include>LiveCDCasesBGDim2</include>
+							<fadetime>600</fadetime>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG10]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+							<texture background="true">thumbs/boxes/cd_glass.png</texture>
+							<visible>[Window.IsVisible(Home) + !String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + !Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+						<control type="image">
+							<width>375</width>
+							<height>342</height>
+							<texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+							<visible>[Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)] | [!Window.IsVisible(Home) + Skin.HasSetting(LiveBGCDCase)]</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+			<!-- My Pics -->
+			<control type="group">
+				<animation effect="fade" time="600">VisibleChange</animation>
+				<include>Animation_WindowFade250</include>
+				<include>FullscreenDimensions</include>
+				<visible>[Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + Integer.IsGreater(Container(8011).NumItems,0) + String.Contains(Container(9010).ListItem.Property(backgroundCase),Polaroid)] |
+					[String.EndsWith(Container(9000).ListItem.Property(background),.Live) + ![Control.HasFocus(9010) + [String.EndsWith(Container(9010).ListItem.Property(background),FanartList) | String.EndsWith(Container(9010).ListItem.Property(background),.Live)] + Integer.IsGreater(Container(8011).NumItems,0) + !IsEmpty(Container(8011).ListItem.Art(fanart))] + String.Contains(Container(9000).ListItem.Property(backgroundCase),Polaroid)] |
+					String.StartsWith(Control.GetLabel(4322),case)</visible>
+				<control type="group">
+					<control type="group">
+						<control type="group">
+							<description>Picture 1</description>
+							<left>630</left>
+							<top>820</top>
+							<animation effect="rotate" center="auto" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.1.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<!--aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio-->
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 2</description>
+								<left>100</left>
+								<top>-375</top>
+								<animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.2.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 3</description>
+							<left>20</left>
+							<top>-200</top>
+							<animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.3.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 4</description>
+							<left>1400</left>
+							<top>-50</top>
+							<animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.4.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 5</description>
+							<left>500</left>
+							<top>-230</top>
+							<animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.5.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 6</description>
+							<left>1600</left>
+							<top>-400</top>
+							<animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.6.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 7</description>
+							<left>1200</left>
+							<top>400</top>
+							<animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.7.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 8</description>
+							<left>1300</left>
+							<top>300</top>
+							<animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.8.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 9</description>
+							<left>685</left>
+							<animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.9.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+						<control type="group">
+							<description>Picture 10</description>
+							<left>400</left>
+							<top>450</top>
+							<animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+							<control type="image">
+								<include>PicturePos</include>
+								<aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+								<fadetime>IconCrossfadeTime</fadetime>
+								<texture background="true" diffuse="thumbs/boxes/polaroid_mask.png">$INFO[Window(home).Property(MyPicsDBRandom.10.Path)]</texture>
+							</control>
+							<control type="image">
+								<include>PolaroidPos</include>
+								<texture background="true">thumbs/boxes/polaroid.png</texture>
+							</control>
+						</control>
+					</control>
+				</control>
+			</control>
+			<!-- No cases -->
+			<control type="group">
+				<animation effect="fade" time="480">VisibleChange</animation>
+				<include>Animation_WindowFade250</include>
+				<visible>[Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + Integer.IsGreater(Container(8011).NumItems,0) + String.IsEmpty(Container(9010).ListItem.Property(backgroundCase))] |
+					[String.EndsWith(Container(9000).ListItem.Property(background),.Live) + ![Control.HasFocus(9010) + [String.EndsWith(Container(9010).ListItem.Property(background),FanartList) | String.EndsWith(Container(9010).ListItem.Property(background),.Live)] + Integer.IsGreater(Container(8011).NumItems,0) + !String.IsEmpty(Container(8011).ListItem.Art(fanart))] + String.IsEmpty(Container(9000).ListItem.Property(backgroundCase))] |
+					String.StartsWith(Control.GetLabel(4322),nocase)</visible>
+				<control type="group">
+					<left>-200</left>
+					<control type="group">
+						<left>1120</left>
+						<top>700</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG1Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>700</left>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG2Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>430</left>
+						<top>150</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG3Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>1600</left>
+						<top>200</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG4Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>1000</left>
+						<top>100</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG5Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>1950</left>
+						<top>-100</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG6Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>1700</left>
+						<top>800</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG7Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>1470</left>
+						<top>510</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG8Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>1050</left>
+						<top>400</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG9Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<left>600</left>
+						<top>400</top>
+						<animation effect="zoom" start="150" end="150" center="auto" time="0" condition="true">Conditional</animation>
+						<animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<left>54</left>
+							<top>17</top>
+							<width>400</width>
+							<height>400</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[LiveBG10Picture]</texture>
+							<fadetime>600</fadetime>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<variable name="LiveBG1">
+		<value condition="Control.HasFocus(9010) + !String.IsEmpty(Container(9010).ListItem.Property(background)) + !String.IsEmpty(Container(8011).ListItem(0).Art(tvshow.poster))">$INFO[Container(8011).ListItem(0).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + !String.IsEmpty(Container(9010).ListItem.Property(background)) + !String.IsEmpty(Container(8011).ListItem(0).Art(poster))">$INFO[Container(8011).ListItem(0).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + !String.IsEmpty(Container(9010).ListItem.Property(background)) + ">$INFO[Container(8011).ListItem(0).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(0).Art(tvshow.poster))">$INFO[Container(8020).ListItem(0).Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(0).Art(poster))">$INFO[Container(8020).ListItem(0).Art(poster)]</value>
+		<value>$INFO[Container(8020).ListItem(0).Icon]</value>
+	</variable>
+	<variable name="LiveBG2">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(1).Art(poster))">$INFO[Container(8011).ListItem(1).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(1).Art(tvshow.poster))">$INFO[Container(8011).ListItem(1).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(1).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(1).Art(poster))">$INFO[Container(8020).ListItem(1).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(1).Art(tvshow.poster))">$INFO[Container(8020).ListItem(1).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(1).Icon]</value>
+	</variable>
+	<variable name="LiveBG3">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(2).Art(poster))">$INFO[Container(8011).ListItem(2).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(2).Art(tvshow.poster))">$INFO[Container(8011).ListItem(2).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(2).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(2).Art(poster))">$INFO[Container(8020).ListItem(2).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(2).Art(tvshow.poster))">$INFO[Container(8020).ListItem(2).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(2).Icon]</value>
+	</variable>
+	<variable name="LiveBG4">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(3).Art(poster))">$INFO[Container(8011).ListItem(3).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(3).Art(tvshow.poster))">$INFO[Container(8011).ListItem(3).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(3).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(3).Art(poster))">$INFO[Container(8020).ListItem(3).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(3).Art(tvshow.poster))">$INFO[Container(8020).ListItem(3).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(3).Icon]</value>
+	</variable>
+	<variable name="LiveBG5">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(4).Art(poster))">$INFO[Container(8011).ListItem(4).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(4).Art(tvshow.poster))">$INFO[Container(8011).ListItem(4).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(4).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(4).Art(poster))">$INFO[Container(8020).ListItem(4).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(4).Art(tvshow.poster))">$INFO[Container(8020).ListItem(4).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(4).Icon]</value>
+	</variable>
+	<variable name="LiveBG6">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(5).Art(poster))">$INFO[Container(8011).ListItem(5).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(5).Art(tvshow.poster))">$INFO[Container(8011).ListItem(5).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(5).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(5).Art(poster))">$INFO[Container(8020).ListItem(5).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(5).Art(tvshow.poster))">$INFO[Container(8020).ListItem(5).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(5).Icon]</value>
+	</variable>
+	<variable name="LiveBG7">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(6).Art(poster))">$INFO[Container(8011).ListItem(6).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(6).Art(tvshow.poster))">$INFO[Container(8011).ListItem(6).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(6).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(6).Art(poster))">$INFO[Container(8020).ListItem(6).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(6).Art(tvshow.poster))">$INFO[Container(8020).ListItem(6).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(6).Icon]</value>
+	</variable>
+	<variable name="LiveBG8">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(7).Art(poster))">$INFO[Container(8011).ListItem(7).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(7).Art(tvshow.poster))">$INFO[Container(8011).ListItem(7).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(7).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(7).Art(poster))">$INFO[Container(8020).ListItem(7).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(7).Art(tvshow.poster))">$INFO[Container(8020).ListItem(7).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(7).Icon]</value>
+	</variable>
+	<variable name="LiveBG9">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(8).Art(poster))">$INFO[Container(8011).ListItem(8).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(8).Art(tvshow.poster))">$INFO[Container(8011).ListItem(8).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(8).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(8).Art(poster))">$INFO[Container(8020).ListItem(8).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(8).Art(tvshow.poster))">$INFO[Container(8020).ListItem(8).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(8).Icon]</value>
+	</variable>
+	<variable name="LiveBG10">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(9).Art(poster))">$INFO[Container(8011).ListItem(9).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(9).Art(tvshow.poster))">$INFO[Container(8011).ListItem(9).Art(tvshow.poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(9).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(9).Art(poster))">$INFO[Container(8020).ListItem(9).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(9).Art(tvshow.poster))">$INFO[Container(8020).ListItem(9).Art(tvshow.poster)]</value>
+		<value>$INFO[Container(8020).ListItem(9).Icon]</value>
+	</variable>
+	<variable name="LiveBG1Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(0).Art(poster))">$INFO[Container(8011).ListItem(0).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(0).Art(artists.thumb))">$INFO[Container(8011).ListItem(0).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(0).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(0).Art(poster))">$INFO[Container(8020).ListItem(0).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(0).Art(artists.thumb))">$INFO[Container(8020).ListItem(0).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(0).Icon]</value>
+	</variable>
+	<variable name="LiveBG2Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(1).Art(poster))">$INFO[Container(8011).ListItem(1).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(1).Art(artists.thumb))">$INFO[Container(8011).ListItem(1).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(1).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(1).Art(poster))">$INFO[Container(8020).ListItem(1).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(1).Art(artists.thumb))">$INFO[Container(8020).ListItem(1).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(1).Icon]</value>
+	</variable>
+	<variable name="LiveBG3Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(2).Art(poster))">$INFO[Container(8011).ListItem(2).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(2).Art(artists.thumb))">$INFO[Container(8011).ListItem(2).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(2).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(2).Art(poster))">$INFO[Container(8020).ListItem(2).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(2).Art(artists.thumb))">$INFO[Container(8020).ListItem(2).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(2).Icon]</value>
+	</variable>
+	<variable name="LiveBG4Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(3).Art(poster))">$INFO[Container(8011).ListItem(3).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(3).Art(artists.thumb))">$INFO[Container(8011).ListItem(3).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(3).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(3).Art(poster))">$INFO[Container(8020).ListItem(3).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(3).Art(artists.thumb))">$INFO[Container(8020).ListItem(3).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(3).Icon]</value>
+	</variable>
+	<variable name="LiveBG5Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(4).Art(poster))">$INFO[Container(8011).ListItem(4).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(4).Art(artists.thumb))">$INFO[Container(8011).ListItem(4).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(4).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(4).Art(poster))">$INFO[Container(8020).ListItem(4).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(4).Art(artists.thumb))">$INFO[Container(8020).ListItem(4).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(4).Icon]</value>
+	</variable>
+	<variable name="LiveBG6Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(5).Art(poster))">$INFO[Container(8011).ListItem(5).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(5).Art(artists.thumb))">$INFO[Container(8011).ListItem(5).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(5).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(5).Art(poster))">$INFO[Container(8020).ListItem(5).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(5).Art(artists.thumb))">$INFO[Container(8020).ListItem(5).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(5).Icon]</value>
+	</variable>
+	<variable name="LiveBG7Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(6).Art(poster))">$INFO[Container(8011).ListItem(6).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(6).Art(artists.thumb))">$INFO[Container(8011).ListItem(6).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(6).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(6).Art(poster))">$INFO[Container(8020).ListItem(6).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(6).Art(artists.thumb))">$INFO[Container(8020).ListItem(6).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(6).Icon]</value>
+	</variable>
+	<variable name="LiveBG8Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(7).Art(poster))">$INFO[Container(8011).ListItem(7).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(7).Art(artists.thumb))">$INFO[Container(8011).ListItem(7).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(7).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(7).Art(poster))">$INFO[Container(8020).ListItem(7).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(7).Art(artists.thumb))">$INFO[Container(8020).ListItem(7).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(7).Icon]</value>
+	</variable>
+	<variable name="LiveBG9Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(8).Art(poster))">$INFO[Container(8011).ListItem(8).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(8).Art(artists.thumb))">$INFO[Container(8011).ListItem(8).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(8).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(8).Art(poster))">$INFO[Container(8020).ListItem(8).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(8).Art(artists.thumb))">$INFO[Container(8020).ListItem(8).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(8).Icon]</value>
+	</variable>
+	<variable name="LiveBG10Picture">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(9).Art(poster))">$INFO[Container(8011).ListItem(9).Art(poster)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live) + !String.IsEmpty(Container(8011).ListItem(9).Art(artists.thumb))">$INFO[Container(8011).ListItem(9).Art(artists.thumb)]</value>
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$INFO[Container(8011).ListItem(9).Icon]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(9).Art(poster))">$INFO[Container(8020).ListItem(9).Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(8020).ListItem(9).Art(artists.thumb))">$INFO[Container(8020).ListItem(9).Art(artists.thumb)]</value>
+		<value>$INFO[Container(8020).ListItem(9).Icon]</value>
+	</variable>
+	<variable name="LiveBG1Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG1Resolution8011]</value>
+		<value>$VAR[LiveBG1Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG2Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG2Resolution8011]</value>
+		<value>$VAR[LiveBG2Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG3Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG3Resolution8011]</value>
+		<value>$VAR[LiveBG3Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG4Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG4Resolution8011]</value>
+		<value>$VAR[LiveBG4Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG5Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG5Resolution8011]</value>
+		<value>$VAR[LiveBG5Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG6Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG6Resolution8011]</value>
+		<value>$VAR[LiveBG6Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG7Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG7Resolution8011]</value>
+		<value>$VAR[LiveBG7Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG8Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG8Resolution8011]</value>
+		<value>$VAR[LiveBG8Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG9Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG9Resolution8011]</value>
+		<value>$VAR[LiveBG9Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG10Resolution">
+		<value condition="Control.HasFocus(9010) + String.EndsWith(Container(9010).ListItem.Property(background),.Live)">$VAR[LiveBG10Resolution8011]</value>
+		<value>$VAR[LiveBG10Resolution8020]</value>
+	</variable>
+	<variable name="LiveBG1Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.3D.) | String.Contains(Container(8011).ListItem(0).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, 3D.) | String.Contains(Container(8011).ListItem(0).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(0).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(0).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(0).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(0).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(0).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, SDTV.) | String.Contains(Container(8011).ListItem(0).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(0).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, HDTV.) | String.Contains(Container(8011).ListItem(0).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(0).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(0).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(0).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(0).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename,.4K.) | String.Contains(Container(8011).ListItem(0).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(0).Filename, 4K.) | String.Contains(Container(8011).ListItem(0).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(0).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(0).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG2Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.3D.) | String.Contains(Container(8011).ListItem(1).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, 3D.) | String.Contains(Container(8011).ListItem(1).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(1).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(1).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(1).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(1).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(1).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, SDTV.) | String.Contains(Container(8011).ListItem(1).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(1).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, HDTV.) | String.Contains(Container(8011).ListItem(1).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(1).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(1).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(1).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(1).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename,.4K.) | String.Contains(Container(8011).ListItem(1).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(1).Filename, 4K.) | String.Contains(Container(8011).ListItem(1).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(1).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(1).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG3Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.3D.) | String.Contains(Container(8011).ListItem(2).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, 3D.) | String.Contains(Container(8011).ListItem(2).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(2).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(2).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(2).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(2).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(2).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, SDTV.) | String.Contains(Container(8011).ListItem(2).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(2).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, HDTV.) | String.Contains(Container(8011).ListItem(2).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(2).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(2).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(2).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(2).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename,.4K.) | String.Contains(Container(8011).ListItem(2).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(2).Filename, 4K.) | String.Contains(Container(8011).ListItem(2).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(2).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(2).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG4Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.3D.) | String.Contains(Container(8011).ListItem(3).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, 3D.) | String.Contains(Container(8011).ListItem(3).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(3).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(3).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(3).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(3).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(3).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, SDTV.) | String.Contains(Container(8011).ListItem(3).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(3).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, HDTV.) | String.Contains(Container(8011).ListItem(3).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(3).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(3).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(3).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(3).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename,.4K.) | String.Contains(Container(8011).ListItem(3).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(3).Filename, 4K.) | String.Contains(Container(8011).ListItem(3).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(3).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(3).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG5Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.3D.) | String.Contains(Container(8011).ListItem(4).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, 3D.) | String.Contains(Container(8011).ListItem(4).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(4).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(4).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(4).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(4).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(4).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, SDTV.) | String.Contains(Container(8011).ListItem(4).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(4).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, HDTV.) | String.Contains(Container(8011).ListItem(4).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(4).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(4).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(4).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(4).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename,.4K.) | String.Contains(Container(8011).ListItem(4).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(4).Filename, 4K.) | String.Contains(Container(8011).ListItem(4).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(4).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(4).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG6Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.3D.) | String.Contains(Container(8011).ListItem(5).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, 3D.) | String.Contains(Container(8011).ListItem(5).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(5).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(5).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(5).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(5).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(5).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, SDTV.) | String.Contains(Container(8011).ListItem(5).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(5).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, HDTV.) | String.Contains(Container(8011).ListItem(5).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(5).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(5).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(5).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(5).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename,.4K.) | String.Contains(Container(8011).ListItem(5).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(5).Filename, 4K.) | String.Contains(Container(8011).ListItem(5).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(5).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(5).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG7Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.3D.) | String.Contains(Container(8011).ListItem(6).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, 3D.) | String.Contains(Container(8011).ListItem(6).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(6).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(6).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(6).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(6).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(6).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, SDTV.) | String.Contains(Container(8011).ListItem(6).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(6).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, HDTV.) | String.Contains(Container(8011).ListItem(6).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(6).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(6).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(6).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(6).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename,.4K.) | String.Contains(Container(8011).ListItem(6).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(6).Filename, 4K.) | String.Contains(Container(8011).ListItem(6).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(6).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(6).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG8Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.3D.) | String.Contains(Container(8011).ListItem(7).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, 3D.) | String.Contains(Container(8011).ListItem(7).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(7).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(7).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(7).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(7).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(7).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, SDTV.) | String.Contains(Container(8011).ListItem(7).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(7).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, HDTV.) | String.Contains(Container(8011).ListItem(7).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(7).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(7).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(7).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(7).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename,.4K.) | String.Contains(Container(8011).ListItem(7).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(7).Filename, 4K.) | String.Contains(Container(8011).ListItem(7).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(7).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(7).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG9Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.3D.) | String.Contains(Container(8011).ListItem(8).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, 3D.) | String.Contains(Container(8011).ListItem(8).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(8).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(8).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(8).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(8).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(8).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, SDTV.) | String.Contains(Container(8011).ListItem(8).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(8).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, HDTV.) | String.Contains(Container(8011).ListItem(8).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(8).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(8).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(8).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(8).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename,.4K.) | String.Contains(Container(8011).ListItem(8).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(8).Filename, 4K.) | String.Contains(Container(8011).ListItem(8).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(8).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(8).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG10Resolution8011">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.3D.) | String.Contains(Container(8011).ListItem(9).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, 3D.) | String.Contains(Container(8011).ListItem(9).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.3DBD.) | String.Contains(Container(8011).ListItem(9).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, 3DBD.) | String.Contains(Container(8011).ListItem(9).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.HDDVD.) | String.Contains(Container(8011).ListItem(9).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, HDDVD.) | String.Contains(Container(8011).ListItem(9).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.SDTV.) | String.Contains(Container(8011).ListItem(9).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, SDTV.) | String.Contains(Container(8011).ListItem(9).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.HDTV.) | String.Contains(Container(8011).ListItem(9).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, HDTV.) | String.Contains(Container(8011).ListItem(9).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.WEBDL.) | String.Contains(Container(8011).ListItem(9).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, WEBDL.) | String.Contains(Container(8011).ListItem(9).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.WEB-DL.) | String.Contains(Container(8011).ListItem(9).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, WEB-DL.) | String.Contains(Container(8011).ListItem(9).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename,.4K.) | String.Contains(Container(8011).ListItem(9).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8011).ListItem(9).Filename, 4K.) | String.Contains(Container(8011).ListItem(9).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8011).ListItem(9).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8011).ListItem(9).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG1Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.3D.) | String.Contains(Container(8020).ListItem(0).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, 3D.) | String.Contains(Container(8020).ListItem(0).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(0).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(0).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(0).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(0).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(0).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, SDTV.) | String.Contains(Container(8020).ListItem(0).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(0).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, HDTV.) | String.Contains(Container(8020).ListItem(0).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(0).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(0).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(0).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(0).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename,.4K.) | String.Contains(Container(8020).ListItem(0).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(0).Filename, 4K.) | String.Contains(Container(8020).ListItem(0).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(0).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(0).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG2Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.3D.) | String.Contains(Container(8020).ListItem(1).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, 3D.) | String.Contains(Container(8020).ListItem(1).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(1).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(1).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(1).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(1).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(1).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, SDTV.) | String.Contains(Container(8020).ListItem(1).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(1).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, HDTV.) | String.Contains(Container(8020).ListItem(1).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(1).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(1).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(1).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(1).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename,.4K.) | String.Contains(Container(8020).ListItem(1).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(1).Filename, 4K.) | String.Contains(Container(8020).ListItem(1).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(1).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(1).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG3Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.3D.) | String.Contains(Container(8020).ListItem(2).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, 3D.) | String.Contains(Container(8020).ListItem(2).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(2).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(2).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(2).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(2).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(2).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, SDTV.) | String.Contains(Container(8020).ListItem(2).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(2).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, HDTV.) | String.Contains(Container(8020).ListItem(2).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(2).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(2).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(2).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(2).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename,.4K.) | String.Contains(Container(8020).ListItem(2).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(2).Filename, 4K.) | String.Contains(Container(8020).ListItem(2).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(2).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(2).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG4Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.3D.) | String.Contains(Container(8020).ListItem(3).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, 3D.) | String.Contains(Container(8020).ListItem(3).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(3).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(3).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(3).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(3).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(3).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, SDTV.) | String.Contains(Container(8020).ListItem(3).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(3).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, HDTV.) | String.Contains(Container(8020).ListItem(3).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(3).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(3).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(3).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(3).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename,.4K.) | String.Contains(Container(8020).ListItem(3).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(3).Filename, 4K.) | String.Contains(Container(8020).ListItem(3).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(3).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(3).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG5Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.3D.) | String.Contains(Container(8020).ListItem(4).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, 3D.) | String.Contains(Container(8020).ListItem(4).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(4).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(4).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(4).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(4).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(4).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, SDTV.) | String.Contains(Container(8020).ListItem(4).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(4).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, HDTV.) | String.Contains(Container(8020).ListItem(4).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(4).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(4).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(4).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(4).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename,.4K.) | String.Contains(Container(8020).ListItem(4).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(4).Filename, 4K.) | String.Contains(Container(8020).ListItem(4).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(4).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(4).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG6Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.3D.) | String.Contains(Container(8020).ListItem(5).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, 3D.) | String.Contains(Container(8020).ListItem(5).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(5).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(5).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(5).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(5).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(5).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, SDTV.) | String.Contains(Container(8020).ListItem(5).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(5).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, HDTV.) | String.Contains(Container(8020).ListItem(5).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(5).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(5).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(5).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(5).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename,.4K.) | String.Contains(Container(8020).ListItem(5).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(5).Filename, 4K.) | String.Contains(Container(8020).ListItem(5).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(5).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(5).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG7Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.3D.) | String.Contains(Container(8020).ListItem(6).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, 3D.) | String.Contains(Container(8020).ListItem(6).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(6).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(6).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(6).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(6).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(6).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, SDTV.) | String.Contains(Container(8020).ListItem(6).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(6).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, HDTV.) | String.Contains(Container(8020).ListItem(6).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(6).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(6).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(6).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(6).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename,.4K.) | String.Contains(Container(8020).ListItem(6).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(6).Filename, 4K.) | String.Contains(Container(8020).ListItem(6).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(6).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(6).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG8Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.3D.) | String.Contains(Container(8020).ListItem(7).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, 3D.) | String.Contains(Container(8020).ListItem(7).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(7).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(7).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(7).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(7).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(7).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, SDTV.) | String.Contains(Container(8020).ListItem(7).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(7).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, HDTV.) | String.Contains(Container(8020).ListItem(7).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(7).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(7).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(7).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(7).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename,.4K.) | String.Contains(Container(8020).ListItem(7).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(7).Filename, 4K.) | String.Contains(Container(8020).ListItem(7).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(7).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(7).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG9Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.3D.) | String.Contains(Container(8020).ListItem(8).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, 3D.) | String.Contains(Container(8020).ListItem(8).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(8).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(8).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(8).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(8).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(8).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, SDTV.) | String.Contains(Container(8020).ListItem(8).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(8).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, HDTV.) | String.Contains(Container(8020).ListItem(8).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(8).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(8).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(8).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(8).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename,.4K.) | String.Contains(Container(8020).ListItem(8).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(8).Filename, 4K.) | String.Contains(Container(8020).ListItem(8).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(8).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(8).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBG10Resolution8020">
+		<!--value condition="[Container.Content(tvshows) | Container.Content(seasons)]">tvseries.png</value-->
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.3D.) | String.Contains(Container(8020).ListItem(9).Filename,.3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, 3D.) | String.Contains(Container(8020).ListItem(9).Filename, 3d.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.3DBD.) | String.Contains(Container(8020).ListItem(9).Filename,.3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, 3DBD.) | String.Contains(Container(8020).ListItem(9).Filename, 3dbd.)">3d</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.HDDVD.) | String.Contains(Container(8020).ListItem(9).Filename,.hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, HDDVD.) | String.Contains(Container(8020).ListItem(9).Filename, hddvd.)">hddvd</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.SDTV.) | String.Contains(Container(8020).ListItem(9).Filename,.sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, SDTV.) | String.Contains(Container(8020).ListItem(9).Filename, sdtv.)">sdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.HDTV.) | String.Contains(Container(8020).ListItem(9).Filename,.hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, HDTV.) | String.Contains(Container(8020).ListItem(9).Filename, hdtv.)">hdtv</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.WEBDL.) | String.Contains(Container(8020).ListItem(9).Filename,.webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, WEBDL.) | String.Contains(Container(8020).ListItem(9).Filename, webdl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.WEB-DL.) | String.Contains(Container(8020).ListItem(9).Filename,.web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, WEB-DL.) | String.Contains(Container(8020).ListItem(9).Filename, web-dl.)">webdl</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename,.4K.) | String.Contains(Container(8020).ListItem(9).Filename,.4k.)">4k</value>
+		<value condition="String.Contains(Container(8020).ListItem(9).Filename, 4K.) | String.Contains(Container(8020).ListItem(9).Filename, 4k.)">4k</value>
+		<!--value condition="String.Contains(Container(8020).ListItem(9).Filename,hdtv)">hdtv</value-->
+		<value>$INFO[Container(8020).ListItem(9).VideoResolution]p</value>
+	</variable>
+	<variable name="LiveBGCases">
+		<value condition="Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Clear)">movies</value>
+		<value condition="Window.IsVisible(Home) + String.EndsWith(Container(9000).ListItem.Property(backgroundCase),Color)">colorcases</value>
+		<value condition="Window.IsVisible(Home)">tvshows</value>
+		<value condition="String.IsEqual(Skin.String(LiveBGCase),movies)">movies</value>
+		<value condition="String.IsEqual(Skin.String(LiveBGCase),tvshows)">colorcases</value>
+		<value>tvshows</value>
+	</variable>
+	<variable name="LiveBGBackground">
+		<value condition="Window.IsVisible(Home) + Control.HasFocus(9010) + String.IsEqual(Container(9010).ListItem.Property(Playlist.Live)) + Integer.IsGreater(Container(8011).NumItems,0)">$INFO[Container(9010).ListItem.Property(backgroundLive)]</value>
+		<value condition="Window.IsVisible(Home)">$INFO[Container(9000).ListItem.Property(backgroundLive)]</value>
+		<value>$INFO[Skin.String(LiveBG)]</value>
+	</variable>
+</includes>

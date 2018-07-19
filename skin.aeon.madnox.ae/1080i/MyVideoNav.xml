@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(TVTunes.Enabled)">RunScript(script.tvtunes,backend=True)</onload>
+	<onload condition="System.HasAddon(script.tv.show.next.aired) + String.IsEmpty(Window(Home).Property(DontRunTVShowScripts))">RunScript(script.tv.show.next.aired,backend=True)</onload>
+	<onload>ClearProperty(BrowseActors,home)</onload>
+	<include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
+	<onload condition="!Skin.HasSetting(ExplainMediaMenu)">ActivateWindow(1123)</onload>
+	<views>50,52,53,57,500,501,503,550,507,505,508,509,499,700,708,750,800,820,900,510,511,512,514,516,518,998,999</views>
+	<controls>
+		<control type="fadelabel" id="4211">
+			<pauseatend>7500</pauseatend>
+			<width>11479</width>
+			<height>118</height>
+			<font>Font_Reg57</font>
+			<textcolor>black</textcolor>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.0.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.1.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.2.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.3.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.4.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.5.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.6.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.7.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.8.Art.ClearLogo)]</label>
+			<label>$INFO[Window(home).Property(SkinHelper.ListItem.9.Art.ClearLogo)]</label>
+		</control>
+		<control type="button" id="9900">
+			<!-- no info-->
+			<include>HiddenObject</include>
+			<visible>!Container.Content()</visible>
+			<visible>!ListItem.IsParentFolder</visible>
+			<visible>!Container.Content(years)</visible>
+			<visible>!Container.Content(genres)</visible>
+			<visible>!Container.Content(studios)</visible>
+			<visible>!Container.Content(countries)</visible>
+		</control>
+		<control type="label" id="4420">
+			<label fallback="fanart">$VAR[InfoPanelStyleVar]</label>
+			<include>HiddenObject</include>
+		</control>
+		<control type="label" id="4421">
+			<label>$VAR[InfoPanelVar]</label>
+			<include>HiddenObject</include>
+		</control>
+		<!-- BEGIN Add Extra Fanart -->
+		<control type="group">
+			<visible>![Control.IsVisible(516) | Control.IsVisible(800) | Control.IsVisible(820)]</visible>
+			<control type="multiimage">
+				<imagepath background="true" fallback="special://skin/backgrounds/videos/">$VAR[VideoFanartVar]</imagepath>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="fade" start="100" end="50" time="640">Hidden</animation>
+				<visible>!Control.IsVisible(4200) + !Control.IsVisible(4201)</visible>
+				<visible>Skin.HasSetting(genrethumbs)</visible>
+			</control>
+			<control type="multiimage">
+				<imagepath background="true" fallback="special://skin/backgrounds/videos/">$VAR[VideoFanartVar1]</imagepath>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="fade" start="100" end="50" time="640">Hidden</animation>
+				<visible>!Control.IsVisible(4200) + !Control.IsVisible(4201)</visible>
+				<visible>!Skin.HasSetting(genrethumbs)</visible>
+			</control>
+			<control type="multiimage" id="4201">
+				<imagepath background="true" fallback="special://skin/backgrounds/movies/">$VAR[MovieFanartVar]</imagepath>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="fade" start="100" end="50" time="640">Hidden</animation>
+				<visible>Container.Content(movies) | Container.Content(sets)</visible>
+			</control>
+			<control type="multiimage" id="4200">
+				<imagepath background="true" fallback="special://skin/backgrounds/tvshows/">$VAR[TVShowFanartVar]</imagepath>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="fade" start="100" end="50" time="640">Hidden</animation>
+				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+			</control>
+			<control type="multiimage">
+				<imagepath background="true">$VAR[VideoExtraFanartVar]</imagepath>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<visible>[Container.Content(musicvideos) + Skin.HasSetting(extrafanartmusicvideos)] | [Container.Content(movies) + Skin.HasSetting(extrafanartmovies)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanarttvshows)] | [Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)]</visible>
+				<visible>!String.StartsWith(ListItem.Label,*) + [String.StartsWith(Container.ListItem.FolderPath,videodb://) | String.StartsWith(Container.ListItem.FolderPath,special://profile/playlist)]</visible>
+			</control>
+			<control type="multiimage">
+				<!-- season fanart -->
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<imagepath background="true">$INFO[ListItem.path]season0$INFO[ListItem.season]-fanart.jpg</imagepath>
+				<visible>Container.Content(episodes)</visible>
+				<animation effect="zoom" start="110" end="130" center="auto" time="12000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+				<animation effect="slide" start="-15,-15" end="15,15" time="6000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+			</control>
+			<include>InteractiveNodeCases</include>
+			<include condition="Skin.HasSetting(RotateFanart)">NodeFadeLabels</include>
+		</control>
+		<!-- END Add Extra Fanart -->
+		<!-- view id = 516-->
+		<include condition="!Skin.HasSetting(DisableBigFanVL)">BigFan</include>
+		<include>VideoBackground</include>
+		<include condition="!Skin.HasSetting(DisableBigFanVL)">BigFanFurniture</include>
+		<control type="button" id="197">
+			<include>HiddenObject</include>
+			<visible>!Container.OnNext + !Container.OnPrevious + String.IsEqual(Control.GetLabel(4421),infopanelonauto)</visible>
+			<include>DelayAnimations</include>
+		</control>
+		<control type="button" id="5999">
+			<include>HiddenObject</include>
+			<visible>!Control.HasFocus(109)</visible>
+			<visible>[[Skin.HasSetting(darkinfopane) | Control.IsVisible(700)] | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(700) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]</visible>
+		</control>
+		<control type="image">
+			<texture colordiffuse="$VAR[SpotColorVar2]">diffuseoverlay.png</texture>
+			<include>FullscreenDimensions</include>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<animation effect="fade" end="100" time="440" delay="160">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="320">Hidden</animation>
+			<visible>!Control.HasFocus(109)</visible>
+			<visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | [Skin.HasSetting(no_infopane_panel) + Control.IsVisible(7550)] | Control.IsVisible(5999)</visible>
+		</control>
+		<include>Furniture_Glow</include>
+		<include>ShowcaseInfoPaneMoviesNew</include>
+		<include>ShowcaseInfoPaneMovies</include>
+		<include>ShowcaseInfoPaneTextOnly</include>
+		<include>Furniture_Showcase</include>
+		<include condition="!Skin.HasSetting(DisableInfoWallVL) | !Skin.HasSetting(DisableWallVL)">WallPanel</include>
+		<control type="group">
+			<animation effect="slide" end="0,1080" time="560" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
+			<control type="group">
+				<!-- view id = 50 -->
+				<include>CommonRootView</include>
+				<!-- view id = 510 -->
+				<include condition="String.IsEmpty(Skin.String(DisablePostersVL))">PostersViewList</include>
+				<include condition="String.IsEmpty(Skin.String(DisablePostersVL)) | String.IsEmpty(Skin.String(DisableTriPanelVL))">PostersView</include>
+				<!--view id = 52-->
+				<include condition="String.IsEmpty(Skin.String(DisableTriPanelVL))">TriPanel</include>
+				<!-- view id = 53 -->
+				<include condition="String.IsEmpty(Skin.String(DisableTriPanelVL))">TriPanelSquare</include>
+				<!-- view id = 500 -->
+				<include condition="String.IsEmpty(Skin.String(DisableWallVL))">Viewtype_Wall</include>
+				<!-- view id = 501 Showcase-->
+				<include condition="String.IsEmpty(Skin.String(DisableShowCaseVL))">Showcase</include>
+				<!-- view id = 508 Bannerview-->
+				<include condition="String.IsEmpty(Skin.String(DisableBannersVL))">Banners</include>
+				<!-- view id = 503 Landscape-->
+				<include condition="String.IsEmpty(Skin.String(DisableLandscapeVL))">MediaListView3</include>
+				<!-- view id = 504 Showcase DVD-->
+				<!-- view id = 511 -->
+				<include condition="String.IsEmpty(Skin.String(DisableLowListVL))">LowList</include>
+				<!-- view id = 57-->
+				<include condition="String.IsEmpty(Skin.String(DisableShiftVL))">ShiftView</include>
+				<!-- view id = 509-->
+				<include condition="String.IsEmpty(Skin.String(DisableShowCaseSquareVL))">ShowcaseQuadrate</include>
+				<!-- view id = 512-->
+				<include condition="String.IsEmpty(Skin.String(DisableInfoWallVL))">AddonWall</include>
+				<!--view id = 514-->
+				<include condition="String.IsEmpty(Skin.String(DisableEpisodeVL))">Viewtype_Episode</include>
+				<include condition="String.IsEmpty(Skin.String(DisablePanelVL))">Panel</include>
+				<include condition="String.IsEmpty(Skin.String(DisableInfoPanelVL))">Viewtype_FullscreenPanel</include>
+				<!--include>Oscars</include-->
+				<!--include>IMDb250</include-->
+				<include>Wall_Large</include>
+				<include>Video_RightList</include>
+				<include>VideoFanartList</include>
+				<include>VideoBannerInfo</include>
+				<include>KodiFlixView</include>
+				<include>KodiFlixViewTV</include>
+				<include>ViewSets</include>
+				<!--MAD - New View - WIP -->
+				<!--include>DirectoryView</include-->
+				<include>Shelf</include>
+				<include>Shelf3DR</include>
+			</control>
+			<control type="button" id="1970">
+				<include>HiddenObject</include>
+				<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+				<visible>[Control.IsVisible(501) | Control.IsVisible(750)] | [Control.IsVisible(52) + !String.IsEqual(Skin.String(TriPanelPosition),3)]</visible>
+				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<animation effect="fade" end="100" time="120" delay="1600">Visible</animation>
+				<animation effect="fade" end="100" time="120" delay="1600">WindowOpen</animation>
+			</control>
+			<control type="group">
+				<animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(501) + Skin.HasSetting(showcasezoom)">Conditional</animation>
+				<animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="160,970" condition="Control.IsVisible(52) + String.IsEqual(Skin.String(TriPanelPosition),2)">Conditional</animation>
+				<animation effect="zoom" start="100" end="170" time="640" easing="inout" tween="circle" center="960,970" condition="Control.IsVisible(52) + String.IsEqual(Skin.String(TriPanelPosition),1)">Conditional</animation>
+				<animation effect="zoom" start="100" end="195" time="640" easing="inout" tween="circle" center="460,985" condition="Control.IsVisible(52) + String.IsEqual(Skin.String(TriPanelPosition),4)">Conditional</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="240"/>
+					<effect type="zoom" start="100" end="130" center="960,540" time="240" tween="cubic" easing="in"/>
+				</animation>
+				<!--Showcase Discart -->
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$INFO[Container.ListItem.Art(discart)]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + !String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>984</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="bottom">scale</aspectratio>
+					<texture background="true" flipy="true">$INFO[Container.ListItem.Art(discart)]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>22FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + !String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Container.ListItem.Art(poster)]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakediscart) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true">$VAR[FakeDiscArtOverlay]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakediscart) + !String.IsEmpty(ListItem.Art(poster)) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>984</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" flipy="true">$INFO[Container.ListItem.Art(discart)]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>22FFFFFF</colordiffuse>
+					<!-- MikeBZH44 Add !Skin.HasSetting(OpenCase) condition -->
+					<animation type="Conditional" condition="ControlIsVisible(1970) + !String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + !String.IsEmpty(Container.ListItem.Art(discart)) + !ListItem.IsCollection + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>984</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="bottom">scale</aspectratio>
+					<texture background="true" flipy="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Container.ListItem.Art(poster)]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>22FFFFFF</colordiffuse>
+					<!-- MikeBZH44 Add !Skin.HasSetting(OpenCase) condition -->
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(Fakediscart) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>984</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" flipy="true">$VAR[FakeDiscArtOverlay]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>22FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakediscart) + !String.IsEmpty(ListItem.Art(poster)) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true">$VAR[FakeDischand]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakedischandwriting) + !String.IsEmpty(ListItem.Art(poster)) + !Skin.Hassetting(Fakehanddisccolor) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true">$VAR[FakeDischandcolor]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakedischandwriting) + !String.IsEmpty(ListItem.Art(poster)) + Skin.Hassetting(fakehanddisccolor) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>984</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" flipy="true">$VAR[FakeDischand]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>22FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(Fakedischandwriting) + !String.IsEmpty(ListItem.Art(poster)) + !Skin.Hassetting(Fakehanddisccolor) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>984</top>
+					<width>280</width>
+					<height>280</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" flipy="true">$VAR[FakeDischandcolor]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>22FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(Fakedischandwriting) + !String.IsEmpty(Container.ListItem.Art(poster)) + Skin.Hassetting(fakehanddisccolor) + !Control.IsVisible(750)</visible>
+				</control>
+				<control type="textbox">
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<left>2580</left>
+					<top>754</top>
+					<width>180</width>
+					<height>180</height>
+					<font>Hand_20</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + Skin.HasSetting(Fakedischandwriting) + !ListItem.IsCollection + String.IsEmpty(Container.ListItem.Art(clearlogo)) + !Control.IsVisible(750)</visible>
+					<label> $INFO[ListItem.Label]</label>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="textbox">
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<left>2580</left>
+					<top>754</top>
+					<width>180</width>
+					<height>180</height>
+					<font>Hand_20</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + Skin.HasSetting(Fakedischandwriting) + !ListItem.IsCollection + String.IsEmpty(Container.ListItem.Art(clearlogo)) + !Control.IsVisible(750) + !ListItem.IsParentFolder</visible>
+					<label>[CR][CR][CR][CR][CR][CR] $INFO[ListItem.Year] - $INFO[ListItem.Duration]</label>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="group">
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + Container.Content(movies) + !String.IsEmpty(Container.ListItem.Art(clearlogo)) + String.IsEmpty(Container.ListItem.Art(discart)) + !ListItem.IsCollection + Skin.HasSetting(Fakedischandwriting) + !Control.IsVisible(750) + !ListItem.IsParentFolder</visible>
+					<control type="image">
+						<left>2600</left>
+						<top>744</top>
+						<width>146</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<texture background="true" fallback="empty.png">$VAR{LogoVarINFO]</texture>
+					</control>
+					<control type="textbox">
+						<left>2580</left>
+						<top>754</top>
+						<width>180</width>
+						<height>180</height>
+						<font>Hand_20</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>[CR][CR][CR][CR][CR][CR] $INFO[ListItem.Year] - $INFO[ListItem.Duration]</label>
+						<textcolor>black</textcolor>
+					</control>
+				</control>
+				<!--Shelf 3D Discart - Start -->
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$INFO[Container.ListItem.Art(discart)]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + !String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>994</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="bottom">scale</aspectratio>
+					<texture background="true" flipy="true">$INFO[Container.ListItem.Art(discart)]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>61FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + !String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="auto" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Container.ListItem.Art(poster)]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakediscart) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true">$VAR[FakeDiscArtOverlay]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakediscart) + !String.IsEmpty(Container.ListItem.Art(poster)) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>994</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" flipy="true">$INFO[Container.ListItem.Art(discart)]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>61FFFFFF</colordiffuse>
+					<!-- MikeBZH44 Add !Skin.HasSetting(OpenCase) condition -->
+					<animation type="Conditional" condition="ControlIsVisible(1970) + !String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + !String.IsEmpty(Container.ListItem.Art(discart)) + !ListItem.IsCollection + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>994</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="bottom">scale</aspectratio>
+					<texture background="true" flipy="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Container.ListItem.Art(poster)]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>61FFFFFF</colordiffuse>
+					<!-- MikeBZH44 Add !Skin.HasSetting(OpenCase) condition -->
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(Fakediscart) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>994</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" flipy="true">$VAR[FakeDiscArtOverlay]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>61FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakediscart) + !String.IsEmpty(Container.ListItem.Art(poster)) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true">$VAR[FakeDischand]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakedischandwriting) + !String.IsEmpty(Container.ListItem.Art(poster)) + !Skin.Hassetting(Fakehanddisccolor) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>704</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true">$VAR[FakeDischandcolor]</texture>
+					<fadetime>4000</fadetime>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(fakedischandwriting) + !String.IsEmpty(Container.ListItem.Art(poster)) + Skin.Hassetting(fakehanddisccolor) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>994</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" flipy="true">$VAR[FakeDischand]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>61FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(Fakedischandwriting) + !String.IsEmpty(Container.ListItem.Art(poster)) + !Skin.Hassetting(Fakehanddisccolor) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="image">
+					<left>2530</left>
+					<top>994</top>
+					<width>290</width>
+					<height>290</height>
+					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+					<texture background="true" flipy="true">$VAR[FakeDischandcolor]</texture>
+					<fadetime>4000</fadetime>
+					<colordiffuse>61FFFFFF</colordiffuse>
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,1124" end="-720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<bordersize>7</bordersize>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + !ListItem.IsCollection + Skin.Hassetting(Fakedischandwriting) + !String.IsEmpty(Container.ListItem.Art(poster)) + Skin.Hassetting(fakehanddisccolor) + Control.IsVisible(750)</visible>
+				</control>
+				<control type="textbox">
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart)) + !Skin.HasSetting(OpenCase)" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<left>2580</left>
+					<top>754</top>
+					<width>180</width>
+					<height>180</height>
+					<font>Hand_20</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + Skin.HasSetting(Fakedischandwriting) + !ListItem.IsCollection + String.IsEmpty(Container.ListItem.Art(clearlogo)) + Control.IsVisible(750)</visible>
+					<label> $INFO[ListItem.Label]</label>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="textbox">
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<left>2580</left>
+					<top>754</top>
+					<width>180</width>
+					<height>180</height>
+					<font>Hand_20</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<visible>Skin.HasSetting(showcasecdart) + String.IsEmpty(Container.ListItem.Art(discart)) + Container.Content(movies) + Skin.HasSetting(Fakedischandwriting) + !ListItem.IsCollection + String.IsEmpty(Container.ListItem.Art(clearlogo)) + Control.IsVisible(750) + !ListItem.IsParentFolder</visible>
+					<label>[CR][CR][CR][CR][CR][CR] $INFO[ListItem.Year] - $INFO[ListItem.Duration]</label>
+					<textcolor>black</textcolor>
+				</control>
+				<control type="group">
+					<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+						<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						<effect type="rotate" start="0" center="2670,844" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+					</animation>
+					<visible>Skin.HasSetting(showcasecdart) + Container.Content(movies) + !String.IsEmpty(Container.ListItem.Art(clearlogo)) + String.IsEmpty(Container.ListItem.Art(discart)) + !ListItem.IsCollection + Skin.HasSetting(Fakedischandwriting) + Control.IsVisible(750) + !ListItem.IsParentFolder</visible>
+					<control type="image">
+						<left>2600</left>
+						<top>744</top>
+						<width>146</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<texture background="true" fallback="empty.png">$VAR{LogoVar]</texture>
+					</control>
+					<control type="textbox">
+						<left>2580</left>
+						<top>754</top>
+						<width>180</width>
+						<height>180</height>
+						<font>Hand_20</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>[CR][CR][CR][CR][CR][CR] $INFO[ListItem.Year] - $INFO[ListItem.Duration]</label>
+						<textcolor>black</textcolor>
+					</control>
+				</control>
+				<!--Moviesets -->
+				<control type="group">
+					<visible>ListItem.IsCollection + Control.IsVisible(750)</visible>
+					<control type="image" id="4299">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2530</left>
+						<top>704</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.0.Art.DiscArt)]</texture>
+					</control>
+					<control type="group">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2530</left>
+						<top>704</top>
+						<width>290</width>
+						<height>290</height>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>ListItem.IsCollection + !ListItem.IsParentFolder + Skin.HasSetting(Shelf3DFakeDiscs) + String.IsEmpty(Control.GetLabel(4299))</visible>
+						<control type="image">
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Window(home).Property(SkinHelper.ListItem.0.Art.Poster)]</texture>
+						</control>
+					</control>
+					<control type="image" id="4298">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2830</left>
+						<top>704</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.1.Art.DiscArt)]</texture>
+					</control>
+					<control type="group">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2830</left>
+						<top>704</top>
+						<width>290</width>
+						<height>290</height>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>ListItem.IsCollection + !ListItem.IsParentFolder + Skin.HasSetting(Shelf3DFakeDiscs) + String.IsEmpty(Control.GetLabel(4298)) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.1.Art.Poster))</visible>
+						<include>Shelf3DDiscAnimationReflection</include>
+						<control type="image">
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Window(home).Property(SkinHelper.ListItem.1.Art.Poster)]</texture>
+						</control>
+					</control>
+					<control type="image" id="4297">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>3130</left>
+						<top>704</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.2.Art.DiscArt)]</texture>
+						<include>Shelf3DDiscAnimation</include>
+					</control>
+					<control type="group">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>3130</left>
+						<top>704</top>
+						<width>290</width>
+						<height>290</height>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>ListItem.IsCollection + !ListItem.IsParentFolder + Skin.HasSetting(Shelf3DFakeDiscs) + String.IsEmpty(Control.GetLabel(4297)) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.2.Art.Poster))</visible>
+						<include>Shelf3DDiscAnimationReflection</include>
+						<control type="image">
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Window(home).Property(SkinHelper.ListItem.2.Art.Poster)]</texture>
+						</control>
+					</control>
+					<!-- TO DO - Sort out reflections -->
+					<control type="image">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2530</left>
+						<top>990</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="720" center="auto" end="0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" delay="2000" time="150" />
+						</animation>
+						<texture flipy="true" background="true">$INFO[Window(home).Property(SkinHelper.ListItem.0.Art.DiscArt)]</texture>
+						<colordiffuse>61FFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2530</left>
+						<top>990</top>
+						<width>290</width>
+						<height>290</height>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="720" center="auto" end="0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>ListItem.IsCollection + !ListItem.IsParentFolder + Skin.HasSetting(Shelf3DFakeDiscs) + String.IsEmpty(Control.GetLabel(4299)) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.0.Art.Poster))</visible>
+						<control type="image">
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture flipy="true" background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Window(home).Property(SkinHelper.ListItem.0.Art.Poster)]</texture>
+							<colordiffuse>61FFFFFF</colordiffuse>
+						</control>
+					</control>
+					<control type="image">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2830</left>
+						<top>990</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="720" center="auto" end="0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<texture flipy="true" background="true">$INFO[Window(home).Property(SkinHelper.ListItem.1.Art.DiscArt)]</texture>
+						<include>Shelf3DDiscAnimationReflection</include>
+						<colordiffuse>61FFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>2830</left>
+						<top>990</top>
+						<width>290</width>
+						<height>290</height>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="720" center="auto" end="0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>ListItem.IsCollection + !ListItem.IsParentFolder + Skin.HasSetting(Shelf3DFakeDiscs) + String.IsEmpty(Control.GetLabel(4298)) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.1.Art.Poster))</visible>
+						<include>Shelf3DDiscAnimationReflection</include>
+						<control type="image">
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture flipy="true" background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Window(home).Property(SkinHelper.ListItem.1.Art.Poster)]</texture>
+							<colordiffuse>61FFFFFF</colordiffuse>
+						</control>
+					</control>
+					<control type="image">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>3130</left>
+						<top>990</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="720" center="auto" end="0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<texture flipy="true" background="true">$INFO[Window(home).Property(SkinHelper.ListItem.2.Art.DiscArt)]</texture>
+						<include>Shelf3DDiscAnimationReflection</include>
+						<colordiffuse>61FFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<animation effect="rotatey" center="1230" start="-12" end="-12" time="0" condition="!Skin.HasSetting(Shelf3DFlatDiscs)">Conditional</animation>
+						<left>3130</left>
+						<top>990</top>
+						<width>290</width>
+						<height>290</height>
+						<animation type="Conditional" condition="Control.IsVisible(1970) + String.IsEmpty(Container.ListItem.Art(discart))" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="720" center="auto" end="0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<visible>ListItem.IsCollection + !ListItem.IsParentFolder + Skin.HasSetting(Shelf3DFakeDiscs) + String.IsEmpty(Control.GetLabel(4297)) + !String.IsEmpty(Window(home).Property(SkinHelper.ListItem.2.Art.Poster))</visible>
+						<control type="image">
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture flipy="true" background="true" diffuse="thumbs/sets/cdart-mask.png">$INFO[Window(home).Property(SkinHelper.ListItem.2.Art.Poster)]</texture>
+							<colordiffuse>61FFFFFF</colordiffuse>
+						</control>
+					</control>
+				</control>
+				<!--Shelf 3D Discart - End -->
+				<!-- KodiFlix - Sets - Boxsets - Start -->
+				<control type="group">
+					<visible>Control.IsVisible(800) + !Skin.HasSetting(KodiFlixExtras) + Skin.HasSetting(KodiFlixMovieBoxsets) + Skin.HasSetting(KodiFlixMovieBoxsetsDiscArt) + !Skin.HasSetting(KodiFlixMovieBoxsetsActiveMovieSetCases) + [Container.Content(sets) | ListItem.IsCollection]</visible>
+					<animation effect="slide" start="0,0" end="500,0" time="0" pulse="false" condition="Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="700,0" time="6000" pulse="false" condition="!Skin.HasSetting(KodiFlixMoviesCenterList) + Skin.HasSetting(KodiFlixMoviesCenterFocus)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="750,0" time="6000" pulse="false" condition="Skin.HasSetting(KodiFlixMoviesCenterList) + Skin.HasSetting(KodiFlixMoviesCenterFocus)">Conditional</animation>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.8.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.8.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1000,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.8.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1300,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.7.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.7.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1100,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.7.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1350,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.6.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.6.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1200,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.6.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1400,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.5.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.5.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1300,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.5.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1450,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.4.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.4.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1400,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.4.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1500,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.3.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.3.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1500,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.3.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1550,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.2.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.2.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.2.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1600,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.1.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.1.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1700,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.1.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1650,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+					<control type="image">
+						<left>2130</left>
+						<top>664</top>
+						<width>290</width>
+						<height>290</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[Window(home).Property(SkinHelper.ListItem.0.Art.DiscArt)]</texture>
+						<fadetime>4000</fadetime>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.0.Art.DiscArt)) + !Skin.HasSetting(KodiFlixMoviesCenterList) + !Skin.HasSetting(KodiFlixMoviesCenterFocus)" reversible="true">
+							<effect type="slide" start="0,0" end="-1800,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="Conditional" condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.0.Art.DiscArt)) + [Skin.HasSetting(KodiFlixMoviesCenterList) | Skin.HasSetting(KodiFlixMoviesCenterFocus)]" reversible="true">
+							<effect type="slide" start="0,0" end="-1700,0" delay="1200" time="1120" tween="quadratic" easing="out"/>
+							<effect type="rotate" start="0" center="auto" end="720" delay="1200" time="1120" tween="quadratic" easing="out"/>
+						</animation>
+					</control>
+				</control>
+				<!-- KodiFlix - Sets - Boxsets - End -->
+			</control>
+			<include>FloorSetDiscArt</include>
+			<control type="group">
+				<left>815</left>
+				<top>560</top>
+				<animation effect="fade" start="0" end="1000" time="50" delay="200" condition="[Control.IsVisible(1970)] + Skin.HasSetting(noflow)">Conditional</animation>
+				<visible>Skin.HasSetting(noflow)</visible>
+				<include>Boxset_warlion</include>
+			</control>
+			<control type="group">
+				<control type="button" id="7000">
+					<include>HiddenObject</include>
+					<onfocus condition="[String.IsEqual(Control.GetLabel(4421),infopanelon) | Control.IsVisible(508)] + [Control.IsVisible(501) | Control.IsVisible(499) | Control.IsVisible(503) |  Control.IsVisible(508)]">SetFocus(9000)</onfocus>
+					<onfocus condition="[String.IsEqual(Control.GetLabel(4421),infopanelon) + Container.Content(movies) + !String.IsEmpty(ListItem.Trailer)] + [Control.IsVisible(501) | Control.IsVisible(503)]">SetFocus(9000)</onfocus>
+					<onup>SetFocus(9000)</onup>
+					<onleft condition="Control.IsVisible(501)">Control.Move(501,-1)</onleft>
+					<onleft condition="Control.IsVisible(503)">Control.Move(503,-1)</onleft>
+					<onleft condition="Control.IsVisible(508)">Control.Move(508,-1)</onleft>
+					<onright condition="Control.IsVisible(501)">Control.Move(501,1)</onright>
+					<onright condition="Control.IsVisible(503)">Control.Move(503,1)</onright>
+					<onright condition="Control.IsVisible(508)">Control.Move(508,1)</onright>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<ondown>50</ondown>
+					<onback>50</onback>
+					<onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
+					<onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="Container.Content(tvshows) | Container.Content(seasons)">SetFocus(50)</onclick>
+					<onclick condition="Container.Content(tvshows) | Container.Content(seasons)">Select</onclick>
+					<visible>Control.IsVisible(9900) + !String.IsEqual(Control.GetLabel(4421),infopaneloff)</visible>
+				</control>
+				<control type="button" id="7566">
+					<include>HiddenObject</include>
+					<onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
+					<onfocus condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onfocus>
+					<onfocus condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
+				</control>
+			</control>
+			<include>Furniture_DarkGradient</include>
+			<include>FloorFlags</include>
+			<include>FloorLabels</include>
+			<include condition="!Skin.HasSetting(DisablePostersVL) | !Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
+			<control type="group">
+				<animation effect="slide" end="-50,0" time="320" easing="inout" tween="circle" condition="Skin.HasSetting(smallshiftview) + Control.IsVisible(57)">Conditional</animation>
+				<animation effect="slide" end="-642.5,0" time="320" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
+				<animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
+				<animation effect="fade" delay="160" end="100" time="240" condition="!String.IsEqual(Control.GetLabel(8822),empty.png)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="Container.Content(seasons)">Conditional</animation>
+				<visible>![Container.OnNext | Container.OnPrevious]</visible>
+				<visible>![Control.HasFocus(61) | Control.IsVisible(4050)]</visible>
+				<include>Animation_OpenCloseZoom_New</include>
+				<control type="image" id="8822">
+					<left>712</left>
+					<top>978</top>
+					<width>494</width>
+					<height>95</height>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<texture background="true" diffuse="thumbs/banner_mask.png">$INFO[ListItem.Art(banner)]</texture>
+					<fadetime>200</fadetime>
+					<animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
+					<visible>[Skin.HasSetting(tvshowbannersfloor) + Container.Content(tvshows)]</visible>
+					<visible>Control.IsVisible(57) | Control.IsVisible(508) | [Control.IsVisible(500) + !String.IsEqual(Container.FolderName,youtube) + Skin.HasSetting(tvshowbannersfloor)] | Control.IsVisible(501)</visible>
+					<visible>[Container.Content(tvshows) + !Skin.HasSetting(NoFloorLabelTVshows) + Skin.HasSetting(tvshowbannersfloor)]</visible>
+				</control>
+				<control type="image" id="8822">
+					<left>817.5</left>
+					<top>958</top>
+					<width>300</width>
+					<height>105</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" fallback="empty.png">$VAR[LogoVar]</texture>
+					<fadetime>200</fadetime>
+					<animation effect="fade" delay="240" time="240" reversible="false">Hidden</animation>
+					<visible>[!Control.HasFocus(6020) + !Control.HasFocus(6015) + !Control.HasFocus(6016)]</visible>
+					<visible>Control.IsVisible(57) | [Control.IsVisible(508) + Skin.HasSetting(movielogosfloor)] | [Control.IsVisible(508) + Skin.HasSetting(tvshowlogosfloor)] | [Control.IsVisible(500) + !String.IsEqual(Container.FolderName,youtube) + [Skin.HasSetting(movielogosfloor) | Skin.HasSetting(tvshowlogosfloor)]] | Control.IsVisible(501) | [Control.IsVisible(499) + Skin.HasSetting(WallLargeLogo)]</visible>
+					<visible>[Skin.HasSetting(movielogosfloor) + Container.Content(movies)] | [Skin.HasSetting(WallLargeLogo) + [Container.Content(movies) | Container.Content(tvshows)]] | [Skin.HasSetting(tvshowlogosfloor) + Container.Content(tvshows)] | [Skin.HasSetting(movielogosfloor) + Container.Content(sets)]</visible>
+					<visible>[!Skin.HasSetting(NoFloorLabelMovies) + Skin.HasSetting(movielogosfloor) + Container.Content(movies)] | [Container.Content(tvshows) + !Skin.HasSetting(NoFloorLabelTVshows) + Skin.HasSetting(tvshowlogosfloor)] | [Container.Content(sets) + !Skin.HasSetting(NoFloorLabelMovies)]</visible>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<include>Animation_HideBreadCrumbs</include>
+			<include>Breadcrumbs_BackBar</include>
+			<include>BreadcrumbsContent</include>
+			<include>Breadcrumbs_Furniture</include>
+		</control>
+		<include>Furniture_NowPlayingWidget</include>
+		<include>Media_Menu</include>
+		<include>ContextMenuOverlay</include>
+	</controls>
+</window>

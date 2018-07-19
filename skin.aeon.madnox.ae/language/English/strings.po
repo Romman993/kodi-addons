@@ -1,0 +1,3544 @@
+# Kodi Media Center language file
+# Addon Name: Aeon Madnox
+# Addon id: skin.aeon.madnox
+# Addon Provider: Mike_Doc|schimi2k
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: MADNOX\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-01-26 18:24+0100\n"
+"Last-Translator: Team Madnox\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-skins/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgctxt "#31002"
+msgid "Auto"
+msgstr ""
+
+msgctxt "#31003"
+msgid "N/A"
+msgstr ""
+
+#, fuzzy
+msgctxt "#31004"
+msgid "Month"
+msgstr ""
+
+msgctxt "#31005"
+msgid "Premiered"
+msgstr ""
+
+msgctxt "#31006"
+msgid "Info unavailable"
+msgstr ""
+
+msgctxt "#31007"
+msgid "seconds"
+msgstr ""
+
+msgctxt "#31008"
+msgid "Type"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Timer"
+msgstr ""
+
+msgctxt "#31010"
+msgid "General main menu settings"
+msgstr ""
+
+msgctxt "#31011"
+msgid "RottenTomatoes Trailers"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Add group"
+msgstr ""
+
+msgctxt "#31013"
+msgid "Rename group"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Delete group"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Timer"
+msgstr ""
+
+msgctxt "#31016"
+msgid "[B]CONFIGURE TV SETTINGS[/B][CR][CR]· Configure General Settings[CR]· Configure Menu/OSD[CR]· Configure Guide Settings[CR]· Configure Playback Settings[CR]· Configure Recording Settings[CR]· Configure Power Saving[CR]· Configure Parent Control[CR]· Configure Client Specific"
+msgstr ""
+
+msgctxt "#31017"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#31018"
+msgid "Big covers"
+msgstr ""
+
+msgctxt "#31019"
+msgid "Studio"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Extras"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Search Kodi for"
+msgstr ""
+
+msgctxt "#31022"
+msgid "Music - Files"
+msgstr ""
+
+msgctxt "#31023"
+msgid "Reset Fallback"
+msgstr ""
+
+msgctxt "#31024"
+msgid "Page"
+msgstr ""
+
+msgctxt "#31025"
+msgid "Items"
+msgstr ""
+
+msgctxt "#31026"
+msgid "Options"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Reset item"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Showcase"
+msgstr ""
+
+msgctxt "#31029"
+msgid "Showcase2"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Change info labels"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Last Logged In"
+msgstr ""
+
+msgctxt "#31032"
+msgid "Nothing"
+msgstr ""
+
+msgctxt "#31033"
+msgid "Play item on startup"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Move tooltip to top bar"
+msgstr ""
+
+msgctxt "#31035"
+msgid "Conditional weather"
+msgstr ""
+
+msgctxt "#31036"
+msgid "Breadcrumbs classic"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Default breadcrumbs"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Classic top panels"
+msgstr ""
+
+msgctxt "#31039"
+msgid "CD-Wall"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Now Playing"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Choose Action"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Edit Database"
+msgstr ""
+
+msgctxt "#31043"
+msgid "PAUSED"
+msgstr ""
+
+msgctxt "#31044"
+msgid "Artist Slideshow"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Entries"
+msgstr ""
+
+msgctxt "#31046"
+msgid "Breadcrumbs"
+msgstr ""
+
+msgctxt "#31047"
+msgid "Extra-Fanart"
+msgstr ""
+
+msgctxt "#31048"
+msgid "Visualization presets"
+msgstr ""
+
+msgctxt "#31049"
+msgid "IMDB Rating Updater"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Show icon label"
+msgstr ""
+
+msgctxt "#31051"
+msgid "TvGuide Icons"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Infopanel options"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Fullscreen"
+msgstr ""
+
+msgctxt "#31054"
+msgid "Shadow"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Open playlist"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Save playlist"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Close playlist"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Banner"
+msgstr ""
+
+msgctxt "#31059"
+msgid "Logo"
+msgstr ""
+
+msgctxt "#31060"
+msgid "Poster"
+msgstr ""
+
+msgctxt "#31061"
+msgid "Text"
+msgstr ""
+
+msgctxt "#31062"
+msgid "Title"
+msgstr ""
+
+msgctxt "#31063"
+msgid "Choose style"
+msgstr ""
+
+msgctxt "#31064"
+msgid "Press SELECT for alternative layout"
+msgstr ""
+
+msgctxt "#31065"
+msgid "Info"
+msgstr ""
+
+msgctxt "#31066"
+msgid "Back"
+msgstr ""
+
+msgctxt "#31067"
+msgid "Transparent posters"
+msgstr ""
+
+msgctxt "#31068"
+msgid "Random albums"
+msgstr ""
+
+msgctxt "#31069"
+msgid "Icon panel"
+msgstr ""
+
+msgctxt "#31070"
+msgid "Random add-ons"
+msgstr ""
+
+msgctxt "#31071"
+msgid "Default weather"
+msgstr ""
+
+msgctxt "#31072"
+msgid "System info"
+msgstr ""
+
+msgctxt "#31073"
+msgid "Actor information"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Filmography"
+msgstr ""
+
+msgctxt "#31075"
+msgid "Press SELECT to switch between now/next EPG"
+msgstr ""
+
+msgctxt "#31076"
+msgid "Wall Large"
+msgstr ""
+
+msgctxt "#31077"
+msgid "Right List"
+msgstr ""
+
+msgctxt "#31078"
+msgid "Fanart List"
+msgstr ""
+
+msgctxt "#31079"
+msgid "Banner Info"
+msgstr ""
+
+msgctxt "#31080"
+msgid "Director information"
+msgstr ""
+
+msgctxt "#31081"
+msgid "Latest MusicVids"
+msgstr ""
+
+msgctxt "#31082"
+msgid "Extended"
+msgstr ""
+
+msgctxt "#31083"
+msgid "Labels"
+msgstr ""
+
+msgctxt "#31084"
+msgid "Panels"
+msgstr ""
+
+msgctxt "#31085"
+msgid "Light"
+msgstr ""
+
+msgctxt "#31086"
+msgid "ClearART"
+msgstr ""
+
+msgctxt "#31087"
+msgid "Randomize All"
+msgstr ""
+
+msgctxt "#31088"
+msgid "Use color for all areas"
+msgstr ""
+
+msgctxt "#31089"
+msgid "Both"
+msgstr ""
+
+msgctxt "#31090"
+msgid "Adjust Transparency"
+msgstr ""
+
+msgctxt "#31091"
+msgid "Random MusicVids"
+msgstr ""
+
+msgctxt "#31092"
+msgid "Artist fanart (Extrafanart, fanart.jpg, default fanart)"
+msgstr ""
+
+msgctxt "#31093"
+msgid "Actors born today"
+msgstr ""
+
+msgctxt "#31094"
+msgid "Widget fanart"
+msgstr ""
+
+msgctxt "#31095"
+msgid "Rating"
+msgstr ""
+
+msgctxt "#31096"
+msgid "Search YouTube"
+msgstr ""
+
+msgctxt "#31097"
+msgid "Classic OSD style"
+msgstr ""
+
+msgctxt "#31098"
+msgid "Background path"
+msgstr ""
+
+msgctxt "#31099"
+msgid "Top bar style"
+msgstr ""
+
+msgctxt "#31100"
+msgid "Fake Disc Art"
+msgstr ""
+
+msgctxt "#31101"
+msgid "Fake Disc Handwriting"
+msgstr ""
+
+msgctxt "#31102"
+msgid "Background"
+msgstr ""
+
+msgctxt "#31103"
+msgid "Available Groups"
+msgstr ""
+
+msgctxt "#31104"
+msgid "Timer Set"
+msgstr ""
+
+msgctxt "#31105"
+msgid "Channel +"
+msgstr ""
+
+msgctxt "#31106"
+msgid "Channel -"
+msgstr ""
+
+msgctxt "#31107"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#31108"
+msgid "EPG"
+msgstr ""
+
+msgctxt "#31109"
+msgid "Teletext"
+msgstr ""
+
+msgctxt "#31110"
+msgid "Record"
+msgstr ""
+
+msgctxt "#31111"
+msgid "Recording"
+msgstr ""
+
+msgctxt "#31112"
+msgid "Coloured"
+msgstr ""
+
+msgctxt "#31113"
+msgid "Single Image"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Multi Image"
+msgstr ""
+
+msgctxt "#31115"
+msgid "Customizer"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Show"
+msgstr ""
+
+msgctxt "#31117"
+msgid "CNN International"
+msgstr ""
+
+msgctxt "#31118"
+msgid "Radio 105"
+msgstr ""
+
+msgctxt "#31119"
+msgid "Radio Montecarlo"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Tom & Jerry"
+msgstr ""
+
+msgctxt "#31121"
+msgid "Virgin Music"
+msgstr ""
+
+msgctxt "#31122"
+msgid "Colored Disc"
+msgstr ""
+
+msgctxt "#31123"
+msgid "Use Logo For Movie Sets"
+msgstr ""
+
+msgctxt "#31124"
+msgid "Alternate layout"
+msgstr ""
+
+msgctxt "#31125"
+msgid "Show Discart"
+msgstr ""
+
+msgctxt "#31126"
+msgid "Enable cases"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Lyrics add-on"
+msgstr ""
+
+msgctxt "#31128"
+msgid "Lyrics"
+msgstr ""
+
+msgctxt "#31129"
+msgid "Video Stream"
+msgstr ""
+
+msgctxt "#31130"
+msgid "Subtitle add-on"
+msgstr ""
+
+msgctxt "#31131"
+msgid "Enable logo"
+msgstr ""
+
+msgctxt "#31132"
+msgid "Show Information"
+msgstr ""
+
+msgctxt "#31133"
+msgid "KodiFlix"
+msgstr ""
+
+msgctxt "#31134"
+msgid "Enable Background"
+msgstr ""
+
+msgctxt "#31135"
+msgid "Enable Active Disc"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Enable Active Case"
+msgstr ""
+
+msgctxt "#31137"
+msgid "Show Logo"
+msgstr ""
+
+msgctxt "#31138"
+msgid "Landscape View"
+msgstr ""
+
+msgctxt "#31139"
+msgid "Disc Top"
+msgstr ""
+
+msgctxt "#31140"
+msgid "Disc Right"
+msgstr ""
+
+msgctxt "#31141"
+msgid "Minutes Left"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Hour"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Animated fanart in music visualization"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Minute left"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Hour left"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Seconds left"
+msgstr ""
+
+msgctxt "#31147"
+msgid "Hours left"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Show timepanel"
+msgstr ""
+
+msgctxt "#31149"
+msgid "This will shutdown Kodi! [CR]Are you sure?"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Landscape"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Presents"
+msgstr ""
+
+msgctxt "#31152"
+msgid "Run time"
+msgstr ""
+
+msgctxt "#31153"
+msgid "Low List"
+msgstr ""
+
+msgctxt "#31154"
+msgid ":1 Aspect Ratio"
+msgstr ""
+
+msgctxt "#31155"
+msgid "Set Run Time"
+msgstr ""
+
+msgctxt "#31156"
+msgid "Directed by"
+msgstr ""
+
+msgctxt "#31157"
+msgid "Written by"
+msgstr ""
+
+msgctxt "#31158"
+msgid "Hours"
+msgstr ""
+
+msgctxt "#31159"
+msgid "Latest Episode"
+msgstr ""
+
+msgctxt "#31160"
+msgid "Shelf 3D"
+msgstr ""
+
+msgctxt "#31161"
+msgid "Shelf 3D Right"
+msgstr ""
+
+msgctxt "#31162"
+msgid "Trailers"
+msgstr ""
+
+msgctxt "#31163"
+msgid "Featured"
+msgstr ""
+
+msgctxt "#31164"
+msgid "Sort"
+msgstr ""
+
+msgctxt "#31165"
+msgid "Slim list"
+msgstr ""
+
+msgctxt "#31166"
+msgid "Infopanel"
+msgstr ""
+
+msgctxt "#31167"
+msgid "Playlists for Widget 2"
+msgstr ""
+
+msgctxt "#31168"
+msgid "No CoverFlow"
+msgstr ""
+
+msgctxt "#31169"
+msgid "Thin panel"
+msgstr ""
+
+msgctxt "#31170"
+msgid "Lower list"
+msgstr ""
+
+msgctxt "#31171"
+msgid "Viewtype settings"
+msgstr ""
+
+msgctxt "#31172"
+msgid "Extra info"
+msgstr ""
+
+msgctxt "#31173"
+msgid "Update add-on repos"
+msgstr ""
+
+msgctxt "#31174"
+msgid "Update local add-ons"
+msgstr ""
+
+msgctxt "#31175"
+msgid "Big list"
+msgstr ""
+
+msgctxt "#31176"
+msgid "General options"
+msgstr ""
+
+msgctxt "#31177"
+msgid "Random color mode"
+msgstr ""
+
+msgctxt "#31178"
+msgid "Choose main color"
+msgstr ""
+
+msgctxt "#31179"
+msgid "Disable media menu and hide options in video info"
+msgstr ""
+
+msgctxt "#31180"
+msgid "Hide options in media menu"
+msgstr ""
+
+msgctxt "#31181"
+msgid "Activate 'Glow Mode'"
+msgstr ""
+
+msgctxt "#31182"
+msgid "Colored"
+msgstr ""
+
+msgctxt "#31183"
+msgid "Weather Wunderground"
+msgstr ""
+
+msgctxt "#31184"
+msgid "Unwatched icon"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Viewtype"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Kiosk mode"
+msgstr ""
+
+msgctxt "#31187"
+msgid "GamesFlix"
+msgstr ""
+
+msgctxt "#31188"
+msgid "Show Status"
+msgstr ""
+
+msgctxt "#31189"
+msgid "Previous Episode"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Next Episode"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Use as icon"
+msgstr ""
+
+msgctxt "#31192"
+msgid "Choose font color"
+msgstr ""
+
+msgctxt "#31193"
+msgid "Infopanel Delay"
+msgstr ""
+
+msgctxt "#31194"
+msgid "Delayed"
+msgstr ""
+
+msgctxt "#31195"
+msgid "No background panel"
+msgstr ""
+
+msgctxt "#31196"
+msgid "Small Shift view"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Show related movies from your database"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Extrathumbs"
+msgstr ""
+
+msgctxt "#31199"
+msgid "GamesFlixSquare"
+msgstr ""
+
+msgctxt "#31200"
+msgid "Kodi Cinema"
+msgstr ""
+
+msgctxt "#31201"
+msgid "Kodi Trailer"
+msgstr ""
+
+msgctxt "#31202"
+msgid "DailyMotion"
+msgstr ""
+
+msgctxt "#31203"
+msgid "YouTube User Uploads"
+msgstr ""
+
+msgctxt "#31204"
+msgid "YouTube User Favorites"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Youtube Most Viewed"
+msgstr ""
+
+msgctxt "#31206"
+msgid "Youtube Most Popular"
+msgstr ""
+
+msgctxt "#31207"
+msgid "GamesFlixWide"
+msgstr ""
+
+msgctxt "#31208"
+msgid "MusicFlix"
+msgstr ""
+
+msgctxt "#31209"
+msgid "Sets"
+msgstr ""
+
+msgctxt "#31210"
+msgid "Off"
+msgstr ""
+
+msgctxt "#31211"
+msgid "Always show plot"
+msgstr ""
+
+msgctxt "#31212"
+msgid "Transparent background"
+msgstr ""
+
+msgctxt "#31213"
+msgid "Minutes"
+msgstr ""
+
+msgctxt "#31214"
+msgid "GamesFlixWide"
+msgstr ""
+
+msgctxt "#31215"
+msgid "Enable TvTunes"
+msgstr ""
+
+msgctxt "#31216"
+msgid "Update art (Landscape, Logo, ClearArt) after Database update"
+msgstr ""
+
+msgctxt "#31217"
+msgid "Setting Level"
+msgstr ""
+
+msgctxt "#31218"
+msgid "Change mode"
+msgstr ""
+
+msgctxt "#31219"
+msgid "Disable Video Extras"
+msgstr ""
+
+msgctxt "#31220"
+msgid "Random episodes"
+msgstr ""
+
+msgctxt "#31221"
+msgid "Default"
+msgstr ""
+
+msgctxt "#31222"
+msgid "Random movies"
+msgstr ""
+
+msgctxt "#31223"
+msgid "Visibility"
+msgstr ""
+
+msgctxt "#31224"
+msgid "Newest album"
+msgstr ""
+
+msgctxt "#31225"
+msgid "First album"
+msgstr ""
+
+msgctxt "#31226"
+msgid "Moon phase"
+msgstr ""
+
+msgctxt "#31227"
+msgid "Vinyl Record"
+msgstr ""
+
+msgctxt "#31228"
+msgid "Vertical"
+msgstr ""
+
+msgctxt "#31229"
+msgid "Horizontal"
+msgstr ""
+
+msgctxt "#31230"
+msgid "Viewtypes"
+msgstr ""
+
+msgctxt "#31231"
+msgid "Navigation"
+msgstr ""
+
+msgctxt "#31232"
+msgid "Video Info Options"
+msgstr ""
+
+msgctxt "#31233"
+msgid "Panel"
+msgstr ""
+
+msgctxt "#31234"
+msgid "Wall"
+msgstr ""
+
+msgctxt "#31235"
+msgid "Shift"
+msgstr ""
+
+msgctxt "#31236"
+msgid "BannerPlex"
+msgstr ""
+
+msgctxt "#31237"
+msgid "Average Day (Low)"
+msgstr ""
+
+msgctxt "#31238"
+msgid "Average Day (High)"
+msgstr ""
+
+msgctxt "#31239"
+msgid "Pressure"
+msgstr ""
+
+msgctxt "#31240"
+msgid "'New' flag"
+msgstr ""
+
+msgctxt "#31241"
+msgid "Watched Flag"
+msgstr ""
+
+msgctxt "#31242"
+msgid "Show Flags"
+msgstr ""
+
+msgctxt "#31243"
+msgid "Schedule"
+msgstr ""
+
+msgctxt "#31244"
+msgid "Enable cdART in 'Now Playing' widget"
+msgstr ""
+
+msgctxt "#31245"
+msgid "Returning"
+msgstr ""
+
+msgctxt "#31246"
+msgid "Ended"
+msgstr ""
+
+msgctxt "#31247"
+msgid "TBD"
+msgstr ""
+
+msgctxt "#31248"
+msgid "BD/DVD Cases"
+msgstr ""
+
+msgctxt "#31249"
+msgid "New Series"
+msgstr ""
+
+msgctxt "#31250"
+msgid "Finale"
+msgstr ""
+
+msgctxt "#31251"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "#31252"
+msgid "Weather Condition instead of Image"
+msgstr ""
+
+msgctxt "#31253"
+msgid "Disable Weather on Visualisation"
+msgstr ""
+
+msgctxt "#31254"
+msgid "Enable Bottom Menu Tab"
+msgstr ""
+
+msgctxt "#31255"
+msgid "Blu-ray Disc"
+msgstr ""
+
+msgctxt "#31256"
+msgid "Include already watched Items?"
+msgstr ""
+
+msgctxt "#31257"
+msgid "Enable Status Icon"
+msgstr ""
+
+msgctxt "#31258"
+msgid "Video Extras Flag"
+msgstr ""
+
+msgctxt "#31259"
+msgid "Original"
+msgstr ""
+
+msgctxt "#31260"
+msgid "Inverted"
+msgstr ""
+
+msgctxt "#31261"
+msgid "Customize Icons"
+msgstr ""
+
+msgctxt "#31262"
+msgid "Default Icons"
+msgstr ""
+
+msgctxt "#31263"
+msgid "Mpaa Flags"
+msgstr ""
+
+msgctxt "#31264"
+msgid "Colored Mpaa Flags"
+msgstr ""
+
+msgctxt "#31265"
+msgid "Smaller pop-up dialogs"
+msgstr ""
+
+msgctxt "#31266"
+msgid "Group Extras on Video Info, TvTunes, Video Extras, Cinema "
+msgstr ""
+
+msgctxt "#31267"
+msgid "Auto Login"
+msgstr ""
+
+msgctxt "#31268"
+msgid "Enable Backend mode (additional Info for some media types)"
+msgstr ""
+
+msgctxt "#31269"
+msgid "Watch as 2D"
+msgstr ""
+
+msgctxt "#31270"
+msgid "Upcoming Concerts"
+msgstr ""
+
+msgctxt "#31271"
+msgid "Posters"
+msgstr ""
+
+msgctxt "#31272"
+msgid "Layout"
+msgstr ""
+
+msgctxt "#31273"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "#31274"
+msgid "Reloaded Mpaa Flags"
+msgstr ""
+
+msgctxt "#31275"
+msgid "Extended Rating"
+msgstr ""
+
+msgctxt "#31276"
+msgid "Set up the Aeon MadNox main menu"
+msgstr ""
+
+msgctxt "#31277"
+msgid "Reset main menu to default"
+msgstr ""
+
+msgctxt "#31278"
+msgid "Set weather fanart"
+msgstr ""
+
+msgctxt "#31279"
+msgid "Play trailers in fullscreen"
+msgstr ""
+
+msgctxt "#31280"
+msgid "Show Scroll Letter"
+msgstr ""
+
+msgctxt "#31281"
+msgid "Show video info when player is paused"
+msgstr ""
+
+msgctxt "#31282"
+msgid "Clear Cases"
+msgstr ""
+
+msgctxt "#31283"
+msgid "InfoWall"
+msgstr ""
+
+msgctxt "#31284"
+msgid "Cinema"
+msgstr ""
+
+msgctxt "#31285"
+msgid "Episode No."
+msgstr ""
+
+msgctxt "#31286"
+msgid "Disable Intro"
+msgstr ""
+
+msgctxt "#31287"
+msgid "4 Thumbs"
+msgstr ""
+
+msgctxt "#31288"
+msgid "Use ExtendedInfo for Movies and Shows"
+msgstr ""
+
+msgctxt "#31289"
+msgid "Use Metadata Add-on for Actors"
+msgstr ""
+
+msgctxt "#31290"
+msgid "TV Guide"
+msgstr ""
+
+msgctxt "#31291"
+msgid "BigFan"
+msgstr ""
+
+msgctxt "#31292"
+msgid "Enable Skin Helper Extra Fanart"
+msgstr ""
+
+msgctxt "#31293"
+msgid "Keep"
+msgstr ""
+
+msgctxt "#31294"
+msgid "AutoRotate Music Info"
+msgstr ""
+
+msgctxt "#31295"
+msgid "Widget"
+msgstr ""
+
+msgctxt "#31296"
+msgid "Customize Quick Nav"
+msgstr ""
+
+msgctxt "#31297"
+msgid "  •  Global widget backgrounds"
+msgstr ""
+
+msgctxt "#31298"
+msgid "Set area color"
+msgstr ""
+
+msgctxt "#31299"
+msgid "Data provider"
+msgstr ""
+
+msgctxt "#31300"
+msgid "       •  Background"
+msgstr ""
+
+msgctxt "#31301"
+msgid "  •  Match info button background to widget background"
+msgstr ""
+
+msgctxt "#31302"
+msgid "  •  Widget Transparency"
+msgstr ""
+
+msgctxt "#31303"
+msgid "  •  Show list widget information"
+msgstr ""
+
+msgctxt "#31304"
+msgid "  •  Global panel widget information"
+msgstr ""
+
+msgctxt "#31305"
+msgid "  •  Hide widgets when not focused"
+msgstr ""
+
+msgctxt "#31306"
+msgid "  •  Auto-scroll list widgets"
+msgstr ""
+
+msgctxt "#31307"
+msgid "Hide fanart"
+msgstr ""
+
+msgctxt "#31308"
+msgid "  •  Cast on widget info"
+msgstr ""
+
+msgctxt "#31309"
+msgid "Memory Used:"
+msgstr ""
+
+msgctxt "#31310"
+msgid "  •  Case on widget info"
+msgstr ""
+
+msgctxt "#31311"
+msgid "  •  Case on widget info screen"
+msgstr ""
+
+msgctxt "#31312"
+msgid " •  Media Case on info and paused screens"
+msgstr ""
+
+msgctxt "#31313"
+msgid " •  Movie DiscArt on info and paused screens"
+msgstr ""
+
+msgctxt "#31314"
+msgid "Plot and Cast on info and paused screens"
+msgstr ""
+
+msgctxt "#31315"
+msgid "Hide Plot and Cast dark overlay"
+msgstr ""
+
+msgctxt "#31316"
+msgid "Get artwork"
+msgstr ""
+
+msgctxt "#31317"
+msgid "Weather Info When Paused"
+msgstr ""
+
+msgctxt "#31318"
+msgid "Time Remaining When Paused"
+msgstr ""
+
+msgctxt "#31319"
+msgid "Music Viz Auto"
+msgstr ""
+
+msgctxt "#31320"
+msgid "Hide Visualisation behind Fanart"
+msgstr ""
+
+msgctxt "#31321"
+msgid "Karaoke song selector"
+msgstr ""
+
+msgctxt "#31322"
+msgid "Aired"
+msgstr ""
+
+msgctxt "#31323"
+msgid "Latest movies"
+msgstr ""
+
+msgctxt "#31324"
+msgid "Latest episodes"
+msgstr ""
+
+msgctxt "#31325"
+msgid "Playlist options"
+msgstr ""
+
+msgctxt "#31326"
+msgid "Most played albums"
+msgstr ""
+
+msgctxt "#31327"
+msgid "Most played ROMs"
+msgstr ""
+
+msgctxt "#31328"
+msgid "     Alternate Music Visualisation 1"
+msgstr ""
+
+msgctxt "#31329"
+msgid "     Alternate Music Visualisation 2"
+msgstr ""
+
+msgctxt "#31330"
+msgid "Random music"
+msgstr ""
+
+msgctxt "#31331"
+msgid "Latest Music"
+msgstr ""
+
+msgctxt "#31332"
+msgid "Play Video"
+msgstr ""
+
+msgctxt "#31333"
+msgid "Recent"
+msgstr ""
+
+msgctxt "#31334"
+msgid "Latest"
+msgstr ""
+
+msgctxt "#31335"
+msgid "In-progress movies"
+msgstr ""
+
+msgctxt "#31336"
+msgid "Today´s Actors"
+msgstr ""
+
+msgctxt "#31337"
+msgid "Show Alternate Layout 1"
+msgstr ""
+
+msgctxt "#31338"
+msgid "  •  Show Info"
+msgstr ""
+
+msgctxt "#31339"
+msgid "  •  Hide Next"
+msgstr ""
+
+msgctxt "#31340"
+msgid "  •  Hide Time/Progress"
+msgstr ""
+
+msgctxt "#31341"
+msgid "  •  Rounded Cover"
+msgstr ""
+
+msgctxt "#31342"
+msgid "  •  Color Artist Name"
+msgstr ""
+
+msgctxt "#31343"
+msgid "  •  Use Album Artist For Handwriting CD"
+msgstr ""
+
+msgctxt "#31344"
+msgid "  •  Alternative Background"
+msgstr ""
+
+msgctxt "#31345"
+msgid "Show Alternate Layout 2"
+msgstr ""
+
+msgctxt "#31346"
+msgid "  •  Show Waveform Progress"
+msgstr ""
+
+msgctxt "#31347"
+msgid "Customize Quick Nav"
+msgstr ""
+
+msgctxt "#31348"
+msgid "Fake Discs"
+msgstr ""
+
+msgctxt "#31349"
+msgid "Enable Zoom"
+msgstr ""
+
+msgctxt "#31350"
+msgid "Enable Episode Thumb"
+msgstr ""
+
+msgctxt "#31351"
+msgid "Pause"
+msgstr ""
+
+msgctxt "#31352"
+msgid "Stop"
+msgstr ""
+
+msgctxt "#31353"
+msgid "Fast Forward"
+msgstr ""
+
+msgctxt "#31354"
+msgid "Rewind"
+msgstr ""
+
+msgctxt "#31355"
+msgid "Movie menu"
+msgstr ""
+
+msgctxt "#31356"
+msgid "Subtitle Settings"
+msgstr ""
+
+msgctxt "#31357"
+msgid "Mixed info"
+msgstr ""
+
+msgctxt "#31358"
+msgid "System info"
+msgstr ""
+
+msgctxt "#31359"
+msgid "Latest albums"
+msgstr ""
+
+msgctxt "#31360"
+msgid "Upcoming"
+msgstr ""
+
+msgctxt "#31361"
+msgid "No Floor Label"
+msgstr ""
+
+msgctxt "#31362"
+msgid "Rounded covers"
+msgstr ""
+
+msgctxt "#31363"
+msgid "No Floor"
+msgstr ""
+
+msgctxt "#31364"
+msgid "Platform"
+msgstr ""
+
+msgctxt "#31365"
+msgid "Get tune"
+msgstr ""
+
+msgctxt "#31366"
+msgid "Small Posters"
+msgstr ""
+
+msgctxt "#31367"
+msgid "Movie Info"
+msgstr ""
+
+msgctxt "#31368"
+msgid "Fake Logo"
+msgstr ""
+
+msgctxt "#31369"
+msgid "Show Track List"
+msgstr ""
+
+msgctxt "#31370"
+msgid "Show CD's"
+msgstr ""
+
+msgctxt "#31371"
+msgid "Disable Black Overlay"
+msgstr ""
+
+msgctxt "#31372"
+msgid "Show Info"
+msgstr ""
+
+msgctxt "#31373"
+msgid "Show New Texture"
+msgstr ""
+
+msgctxt "#31374"
+msgid "Current"
+msgstr ""
+
+msgctxt "#31375"
+msgid "Animated"
+msgstr ""
+
+msgctxt "#31376"
+msgid "Display logo"
+msgstr ""
+
+msgctxt "#31377"
+msgid "cdART"
+msgstr ""
+
+msgctxt "#31378"
+msgid "Set path to music library (needed for extrafanart, clearLOGO)"
+msgstr ""
+
+msgctxt "#31379"
+msgid "Music Banner"
+msgstr ""
+
+msgctxt "#31380"
+msgid "Stripshow"
+msgstr ""
+
+msgctxt "#31381"
+msgid "InfoPanel"
+msgstr ""
+
+msgctxt "#31382"
+msgid "Display CD"
+msgstr ""
+
+msgctxt "#31383"
+msgid "Backdrop"
+msgstr ""
+
+msgctxt "#31384"
+msgid "View Options"
+msgstr ""
+
+msgctxt "#31385"
+msgid "Show Extra Fanart"
+msgstr ""
+
+msgctxt "#31386"
+msgid "No Plot Scroll"
+msgstr ""
+
+msgctxt "#31387"
+msgid "Darken"
+msgstr ""
+
+msgctxt "#31388"
+msgid "Floor label"
+msgstr ""
+
+msgctxt "#31389"
+msgid "No Disc Art"
+msgstr ""
+
+msgctxt "#31390"
+msgid "Skin default"
+msgstr ""
+
+msgctxt "#31391"
+msgid "Enable New View Selector"
+msgstr ""
+
+msgctxt "#31392"
+msgid "Discs Only"
+msgstr ""
+
+msgctxt "#31393"
+msgid "Flat Info Panel"
+msgstr ""
+
+msgctxt "#31394"
+msgid "No Info Panel"
+msgstr ""
+
+msgctxt "#31395"
+msgid "Disable Logo"
+msgstr ""
+
+msgctxt "#31396"
+msgid "Banner List"
+msgstr ""
+
+msgctxt "#31397"
+msgid "Ended"
+msgstr ""
+
+msgctxt "#31398"
+msgid "Disable Spine Text"
+msgstr ""
+
+msgctxt "#31399"
+msgid "Flat Discs"
+msgstr ""
+
+msgctxt "#31400"
+msgid "[B]CONFIGURE INTERFACE SETTINGS[/B][CR][CR]· Configure Skin[CR]· Configure Regional[CR]· Configure Control[CR]· Configure Screensaver[CR]· Configure SkinMaster Lock[CR]· Configure Other"
+msgstr ""
+
+msgctxt "#31401"
+msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]· Configure Video-Play Settings[CR]· Configure Music-Play Settings[CR]· Configure Discs Settings[CR]· Configure Pictures Settings[CR]· Configure Language Settings[CR]· Configure Accessibility"
+msgstr ""
+
+msgctxt "#31402"
+msgid "[B]CONFIGURE LIBRARY SETTINGS[/B][CR][CR]· Configure General Settings[CR]· Configure Video Settings[CR]· Configure Music Settings[CR]· Configure Pictures Settings[CR]· Configure Databases Settings"
+msgstr ""
+
+msgctxt "#31403"
+msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]· Configure General Settings[CR]· Configure Customizers[CR]· Show Credits[CR]· Set Paths"
+msgstr ""
+
+msgctxt "#31404"
+msgid "  •  Record Player"
+msgstr ""
+
+msgctxt "#31405"
+msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]· Configure Device Name[CR]· Configure UPnP and HTTP[CR]· Configure Web Server[CR]· Configure AirPlay[CR]· Configure Weather"
+msgstr ""
+
+msgctxt "#31406"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]· Configure Display Settings[CR]· Configure Audio Settings[CR]· Configure Internet Access[CR]· Configure Power Saving[CR]· Configure Addons Settings[CR]· Configure Logging Settings"
+msgstr ""
+
+msgctxt "#31407"
+msgid "  •  Show Visualisation"
+msgstr ""
+
+msgctxt "#31408"
+msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR]· Manage your installed Add-ons[CR]· Browse for and install Add-ons[CR]· Modify Add-on settings"
+msgstr ""
+
+msgctxt "#31409"
+msgid "[B]SYSTEM INFORMATION[/B][CR][CR]· Show Summary[CR]· Show Storage[CR]· Show Network[CR]· Show Video[CR]· Show Hardware[CR]· Show PVR Service"
+msgstr ""
+
+msgctxt "#31410"
+msgid "[B]CONFIGURE USER PROFILES[/B][CR][CR]· Configure Login[CR]· Manage Profiles"
+msgstr ""
+
+msgctxt "#31411"
+msgid "MANAGER"
+msgstr ""
+
+msgctxt "#31412"
+msgid "[B]MANAGE FILES/FOLDERS[/B][CR][CR]· Copy, Move, Delete, Rename Files and/or Folders[CR]· Create Folders and calculate size of folders"
+msgstr ""
+
+msgctxt "#31413"
+msgid "MONITOR"
+msgstr ""
+
+msgctxt "#31414"
+msgid "Local subtitle available"
+msgstr ""
+
+msgctxt "#31415"
+msgid "Enable small Thumbs"
+msgstr ""
+
+msgctxt "#31416"
+msgid "Open Case"
+msgstr ""
+
+msgctxt "#31417"
+msgid "Enable Case"
+msgstr ""
+
+msgctxt "#31418"
+msgid "Disable Case badge"
+msgstr ""
+
+msgctxt "#31419"
+msgid "Use thumbs as images"
+msgstr ""
+
+msgctxt "#31420"
+msgid "Show CD Case"
+msgstr ""
+
+msgctxt "#31421"
+msgid "  •  Alternative CD Case"
+msgstr ""
+
+msgctxt "#31422"
+msgid "Round Covers"
+msgstr ""
+
+msgctxt "#31423"
+msgid "Perspective Layout"
+msgstr ""
+
+msgctxt "#31424"
+msgid "Extra Fanart"
+msgstr ""
+
+msgctxt "#31425"
+msgid "Show Info/Text Only"
+msgstr ""
+
+msgctxt "#31426"
+msgid "Full"
+msgstr ""
+
+msgctxt "#31427"
+msgid "Outline"
+msgstr ""
+
+msgctxt "#31428"
+msgid "SHUTDOWN IN"
+msgstr ""
+
+msgctxt "#31429"
+msgid "On"
+msgstr ""
+
+msgctxt "#31430"
+msgid "No case for movieset"
+msgstr ""
+
+msgctxt "#31431"
+msgid "Open Set as BoxCase"
+msgstr ""
+
+msgctxt "#31432"
+msgid "Fake Disc Art"
+msgstr ""
+
+msgctxt "#31433"
+msgid "Fake Disc Handwriting"
+msgstr ""
+
+msgctxt "#31434"
+msgid "       • Colored Disc"
+msgstr ""
+
+msgctxt "#31435"
+msgid "       • Handwriting Top"
+msgstr ""
+
+msgctxt "#31436"
+msgid "  •  Hide Repeat/Shuffle"
+msgstr ""
+
+msgctxt "#31437"
+msgid "Show Playlist"
+msgstr ""
+
+msgctxt "#31438"
+msgid "         •  Show 10 Tracks"
+msgstr ""
+
+msgctxt "#31439"
+msgid "         •  Move Down"
+msgstr ""
+
+msgctxt "#31440"
+msgid "         •  fade Background"
+msgstr ""
+
+msgctxt "#31441"
+msgid "         •  Show Numbers"
+msgstr ""
+
+msgctxt "#31442"
+msgid "         •  Rating/Codec Switch"
+msgstr ""
+
+msgctxt "#31443"
+msgid "         •  Genre Text/Icons Switch"
+msgstr ""
+
+msgctxt "#31444"
+msgid "All Oscar Winners"
+msgstr ""
+
+msgctxt "#31445"
+msgid "Best Actor"
+msgstr ""
+
+msgctxt "#31446"
+msgid "Best Actress"
+msgstr ""
+
+msgctxt "#31447"
+msgid "Best Adapted Screenplay"
+msgstr ""
+
+msgctxt "#31448"
+msgid "Best Original Screenplay"
+msgstr ""
+
+msgctxt "#31449"
+msgid "Best Animated Movie"
+msgstr ""
+
+msgctxt "#31450"
+msgid "Best Director"
+msgstr ""
+
+msgctxt "#31451"
+msgid "Best Foreign Movie"
+msgstr ""
+
+msgctxt "#31452"
+msgid "Not rated"
+msgstr ""
+
+msgctxt "#31453"
+msgid "Airtime"
+msgstr ""
+
+msgctxt "#31454"
+msgid "Banners"
+msgstr ""
+
+msgctxt "#31455"
+msgid "MovieWall: Path to movie cover folder"
+msgstr ""
+
+msgctxt "#31457"
+msgid "Best Picture"
+msgstr ""
+
+msgctxt "#31456"
+msgid "CD-Wall: Path to CD cover folder"
+msgstr ""
+
+msgctxt "#31458"
+msgid "Push UP or DOWN to change rating"
+msgstr ""
+
+msgctxt "#31459"
+msgid "Structure of music library"
+msgstr ""
+
+msgctxt "#31460"
+msgid "Best Score"
+msgstr ""
+
+msgctxt "#31461"
+msgid "Best Supporting Actor"
+msgstr ""
+
+msgctxt "#31462"
+msgid "Best Supporting Actress"
+msgstr ""
+
+msgctxt "#31463"
+msgid "Best Visual Effects"
+msgstr ""
+
+msgctxt "#31464"
+msgid "Recommended episodes"
+msgstr ""
+
+msgctxt "#31465"
+msgid "Recent Best Picture"
+msgstr ""
+
+msgctxt "#31466"
+msgid "Recent Oscars"
+msgstr ""
+
+msgctxt "#31467"
+msgid "Get extrafanart"
+msgstr ""
+
+msgctxt "#31468"
+msgid "Get extrathumbs"
+msgstr ""
+
+msgctxt "#31469"
+msgid "Use SkinHelper Animated Posters / Backgrounds"
+msgstr ""
+
+msgctxt "#31470"
+msgid "Large Focus Icon"
+msgstr ""
+
+msgctxt "#31471"
+msgid "Music Panel"
+msgstr ""
+
+msgctxt "#31472"
+msgid "Move Up"
+msgstr ""
+
+msgctxt "#31473"
+msgid "Show Info"
+msgstr ""
+
+msgctxt "#31474"
+msgid "Show Genre | Style | Mood"
+msgstr ""
+
+msgctxt "#31475"
+msgid "Round Cover"
+msgstr ""
+
+msgctxt "#31476"
+msgid "More Artist Icons"
+msgstr ""
+
+msgctxt "#31477"
+msgid "TriPanel"
+msgstr ""
+
+msgctxt "#31478"
+msgid "Setup"
+msgstr ""
+
+msgctxt "#31479"
+msgid "Widgets"
+msgstr ""
+
+msgctxt "#31480"
+msgid "More Album Covers"
+msgstr ""
+
+msgctxt "#31481"
+msgid "Show Logo"
+msgstr ""
+
+msgctxt "#31482"
+msgid "Cases"
+msgstr ""
+
+msgctxt "#31483"
+msgid "Grid size normal"
+msgstr ""
+
+msgctxt "#31484"
+msgid "Play trailer"
+msgstr ""
+
+msgctxt "#31485"
+msgid "Show Banner"
+msgstr ""
+
+msgctxt "#31486"
+msgid "   • On Right Side"
+msgstr ""
+
+msgctxt "#31487"
+msgid "Use Vinyl Art"
+msgstr ""
+
+msgctxt "#31488"
+msgid "Album"
+msgstr ""
+
+msgctxt "#31489"
+msgid "Albums"
+msgstr ""
+
+msgctxt "#31490"
+msgid "with"
+msgstr ""
+
+msgctxt "#31491"
+msgid "Show Extra Info"
+msgstr ""
+
+msgctxt "#31492"
+msgid "Enable Playlist on Startup"
+msgstr ""
+
+msgctxt "#31493"
+msgid "Album review"
+msgstr ""
+
+msgctxt "#31494"
+msgid "Customize"
+msgstr ""
+
+msgctxt "#31495"
+msgid "PVR Artwork"
+msgstr ""
+
+msgctxt "#31496"
+msgid "Sideblade"
+msgstr ""
+
+msgctxt "#31497"
+msgid "Channel OSD"
+msgstr ""
+
+msgctxt "#31498"
+msgid "Extended Channel OSD"
+msgstr ""
+
+msgctxt "#31499"
+msgid "Switch places for progressbar & icon"
+msgstr ""
+
+msgctxt "#31500"
+msgid "Pictures"
+msgstr ""
+
+msgctxt "#31501"
+msgid "Music"
+msgstr ""
+
+msgctxt "#31502"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#31503"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#31504"
+msgid "Videos"
+msgstr ""
+
+msgctxt "#31505"
+msgid "Programs"
+msgstr ""
+
+msgctxt "#31506"
+msgid "System"
+msgstr ""
+
+msgctxt "#31507"
+msgid "Add-Ons"
+msgstr ""
+
+msgctxt "#31508"
+msgid "Shutdown"
+msgstr ""
+
+msgctxt "#31509"
+msgid "Favorites"
+msgstr ""
+
+msgctxt "#31510"
+msgid "Weather"
+msgstr ""
+
+msgctxt "#31511"
+msgid "Play Disc"
+msgstr ""
+
+msgctxt "#31512"
+msgid "Hide Info"
+msgstr ""
+
+msgctxt "#31513"
+msgid "Open Cases"
+msgstr ""
+
+msgctxt "#31514"
+msgid "IMDB Icon"
+msgstr ""
+
+msgctxt "#31515"
+msgid "Hide Background Panel"
+msgstr ""
+
+msgctxt "#31516"
+msgid "Thumbnail Info"
+msgstr ""
+
+msgctxt "#31517"
+msgid "Season Title"
+msgstr ""
+
+msgctxt "#31518"
+msgid "View Layout"
+msgstr ""
+
+msgctxt "#31519"
+msgid "Lower Info"
+msgstr ""
+
+msgctxt "#31520"
+msgid "Small Fanart"
+msgstr ""
+
+msgctxt "#31521"
+msgid "Disc Art"
+msgstr ""
+
+msgctxt "#31522"
+msgid "MovieSet Cases"
+msgstr ""
+
+msgctxt "#31523"
+msgid "Enable Discs"
+msgstr ""
+
+msgctxt "#31524"
+msgid "Extra Films"
+msgstr ""
+
+msgctxt "#31525"
+msgid "BoxSet Cases"
+msgstr ""
+
+msgctxt "#31526"
+msgid "Extra Seasons"
+msgstr ""
+
+msgctxt "#31527"
+msgid "Center List"
+msgstr ""
+
+msgctxt "#31528"
+msgid "Short List"
+msgstr ""
+
+msgctxt "#31529"
+msgid "Dim List"
+msgstr ""
+
+msgctxt "#31530"
+msgid "Dim Amount:"
+msgstr ""
+
+msgctxt "#31531"
+msgid "Center Focus"
+msgstr ""
+
+msgctxt "#31532"
+msgid "Extra Zoom Focus"
+msgstr ""
+
+msgctxt "#31533"
+msgid "Remove Focus Surround"
+msgstr ""
+
+msgctxt "#31534"
+msgid "Enable 'Alphabet' Scrollbar"
+msgstr ""
+
+msgctxt "#31535"
+msgid "Infobar"
+msgstr ""
+
+msgctxt "#31536"
+msgid "Infobar type:"
+msgstr ""
+
+msgctxt "#31537"
+msgid "Hide encryption information"
+msgstr ""
+
+msgctxt "#31538"
+msgid "Hide tuner information"
+msgstr ""
+
+msgctxt "#31539"
+msgid "Hide signal information"
+msgstr ""
+
+msgctxt "#31540"
+msgid "Timeline View"
+msgstr ""
+
+msgctxt "#31541"
+msgid "Channels display type:"
+msgstr ""
+
+msgctxt "#31542"
+msgid "Hide Guide"
+msgstr ""
+
+msgctxt "#31543"
+msgid "Hide Recordings"
+msgstr ""
+
+msgctxt "#31544"
+msgid "Hide Timer"
+msgstr ""
+
+msgctxt "#31545"
+msgid "Hide Search"
+msgstr ""
+
+msgctxt "#31546"
+msgid "Icon only"
+msgstr ""
+
+msgctxt "#31547"
+msgid "Name & Icon"
+msgstr ""
+
+msgctxt "#31548"
+msgid "Name only"
+msgstr ""
+
+msgctxt "#31549"
+msgid "Compact"
+msgstr ""
+
+msgctxt "#31550"
+msgid "Standard"
+msgstr ""
+
+msgctxt "#31551"
+msgid "PLOT"
+msgstr ""
+
+msgctxt "#31552"
+msgid "CAST & ROLE"
+msgstr ""
+
+msgctxt "#31553"
+msgid "Colored Genres"
+msgstr ""
+
+msgctxt "#31554"
+msgid "Video Genres"
+msgstr ""
+
+msgctxt "#31555"
+msgid "Current Setting"
+msgstr ""
+
+msgctxt "#31556"
+msgid "Enable MPAA rating description"
+msgstr ""
+
+msgctxt "#31557"
+msgid "  •  Disable Widget Fanart"
+msgstr ""
+
+msgctxt "#31558"
+msgid "Widget Info"
+msgstr ""
+
+msgctxt "#31559"
+msgid "Enable Widget Info"
+msgstr ""
+
+msgctxt "#31560"
+msgid "Move now Playing Below HomeBar"
+msgstr ""
+
+msgctxt "#31561"
+msgid "Center CD"
+msgstr ""
+
+msgctxt "#31562"
+msgid "Show Logo"
+msgstr ""
+
+msgctxt "#31563"
+msgid "List Xtra"
+msgstr ""
+
+msgctxt "#31600"
+msgid "Main menu item customizer (backgrounds,widgets)"
+msgstr ""
+
+msgctxt "#31601"
+msgid "CDWall"
+msgstr ""
+
+msgctxt "#31602"
+msgid "Choose main menu style"
+msgstr ""
+
+msgctxt "#31610"
+msgid "Set area color for Home window"
+msgstr ""
+
+msgctxt "#31611"
+msgid "Fullscreen video"
+msgstr ""
+
+msgctxt "#31612"
+msgid "MovieWall"
+msgstr ""
+
+msgctxt "#31613"
+msgid "Enable custom startup focus position of main menu"
+msgstr ""
+
+msgctxt "#31614"
+msgid "CDArt Manager"
+msgstr ""
+
+msgctxt "#31615"
+msgid "Audio visualization"
+msgstr ""
+
+msgctxt "#31616"
+msgid "Low"
+msgstr ""
+
+msgctxt "#31617"
+msgid "High"
+msgstr ""
+
+msgctxt "#31619"
+msgid "Fullscreen video options"
+msgstr ""
+
+msgctxt "#31620"
+msgid "Add to icon panel"
+msgstr ""
+
+msgctxt "#31621"
+msgid "Use Alaska paused label for video OSD"
+msgstr ""
+
+msgctxt "#31622"
+msgid "Label"
+msgstr ""
+
+msgctxt "#31627"
+msgid "Hide OSD player controls"
+msgstr ""
+
+msgctxt "#31628"
+msgid "Current position"
+msgstr ""
+
+msgctxt "#31629"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#31630"
+msgid "Custom"
+msgstr ""
+
+msgctxt "#31631"
+msgid "Show logo instead of title"
+msgstr ""
+
+msgctxt "#31632"
+msgid "Enable Extended Info widget"
+msgstr ""
+
+msgctxt "#31633"
+msgid "QuickNav"
+msgstr ""
+
+msgctxt "#31634"
+msgid "Main Menu"
+msgstr ""
+
+msgctxt "#31635"
+msgid "Similar Artists"
+msgstr ""
+
+msgctxt "#31636"
+msgid "Rotating"
+msgstr ""
+
+msgctxt "#31637"
+msgid "Video OSD Settings"
+msgstr ""
+
+msgctxt "#31638"
+msgid "Show 'Next Aired' info"
+msgstr ""
+
+msgctxt "#31639"
+msgid "Hide video thumb on info and paused screens"
+msgstr ""
+
+msgctxt "#31640"
+msgid "Show remaining time instead of duration."
+msgstr ""
+
+msgctxt "#31641"
+msgid "Paths"
+msgstr ""
+
+msgctxt "#31643"
+msgid "Customize Home window furniture"
+msgstr ""
+
+msgctxt "#31644"
+msgid "Icon Panel Manager"
+msgstr ""
+
+msgctxt "#31645"
+msgid "Background Setup"
+msgstr ""
+
+msgctxt "#31646"
+msgid "Do you want to download all available [CR]artwork without user interaction?"
+msgstr ""
+
+msgctxt "#31673"
+msgid "Most Played ROMs"
+msgstr ""
+
+msgctxt "#31674"
+msgid "Switch panel layout"
+msgstr ""
+
+msgctxt "#31675"
+msgid "Customize top bar"
+msgstr ""
+
+msgctxt "#31676"
+msgid "Top bar"
+msgstr ""
+
+msgctxt "#31677"
+msgid "Left side"
+msgstr ""
+
+msgctxt "#31678"
+msgid "Set path to folder for conditional weather fanart"
+msgstr ""
+
+msgctxt "#31679"
+msgid "Change label"
+msgstr ""
+
+msgctxt "#31680"
+msgid "Choose background"
+msgstr ""
+
+msgctxt "#31681"
+msgid "Choose widget"
+msgstr ""
+
+msgctxt "#31682"
+msgid "Customizers"
+msgstr ""
+
+msgctxt "#31683"
+msgid "Library stats"
+msgstr ""
+
+msgctxt "#31684"
+msgid "Glass"
+msgstr ""
+
+msgctxt "#31685"
+msgid "Classic"
+msgstr ""
+
+msgctxt "#31686"
+msgid "Aeon"
+msgstr ""
+
+msgctxt "#31687"
+msgid "Furniture settings"
+msgstr ""
+
+msgctxt "#31688"
+msgid "Disable timepanel"
+msgstr ""
+
+msgctxt "#31689"
+msgid "Disable library stats"
+msgstr ""
+
+msgctxt "#31690"
+msgid "Disable rss panel"
+msgstr ""
+
+msgctxt "#31691"
+msgid "Toggle position"
+msgstr ""
+
+msgctxt "#31692"
+msgid "Shorter time and library stats panel"
+msgstr ""
+
+msgctxt "#31694"
+msgid "Fixed list"
+msgstr ""
+
+msgctxt "#31695"
+msgid "Submenu"
+msgstr ""
+
+msgctxt "#31696"
+msgid "Alternative layout"
+msgstr ""
+
+msgctxt "#31697"
+msgid "Choose cover type"
+msgstr ""
+
+msgctxt "#31698"
+msgid "Show list of actors/artists birthdays"
+msgstr ""
+
+msgctxt "#31699"
+msgid "Smaller main menu"
+msgstr ""
+
+msgctxt "#31700"
+msgid "Set custom background image"
+msgstr ""
+
+msgctxt "#31701"
+msgid "Supplied backgrounds"
+msgstr ""
+
+msgctxt "#31702"
+msgid "Cover settings"
+msgstr ""
+
+msgctxt "#31703"
+msgid "Set InfoLine"
+msgstr ""
+
+msgctxt "#31704"
+msgid "Set Submenu"
+msgstr ""
+
+msgctxt "#31706"
+msgid "First run help...."
+msgstr ""
+
+msgctxt "#31707"
+msgid "This tab signifies that there is a menu off to the side of this window that contains extra options for this section.  To access the menu, navigate to the arrow direction with the Harmony remote or keyboard or place your mouse pointer over the tab. [CR][CR]Click \"Ok\" to close this dialog. It will not appear again."
+msgstr ""
+
+msgctxt "#31708"
+msgid "Background Customizer"
+msgstr ""
+
+msgctxt "#31709"
+msgid "Set Delay"
+msgstr ""
+
+msgctxt "#31710"
+msgid "Show ExtraFanart"
+msgstr ""
+
+msgctxt "#31711"
+msgid "Activate Info Panel"
+msgstr ""
+
+msgctxt "#31712"
+msgid "Recommended MusicVids"
+msgstr ""
+
+msgctxt "#31714"
+msgid "Video Library Node"
+msgstr ""
+
+msgctxt "#31715"
+msgid "Smart Playlist Manager"
+msgstr ""
+
+msgctxt "#31716"
+msgid "Default Sets"
+msgstr ""
+
+msgctxt "#31717"
+msgid "Optional Custom Sets"
+msgstr ""
+
+msgctxt "#31718"
+msgid "Custom set"
+msgstr ""
+
+msgctxt "#31719"
+msgid "No Default Items"
+msgstr ""
+
+msgctxt "#31720"
+msgid "Default Movie Items"
+msgstr ""
+
+msgctxt "#31721"
+msgid "Default TV Show Items"
+msgstr ""
+
+msgctxt "#31722"
+msgid "Default Music Items"
+msgstr ""
+
+msgctxt "#31723"
+msgid "Default Settings Items"
+msgstr ""
+
+msgctxt "#31724"
+msgid "Default Shutdown Items"
+msgstr ""
+
+msgctxt "#31725"
+msgid "Default PVR Items"
+msgstr ""
+
+msgctxt "#31726"
+msgid "Default Video Items"
+msgstr ""
+
+msgctxt "#31727"
+msgid "Remaining Cities"
+msgstr ""
+
+msgctxt "#31728"
+msgid "Show Cities"
+msgstr ""
+
+msgctxt "#31729"
+msgid "Move NowPlaying widget to bottom"
+msgstr ""
+
+msgctxt "#31730"
+msgid "Script features"
+msgstr ""
+
+msgctxt "#31731"
+msgid "Skin Settings"
+msgstr ""
+
+msgctxt "#31732"
+msgid "Edit Main Menu"
+msgstr ""
+
+msgctxt "#31733"
+msgid "Choose song"
+msgstr ""
+
+msgctxt "#31734"
+msgid "Use QuickList instead of default shutdown menu"
+msgstr ""
+
+msgctxt "#31735"
+msgid "Artwork"
+msgstr ""
+
+# skinshortcuts Locals start here
+msgctxt "#31742"
+msgid "Edit submenu"
+msgstr ""
+
+msgctxt "#31743"
+msgid "  •  background image"
+msgstr ""
+
+msgctxt "#31744"
+msgid "  •  Case"
+msgstr ""
+
+msgctxt "#31745"
+msgid "Choose infoline"
+msgstr ""
+
+msgctxt "#31746"
+msgid "Change icon"
+msgstr ""
+
+msgctxt "#31747"
+msgid "Widget 1"
+msgstr ""
+
+msgctxt "#31748"
+msgid "Widget 2"
+msgstr ""
+
+msgctxt "#31749"
+msgid "Configure widget 1"
+msgstr ""
+
+msgctxt "#31750"
+msgid "Style"
+msgstr ""
+
+msgctxt "#31751"
+msgid "Background"
+msgstr ""
+
+msgctxt "#31752"
+msgid "Panel Label"
+msgstr ""
+
+msgctxt "#31753"
+msgid "List Widget Titles"
+msgstr ""
+
+msgctxt "#31754"
+msgid "  •  Art"
+msgstr ""
+
+msgctxt "#31755"
+msgid "  •  Case"
+msgstr ""
+
+msgctxt "#31756"
+msgid "  •  Sort by"
+msgstr ""
+
+msgctxt "#31757"
+msgid "  •  Sort order"
+msgstr ""
+
+msgctxt "#31758"
+msgid "  •  Limit"
+msgstr ""
+
+msgctxt "#31759"
+msgid "Configure custom list"
+msgstr ""
+
+msgctxt "#31760"
+msgid "Configure widget 2"
+msgstr ""
+
+# skinshortcuts Locals END here
+#
+#
+# Widgets Locals START here
+msgctxt "#31765"
+msgid "Extended List"
+msgstr ""
+
+msgctxt "#31766"
+msgid "Extended Panel"
+msgstr ""
+
+msgctxt "#31767"
+msgid "Compact Panel"
+msgstr ""
+
+msgctxt "#31768"
+msgid "Extended Compact Panel"
+msgstr ""
+
+msgctxt "#31769"
+msgid "Extended Mixed"
+msgstr ""
+
+msgctxt "#31770"
+msgid "Flat"
+msgstr ""
+
+msgctxt "#31771"
+msgid "Clear White"
+msgstr ""
+
+msgctxt "#31772"
+msgid "Colored Default"
+msgstr ""
+
+msgctxt "#31773"
+msgid "Colored Flat"
+msgstr ""
+
+msgctxt "#31774"
+msgid "Colored Clear"
+msgstr ""
+
+msgctxt "#31775"
+msgid "Colored Clear White"
+msgstr ""
+
+msgctxt "#31776"
+msgid "Weather fanart"
+msgstr ""
+
+msgctxt "#31777"
+msgid "Widget 1 fanart"
+msgstr ""
+
+msgctxt "#31778"
+msgid "Widget 2 fanart"
+msgstr ""
+
+msgctxt "#31779"
+msgid "Live Background - "
+msgstr ""
+
+msgctxt "#31780"
+msgid "Live Background - Recently Added Albums"
+msgstr ""
+
+msgctxt "#31781"
+msgid "Case"
+msgstr ""
+
+msgctxt "#31782"
+msgid "Glass"
+msgstr ""
+
+msgctxt "#31783"
+msgid "Clear Case"
+msgstr ""
+
+msgctxt "#31784"
+msgid "ColorCase"
+msgstr ""
+
+msgctxt "#31785"
+msgid "BD-Case"
+msgstr ""
+
+msgctxt "#31786"
+msgid "DVD/BR Clear"
+msgstr ""
+
+msgctxt "#31787"
+msgid "DVD/BR Color"
+msgstr ""
+
+msgctxt "#31788"
+msgid "CD Cases"
+msgstr ""
+
+msgctxt "#31789"
+msgid "CD Cases Clear"
+msgstr ""
+
+msgctxt "#31790"
+msgid "Widget Background"
+msgstr ""
+
+msgctxt "#31791"
+msgid "Panel Label"
+msgstr ""
+
+msgctxt "#31792"
+msgid "Sort by"
+msgstr ""
+
+msgctxt "#31793"
+msgid "Sort Order"
+msgstr ""
+
+msgctxt "#31794"
+msgid "List Widget Title"
+msgstr ""
+
+msgctxt "#31795"
+msgid "Movie library"
+msgstr ""
+
+msgctxt "#31796"
+msgid "TV library"
+msgstr ""
+
+msgctxt "#31797"
+msgid "Movie playlist"
+msgstr ""
+
+msgctxt "#31798"
+msgid "TV Show playlist"
+msgstr ""
+
+msgctxt "#31799"
+msgid "Music Video playlist"
+msgstr ""
+
+msgctxt "#31800"
+msgid "Fade background in visualisation"
+msgstr ""
+
+msgctxt "#31801"
+msgid "Always show Album Info"
+msgstr ""
+
+msgctxt "#31802"
+msgid "Music BG"
+msgstr ""
+
+msgctxt "#31803"
+msgid "Always randomize Random Widget Items"
+msgstr ""
+
+msgctxt "#31804"
+msgid "Panel"
+msgstr ""
+
+msgctxt "#31805"
+msgid "Square Poster"
+msgstr ""
+
+msgctxt "#31806"
+msgid "On Focus"
+msgstr ""
+
+msgctxt "#31821"
+msgid "Always on"
+msgstr ""
+
+msgctxt "#31822"
+msgid "Match widget panel"
+msgstr ""
+
+msgctxt "#31827"
+msgid "Widget Transparency"
+msgstr ""
+
+msgctxt "#31858"
+msgid "Show list widget info"
+msgstr ""
+
+msgctxt "#31859"
+msgid "Show case on widget info"
+msgstr ""
+
+# 	List 			#535
+# 	None 			#231
+# 	Mixed 			#20395
+# 	Clear 			#386
+# 	Panel 			#31804
+# 	Default 		#571
+# 	Favourites		#1036
+# 	Programs		#10001
+# 	Weather			#24027
+# 	Next aired		#31819
+# 	System uptime	#12390
+# 	Style			#29902
+# 	Music library	#31852
+# 	ascending		#21430
+# 	descending		#21431
+#
+# Widgets Locals END here
+#
+msgctxt "#31807"
+msgid "Choose Icon"
+msgstr ""
+
+msgctxt "#31808"
+msgid "Exchange Position"
+msgstr ""
+
+msgctxt "#31809"
+msgid "Music Visualisation Settings"
+msgstr ""
+
+msgctxt "#31810"
+msgid "Show ClearArt instead of Logo"
+msgstr ""
+
+msgctxt "#31811"
+msgid "Use Alt Floor"
+msgstr ""
+
+msgctxt "#31812"
+msgid "Show CDArt"
+msgstr ""
+
+msgctxt "#31813"
+msgid "Main Menu Layout"
+msgstr ""
+
+msgctxt "#31814"
+msgid "Always show Submenu"
+msgstr ""
+
+msgctxt "#31815"
+msgid "Latest Pics"
+msgstr ""
+
+msgctxt "#31816"
+msgid "Random Pics"
+msgstr ""
+
+msgctxt "#31817"
+msgid "Random Artists"
+msgstr ""
+
+msgctxt "#31818"
+msgid "Near Concerts"
+msgstr ""
+
+msgctxt "#31819"
+msgid "Next Aired"
+msgstr ""
+
+msgctxt "#31820"
+msgid "Daily Babes"
+msgstr ""
+
+msgctxt "#31823"
+msgid "World Map + Icons"
+msgstr ""
+
+msgctxt "#31824"
+msgid "Live DVD cases"
+msgstr ""
+
+msgctxt "#31825"
+msgid "Live CD cases"
+msgstr ""
+
+msgctxt "#31826"
+msgid "Live Pictures"
+msgstr ""
+
+msgctxt "#31828"
+msgid "Area Shortcut"
+msgstr ""
+
+msgctxt "#31829"
+msgid "Pre-Defined Function"
+msgstr ""
+
+msgctxt "#31830"
+msgid "QuickList"
+msgstr ""
+
+msgctxt "#31831"
+msgid "Play DVD"
+msgstr ""
+
+msgctxt "#31832"
+msgid "Mute"
+msgstr ""
+
+msgctxt "#31833"
+msgid "Update VideoDB"
+msgstr ""
+
+msgctxt "#31834"
+msgid "Update MusicDB"
+msgstr ""
+
+msgctxt "#31835"
+msgid "Update Addons"
+msgstr ""
+
+msgctxt "#31836"
+msgid "Eject Tray"
+msgstr ""
+
+msgctxt "#31837"
+msgid "Music Party Mode"
+msgstr ""
+
+msgctxt "#31838"
+msgid "Video Party Mode"
+msgstr ""
+
+msgctxt "#31839"
+msgid "Restart Kodi"
+msgstr ""
+
+msgctxt "#31840"
+msgid "Random Movie (Genre)"
+msgstr ""
+
+msgctxt "#31841"
+msgid "Random Movie"
+msgstr ""
+
+msgctxt "#31842"
+msgid "Movies (Cinema Exp.)"
+msgstr ""
+
+msgctxt "#31843"
+msgid "Clean MusicDB"
+msgstr ""
+
+msgctxt "#31844"
+msgid "Clean VideoDB"
+msgstr ""
+
+msgctxt "#31845"
+msgid "Movie Sets"
+msgstr ""
+
+msgctxt "#31846"
+msgid "Around the world"
+msgstr ""
+
+msgctxt "#31847"
+msgid "Video Files"
+msgstr ""
+
+msgctxt "#31848"
+msgid "Movie Genres"
+msgstr ""
+
+msgctxt "#31849"
+msgid "Show case on widget info button"
+msgstr ""
+
+msgctxt "#31850"
+msgid "Home Customizer"
+msgstr ""
+
+msgctxt "#31851"
+msgid "Player Controls"
+msgstr ""
+
+msgctxt "#31852"
+msgid "Music Library"
+msgstr ""
+
+msgctxt "#31853"
+msgid "Music Files"
+msgstr ""
+
+msgctxt "#31854"
+msgid "PVR Area"
+msgstr ""
+
+msgctxt "#31855"
+msgid "Featured Area"
+msgstr ""
+
+msgctxt "#31856"
+msgid "NowPlaying"
+msgstr ""
+
+msgctxt "#31857"
+msgid "Temperature"
+msgstr ""
+
+msgctxt "#31860"
+msgid "QuickConfig"
+msgstr ""
+
+msgctxt "#31861"
+msgid "Labels (Bigger Gaps)"
+msgstr ""
+
+msgctxt "#31862"
+msgid "Single Logo"
+msgstr ""
+
+msgctxt "#31863"
+msgid "Two Columns"
+msgstr ""
+
+msgctxt "#31864"
+msgid "Show Widgets"
+msgstr ""
+
+msgctxt "#31865"
+msgid "WakeOnLAN"
+msgstr ""
+
+msgctxt "#31866"
+msgid "Video Folder"
+msgstr ""
+
+msgctxt "#31867"
+msgid "Music Folder"
+msgstr ""
+
+msgctxt "#31868"
+msgid "Enter MAC Address"
+msgstr ""
+
+msgctxt "#31869"
+msgid "Online Video Help"
+msgstr ""
+
+msgctxt "#31870"
+msgid "Help"
+msgstr ""
+
+msgctxt "#31871"
+msgid "Available at Passion-XBMC repository"
+msgstr ""
+
+msgctxt "#31872"
+msgid "Mixed Movies"
+msgstr ""
+
+msgctxt "#31873"
+msgid "Mixed TV"
+msgstr ""
+
+msgctxt "#31874"
+msgid "Mixed Music"
+msgstr ""
+
+msgctxt "#31875"
+msgid "No Content for this Area"
+msgstr ""
+
+msgctxt "#31876"
+msgid "Appearance Setup"
+msgstr ""
+
+msgctxt "#31877"
+msgid "Home NowPlaying Customizer"
+msgstr ""
+
+msgctxt "#31878"
+msgid "Click on \"Play\" buttons To preview settings"
+msgstr ""
+
+msgctxt "#31879"
+msgid "Panel Info"
+msgstr ""
+
+msgctxt "#31880"
+msgid "Image"
+msgstr ""
+
+msgctxt "#31881"
+msgid "Click on buttons to customize them"
+msgstr ""
+
+msgctxt "#31882"
+msgid "Disable option to hide widgets by pressing \"Back\""
+msgstr ""
+
+msgctxt "#31883"
+msgid "Art"
+msgstr ""
+
+msgctxt "#31885"
+msgid "Area-specific Options"
+msgstr ""
+
+msgctxt "#31886"
+msgid "Search Trailer"
+msgstr ""
+
+msgctxt "#31887"
+msgid "Music Info Mode"
+msgstr ""
+
+msgctxt "#31888"
+msgid "PRESS ANY KEY"
+msgstr ""
+
+msgctxt "#31889"
+msgid "Next Tracks:"
+msgstr ""
+
+msgctxt "#31890"
+msgid "Collections"
+msgstr ""
+
+msgctxt "#31891"
+msgid "Folders"
+msgstr ""
+
+msgctxt "#31892"
+msgid "Categories"
+msgstr ""
+
+msgctxt "#31895"
+msgid "No library content for this media type"
+msgstr ""
+
+msgctxt "#31896"
+msgid "10 Day"
+msgstr ""
+
+msgctxt "#31897"
+msgid "Press DOWN for extended info"
+msgstr ""
+
+msgctxt "#31898"
+msgid "Visibility"
+msgstr ""
+
+msgctxt "#31899"
+msgid "Shutdown timer"
+msgstr ""
+
+msgctxt "#31900"
+msgid "Add-on missing"
+msgstr ""
+
+msgctxt "#31902"
+msgid "Attention"
+msgstr ""
+
+msgctxt "#31904"
+msgid "ExtraFanArt is not natively supported by Media Centre"
+msgstr ""
+
+msgctxt "#31905"
+msgid "Needs script.cinema.experience to be available"
+msgstr ""
+
+msgctxt "#31906"
+msgid "Needs script.randommovie to be available"
+msgstr ""
+
+msgctxt "#31909"
+msgid "Bar Style"
+msgstr ""
+
+msgctxt "#31910"
+msgid "This feature requires the ColorPicker add-on"
+msgstr ""
+
+msgctxt "#31911"
+msgid "Updating add-on repos"
+msgstr ""
+
+msgctxt "#31912"
+msgid "Updating local add-ons"
+msgstr ""
+
+msgctxt "#31913"
+msgid "Click on furniture to see available options"
+msgstr ""
+
+msgctxt "#31914"
+msgid "Click on menu items to see available options"
+msgstr ""
+
+msgctxt "#31915"
+msgid "Play some Music to get live Preview of Settings"
+msgstr ""
+
+msgctxt "#31916"
+msgid "Needs \"Additional Artist Info\" activated in Artistslideshow Plugin"
+msgstr ""
+
+msgctxt "#31917"
+msgid "Chance Precip"
+msgstr ""
+
+msgctxt "#31924"
+msgid "Play Theme"
+msgstr ""
+
+msgctxt "#31929"
+msgid "Moon phase"
+msgstr ""
+
+msgctxt "#31940"
+msgid "Pressure"
+msgstr ""
+
+msgctxt "#31945"
+msgid "Video Add-on"
+msgstr ""
+
+msgctxt "#31946"
+msgid "Music Add-on"
+msgstr ""
+
+msgctxt "#31947"
+msgid "Picture Add-on"
+msgstr ""
+
+msgctxt "#31948"
+msgid "Program Add-on"
+msgstr ""
+
+msgctxt "#31949"
+msgid "Video Playlist"
+msgstr ""
+
+msgctxt "#31950"
+msgid "Music Playlist"
+msgstr ""
+
+msgctxt "#31951"
+msgid "Custom"
+msgstr ""
+
+msgctxt "#31952"
+msgid "Language flags"
+msgstr ""
+
+msgctxt "#31953"
+msgid "Favourite"
+msgstr ""
+
+msgctxt "#31954"
+msgid "Function"
+msgstr ""
+
+msgctxt "#31955"
+msgid "Activate Bottom Menu (Play DVD, toggle widgets)"
+msgstr ""
+
+msgctxt "#31956"
+msgid "Choose Type"
+msgstr ""
+
+msgctxt "#31957"
+msgid "Choose 2nd widget"
+msgstr ""
+
+msgctxt "#31958"
+msgid "Menu label"
+msgstr ""
+
+msgctxt "#31959"
+msgid "Icon"
+msgstr ""
+
+msgctxt "#31960"
+msgid "Set icon"
+msgstr ""
+
+msgctxt "#31961"
+msgid "Set up 'Featured' window appearance"
+msgstr ""
+
+msgctxt "#31962"
+msgid "Set up 'Settings' window appearance"
+msgstr ""
+
+msgctxt "#31963"
+msgid "Fallback settings"
+msgstr ""
+
+msgctxt "#31964"
+msgid "Fallback"
+msgstr ""
+
+msgctxt "#31965"
+msgid "Playlist widget"
+msgstr ""
+
+msgctxt "#31967"
+msgid "Others"
+msgstr ""
+
+msgctxt "#31968"
+msgid "Disable Flags"
+msgstr ""
+
+msgctxt "#31969"
+msgid "Flags Paths"
+msgstr ""
+
+msgctxt "#31970"
+msgid "All Flags"
+msgstr ""
+
+msgctxt "#31971"
+msgid "Aspect Ratio Flags"
+msgstr ""
+
+msgctxt "#31972"
+msgid "Audio Flags"
+msgstr ""
+
+msgctxt "#31973"
+msgid "Resolution Flags"
+msgstr ""
+
+msgctxt "#31974"
+msgid "Source Flags"
+msgstr ""
+
+msgctxt "#31975"
+msgid "Colored icons"
+msgstr ""
+
+msgctxt "#31976"
+msgid "Colored TvGuide"
+msgstr ""
+
+msgctxt "#31977"
+msgid "Colored Others"
+msgstr ""
+
+msgctxt "#31978"
+msgid "Set to the [B]Flag[/B] Folder"
+msgstr ""
+
+msgctxt "#31979"
+msgid "Set to the [B]Studios[/B] Folder"
+msgstr ""
+
+msgctxt "#31980"
+msgid "Set to the [B]Language[/B] Folder"
+msgstr ""
+
+msgctxt "#31981"
+msgid "Set Path for Colored Flags"
+msgstr ""
+
+msgctxt "#31982"
+msgid "Set Path for Reloaded Flags"
+msgstr ""
+
+msgctxt "#31983"
+msgid "Set Path for Studios Flags"
+msgstr ""
+
+msgctxt "#31984"
+msgid "Set Path for Language Flags"
+msgstr ""
+
+msgctxt "#31985"
+msgid "Clear Paths"
+msgstr ""
+
+msgctxt "#31986"
+msgid "Colored Studios"
+msgstr ""
+
+msgctxt "#31987"
+msgid "Language"
+msgstr ""
+
+msgctxt "#31988"
+msgid "Reloaded"
+msgstr ""
+
+msgctxt "#31989"
+msgid "Disable Logo on Plot"
+msgstr ""
+
+msgctxt "#31990"
+msgid "Square Thumbnails"
+msgstr ""
+
+msgctxt "#31992"
+msgid "IMDB Flag"
+msgstr ""
+
+msgctxt "#31993"
+msgid "On Air"
+msgstr ""
+
+msgctxt "#31994"
+msgid "Last Aired"
+msgstr ""
+
+msgctxt "#31996"
+msgid "Resume Flag"
+msgstr ""
+
+msgctxt "#31997"
+msgid "Polaroid"
+msgstr ""
+
+msgctxt "#31999"
+msgid "Login"
+msgstr ""

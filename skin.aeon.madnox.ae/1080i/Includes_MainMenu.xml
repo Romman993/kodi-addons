@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include name="Furniture_ClassicHomeGradient">
+		<control type="image">
+			<top>455</top>
+			<width>2120</width>
+			<height>225</height>
+			<texture>home/homemenu_gradient.png</texture>
+		</control>
+		<control type="image">
+			<top>453</top>
+			<width>1920</width>
+			<height>225</height>
+			<texture colordiffuse="$VAR[DialogColorVar]">home/homemenu_overlay.png</texture>
+			<visible>Skin.HasSetting(glasshome)</visible>
+		</control>
+	</include>
+	<include name="MainMenuLabels">
+		<top>-3</top>
+		<height>225</height>
+		<align>center</align>
+		<label>$INFO[ListItem.Label]</label>
+		<font>Font_MainClassic</font>
+	</include>
+	<include name="MainMenuListContent">
+		<left>-338</left>
+		<top>450</top>
+		<width>3069</width>
+		<height>225</height>
+		<hitrect x="-238" y="475" w="2400" h="130"/>
+		<onleft>9000</onleft>
+		<onright>9000</onright>
+		<onup condition="Control.IsVisible(90010)">90010</onup>
+		<onup condition="!Control.IsVisible(90010) + Control.IsVisible(90020)">90020</onup>
+		<ondown>9010</ondown>
+		<scrolltime tween="quadratic">300</scrolltime>
+		<include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
+		<include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
+		<include>DefaultControl</include>
+		<visible>![Player.HasMedia + System.IdleTime(8)]</visible>
+		<orientation>horizontal</orientation>
+		<animation effect="slide" end="-302,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
+		<animation effect="fade" end="100" time="160">Visible</animation>
+		<animation effect="fade" start="100" end="30" time="160" condition="[ControlGroup(9001).HasFocus | Control.HasFocus(8000) | Control.HasFocus(7000) | ControlGroup(6000).HasFocus | ControlGroup(5000).HasFocus]">conditional</animation>
+		<itemlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
+			<control type="image">
+				<left>252</left>
+				<top>64</top>
+				<width>88</width>
+				<height>88</height>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<colordiffuse>white5</colordiffuse>
+			</control>
+			<control type="label">
+				<left>171</left>
+				<top>29</top>
+				<width>250</width>
+				<height>225</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg30_Caps</font>
+				<textcolor>white4</textcolor>
+			</control>
+		</itemlayout>
+		<focusedlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
+			<control type="group">
+				<visible>Skin.HasSetting(MenuLargeicons)</visible>
+				<animation effect="zoom" start="50" end="100" center="296,108" delay="160" tween="back" time="240">Focus</animation>
+				<control type="image">
+					<left>214</left>
+					<top>5</top>
+					<width>160</width>
+					<height>160</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<!-- <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse> -->
+				</control>
+			</control>
+			<control type="group">
+				<visible>!Skin.HasSetting(MenuLargeicons)</visible>
+				<animation effect="zoom" start="80" end="100" center="296,108" delay="160" tween="back" time="240">Focus</animation>
+				<control type="image">
+					<left>252</left>
+					<top>64</top>
+					<width>88</width>
+					<height>88</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
+				</control>
+			</control>
+			<control type="label">
+				<left>171</left>
+				<top>29</top>
+				<width>250</width>
+				<height>225</height>
+				<align>center</align>
+				<label>[B]$INFO[ListItem.Label][/B]</label>
+				<font>Font_Reg30_Caps</font>
+				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+			</control>
+		</focusedlayout>
+		<itemlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+			<control type="label">
+				<width>519</width>
+				<textcolor>white5</textcolor>
+				<include>MainMenuLabels</include>
+			</control>
+		</itemlayout>
+		<focusedlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
+			<control type="label">
+				<width>519</width>
+				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+				<include>MainMenuLabels</include>
+			</control>
+		</focusedlayout>
+		<itemlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
+			<control type="label">
+				<width>639</width>
+				<textcolor>white5</textcolor>
+				<include>MainMenuLabels</include>
+			</control>
+		</itemlayout>
+		<focusedlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
+			<control type="label">
+				<width>639</width>
+				<textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+				<include>MainMenuLabels</include>
+			</control>
+		</focusedlayout>
+		<content>
+			<include>skinshortcuts-mainmenu</include>
+		</content>
+	</include>
+	<include name="SubMenuListContent">
+		<left>145</left>
+		<top>-4</top>
+		<width>1150</width>
+		<height>50</height>
+		<onleft>9010</onleft>
+		<onright>9010</onright>
+		<orientation>horizontal</orientation>
+		<focusposition>2</focusposition>
+		<hitrect x="-238" y="0" w="2400" h="130"/>
+		<scrolltime tween="quadratic">300</scrolltime>
+		<onup>9000</onup>
+		<onback>SetFocus(9000)</onback>
+		<ondown condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(90020)">90020</ondown>
+		<ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020) + Skin.HasSetting(bottomindicator)">SetFocus(9011)</ondown>
+		<ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020) + !Skin.HasSetting(bottomindicator) + Control.IsVisible(90010)">90010</ondown>
+		<ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(90020) + !Skin.HasSetting(bottomindicator) + !Control.IsVisible(90010)">9000</ondown>
+		<ondown condition="Skin.HasSetting(lowermainmenu) + Skin.HasSetting(bottomindicator)">SetFocus(9011)</ondown>
+		<ondown condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(bottomindicator) + Control.IsVisible(90020)">90020</ondown>
+		<ondown condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(bottomindicator) + !Control.IsVisible(90020) + Control.IsVIsible(90010)">90010</ondown>
+		<ondown condition="Skin.HasSetting(lowermainmenu) + !Skin.HasSetting(bottomindicator) + !Control.IsVisible(90020) + Control.IsVIsible(90010)">9000</ondown>
+
+		<itemlayout width="230" height="50">
+			<control type="label">
+				<left>1</left>
+				<width>194</width>
+				<height>50</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>grey2</textcolor>
+			</control>
+		</itemlayout>
+		<focusedlayout width="230" height="50">
+			<control type="label">
+				<left>10</left>
+				<width>202</width>
+				<height>52</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>grey2</textcolor>
+				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
+				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+				<scroll>true</scroll>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<width>202</width>
+				<height>52</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+				<animation effect="zoom" center="112,25" start="100" end="120" time="160" tween="quadratic">Focus</animation>
+				<animation effect="zoom" center="112,25" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+				<scroll>true</scroll>
+				<include>Animation_VisibleChange200</include>
+				<visible>Control.HasFocus(9010)</visible>
+			</control>
+		</focusedlayout>
+		<content>
+			<include>skinshortcuts-submenu</include>
+		</content>
+	</include>
+	<include name="MainMenuFixedList">
+		<control type="fixedlist" id="9000">
+			<include>MainMenuListContent</include>
+		</control>
+	</include>
+	<include name="MainMenuWrapList">
+		<control type="wraplist" id="9000">
+			<include>MainMenuListContent</include>
+		</control>
+	</include>
+	<include name="SubMenuFixedList">
+		<control type="fixedlist" id="9010">
+			<include>SubMenuListContent</include>
+		</control>
+	</include>
+	<include name="SubMenuWrapList">
+		<control type="wraplist" id="9010">
+			<include>SubMenuListContent</include>
+		</control>
+	</include>
+	<include name="FocusPosition4">
+		<focusposition>4</focusposition>
+	</include>
+	<include name="FocusPosition2">
+		<focusposition>2</focusposition>
+	</include>
+	<include name="DefaultControl">
+		<include condition="String.Contains(Skin.String(MainMenuFocus),30)">DefaultControl30</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),29)">DefaultControl29</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),28)">DefaultControl28</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),27)">DefaultControl27</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),26)">DefaultControl26</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),25)">DefaultControl25</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),24)">DefaultControl24</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),23)">DefaultControl23</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),22)">DefaultControl22</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),21)">DefaultControl21</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),20)">DefaultControl20</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),19)">DefaultControl19</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),18)">DefaultControl18</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),17)">DefaultControl17</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),16)">DefaultControl16</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),15)">DefaultControl15</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),14)">DefaultControl14</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),13)">DefaultControl13</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),12)">DefaultControl12</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),11)">DefaultControl11</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),10)">DefaultControl10</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),9)">DefaultControl9</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),8)">DefaultControl8</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),7)">DefaultControl7</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),6)">DefaultControl6</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),5)">DefaultControl5</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),4)">DefaultControl4</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),3)">DefaultControl3</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),2)">DefaultControl2</include>
+		<include condition="String.Contains(Skin.String(MainMenuFocus),1)">DefaultControl1</include>
+	</include>
+	<include name="DefaultControl1">
+		<defaultcontrol>1</defaultcontrol>
+	</include>
+	<include name="DefaultControl2">
+		<defaultcontrol>2</defaultcontrol>
+	</include>
+	<include name="DefaultControl3">
+		<defaultcontrol>3</defaultcontrol>
+	</include>
+	<include name="DefaultControl4">
+		<defaultcontrol>4</defaultcontrol>
+	</include>
+	<include name="DefaultControl5">
+		<defaultcontrol>5</defaultcontrol>
+	</include>
+	<include name="DefaultControl6">
+		<defaultcontrol>6</defaultcontrol>
+	</include>
+	<include name="DefaultControl7">
+		<defaultcontrol>7</defaultcontrol>
+	</include>
+	<include name="DefaultControl8">
+		<defaultcontrol>8</defaultcontrol>
+	</include>
+	<include name="DefaultControl9">
+		<defaultcontrol>9</defaultcontrol>
+	</include>
+	<include name="DefaultControl10">
+		<defaultcontrol>10</defaultcontrol>
+	</include>
+	<include name="DefaultControl11">
+		<defaultcontrol>11</defaultcontrol>
+	</include>
+	<include name="DefaultControl12">
+		<defaultcontrol>12</defaultcontrol>
+	</include>
+	<include name="DefaultControl13">
+		<defaultcontrol>13</defaultcontrol>
+	</include>
+	<include name="DefaultControl14">
+		<defaultcontrol>14</defaultcontrol>
+	</include>
+	<include name="DefaultControl15">
+		<defaultcontrol>15</defaultcontrol>
+	</include>
+	<include name="DefaultControl16">
+		<defaultcontrol>16</defaultcontrol>
+	</include>
+	<include name="DefaultControl17">
+		<defaultcontrol>17</defaultcontrol>
+	</include>
+	<include name="DefaultControl18">
+		<defaultcontrol>18</defaultcontrol>
+	</include>
+	<include name="DefaultControl19">
+		<defaultcontrol>19</defaultcontrol>
+	</include>
+	<include name="DefaultControl20">
+		<defaultcontrol>20</defaultcontrol>
+	</include>
+	<include name="DefaultControl21">
+		<defaultcontrol>21</defaultcontrol>
+	</include>
+	<include name="DefaultControl22">
+		<defaultcontrol>22</defaultcontrol>
+	</include>
+	<include name="DefaultControl23">
+		<defaultcontrol>23</defaultcontrol>
+	</include>
+	<include name="DefaultControl24">
+		<defaultcontrol>24</defaultcontrol>
+	</include>
+	<include name="DefaultControl25">
+		<defaultcontrol>25</defaultcontrol>
+	</include>
+	<include name="DefaultControl26">
+		<defaultcontrol>26</defaultcontrol>
+	</include>
+	<include name="DefaultControl27">
+		<defaultcontrol>27</defaultcontrol>
+	</include>
+	<include name="DefaultControl28">
+		<defaultcontrol>28</defaultcontrol>
+	</include>
+	<include name="DefaultControl29">
+		<defaultcontrol>29</defaultcontrol>
+	</include>
+	<include name="DefaultControl30">
+		<defaultcontrol>30</defaultcontrol>
+	</include>
+
+	<include name="MainMenuBottomBar">
+		<control type="group">
+			<visible>!Window.IsActive(1159) + Skin.HasSetting(bottomMenu)</visible>
+			<include>Animation_WindowFade250</include>
+			<animation effect="slide" start="0,100" end="0,0" time="320" tween="quadratic">VisibleChange</animation>
+			<control type="image">
+				<left>698</left>
+				<top>1003</top>
+				<width>525</width>
+				<height>87</height>
+				<texture>osd/osd_top_bar.png</texture>
+			</control>
+			<control type="grouplist">
+				<left>765</left>
+				<top>1048</top>
+				<width>380</width>
+				<align>center</align>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="image">
+					<top>2</top>
+					<width>60</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio>keep</aspectratio>
+					<texture>common/logo_pics.png</texture>
+					<colordiffuse>black</colordiffuse>
+					<visible>Player.HasMedia</visible>
+				</control>
+				<control type="image">
+					<width>60</width>
+					<height>35</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<aspectratio>keep</aspectratio>
+					<texture>common/logo_music.png</texture>
+					<colordiffuse>black</colordiffuse>
+					<visible>System.HasMediadvd</visible>
+				</control>
+				<control type="image">
+					<top>-5</top>
+					<width>45</width>
+					<height>45</height>
+					<texture>dialogs/circle/$INFO[Container(8014).ListItem.PercentPlayed].png</texture>
+					<colordiffuse>black</colordiffuse>
+					<visible>Integer.IsGreater(Container(8014).NumItems,0)</visible>
+				</control>
+				<control type="label">
+					<top>2</top>
+					<width min="50" max="600">auto</width>
+					<height>30</height>
+					<label>$INFO[Container(8014).ListItem.Label]</label>
+					<font>Font_Reg26_Caps</font>
+					<textcolor>black</textcolor>
+					<scroll>false</scroll>
+					<visible>Integer.IsGreater(Container(8014).NumItems,0)</visible>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="LibraryStats">
+		<control type="group">
+			<visible>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(AlternateTimeStats)</visible>
+			<visible>!String.IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
+			<animation effect="slide" end="-750,0" time="240">WindowClose</animation>
+			<animation effect="slide" start="-750,0" end="0,0" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
+			<animation effect="slide" start="-750" end="0" time="240">VisibleChange</animation>
+			<animation effect="slide" start="-750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
+			<animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
+			<control type="image">
+				<top>-1</top>
+				<width>794</width>
+				<height>87</height>
+				<texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
+				<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+				<animation effect="slide" end="-200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
+				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>15</left>
+				<width>703</width>
+				<height>36</height>
+				<label>$VAR[LibraryStatsVar]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<scroll>true</scroll>
+				<visible>!Skin.HasSetting(shorterhomebars)</visible>
+			</control>
+			<control type="label">
+				<left>15</left>
+				<top>-1</top>
+				<width>503</width>
+				<height>36</height>
+				<label>$VAR[ShortLibraryStatsVar]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<scroll>true</scroll>
+				<visible>Skin.HasSetting(shorterhomebars)</visible>
+			</control>
+		</control>
+	</include>
+	<include name="PlayListStatsList">
+		<control type="list" id="43230">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(InfoLine),Movie playlist) | String.IsEqual(Container(9000).ListItem.Property(InfoLine),TV Show playlist) | String.IsEqual(Container(9000).ListItem.Property(InfoLine),Music Video playlist)</visible>
+			<width>1</width>
+			<height>1</height>
+			<focusedlayout/>
+			<itemlayout/>
+			<content>$VAR[PlaylistStatsContentVar]</content>
+		</control>
+	</include>
+	<include name="TimePanel">
+		<control type="group">
+			<left>760r</left>
+			<visible>!Skin.HasSetting(DisableTimePanel) + !Skin.HasSetting(AlternateTimeStats)</visible>
+			<animation effect="slide" end="750,0" time="240">WindowClose</animation>
+			<animation effect="slide" start="750,0" end="0,0" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
+			<animation effect="slide" start="750,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(timehomehigh)">Conditional</animation>
+			<animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+			<animation effect="slide" start="750" end="0" time="240">VisibleChange</animation>
+			<control type="image">
+				<left>-45</left>
+				<top>-46</top>
+				<width>804</width>
+				<height>87</height>
+				<texture>$VAR[TimePanelImageVar]</texture>
+				<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+				<animation effect="slide" end="200" time="240" condition="Skin.HasSetting(shorterhomebars)">Conditional</animation>
+				<animation effect="rotatex" end="180" time="320" center="20" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>150</left>
+				<width>600</width>
+				<height>36</height>
+				<align>right</align>
+				<label>[COLOR grey]$INFO[System.Date(ddd)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<visible>!Skin.HasSetting(shorterhomebars) + Skin.HasSetting(W_condition_image)</visible>
+			</control>
+			<control type="label">
+				<left>150</left>
+				<width>600</width>
+				<height>36</height>
+				<align>right</align>
+				<label>[COLOR grey]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<visible>Skin.HasSetting(shorterhomebars)</visible>
+			</control>
+			<control type="label">
+				<left>150</left>
+				<width>600</width>
+				<height>36</height>
+				<align>right</align>
+				<label>[COLOR grey]$INFO[System.Date(DDD)] • $INFO[System.Date(D)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
+				<font>Font_Reg28_Caps</font>
+				<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<visible>!Skin.HasSetting(W_condition_image)</visible>
+			</control>
+			<control type="grouplist">
+				<left>30</left>
+				<visible>Weather.IsFetched + !Skin.HasSetting(shorterhomebars)</visible>
+				<include>Animation_VisibleChange400</include>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<animation effect="slide" end="50" time="240" condition="!Skin.HasSetting(W_condition_image)">Conditional</animation>
+				<control type="label">
+					<width min="0" max="700">auto</width>
+					<height>36</height>
+					<label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• [/COLOR]</label>
+					<font>Font_Reg28_Caps</font>
+					<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				</control>
+				<control type="image">
+					<left>-20</left>
+					<top>-13</top>
+					<width>65</width>
+					<height>65</height>
+					<colordiffuse>white2</colordiffuse>
+					<texture>$VAR[Realweatherimg]$INFO[Weather.FanartCode].png</texture>
+					<visible>!Skin.HasSetting(W_condition_image)</visible>
+					<animation effect="slide" end="20" time="320" condition="Skin.HasSetting(W_real_image)">Conditional</animation>
+				</control>
+				<control type="label">
+					<top>-3</top>
+					<width>275</width>
+					<height>40</height>
+					<aligny>top</aligny>
+					<label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+					<font>Font_Reg33_Caps</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<visible>Skin.HasSetting(W_condition_image)</visible>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="RSSPanel">
+		<control type="group">
+			<top>610</top>
+			<visible>[system.getbool(lookandfeel.enablerssfeeds)] + !Skin.HasSetting(DisableRSS)</visible>
+			<animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !String.IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1115)">Conditional</animation>
+			<animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !String.IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1115)">Conditional</animation>
+			<animation effect="slide" end="1920,0" time="240">WindowClose</animation>
+			<animation effect="slide" start="1880,0" end="0,0" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
+			<animation effect="slide" start="1880,0" end="0,0" delay="2000" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(rsshomelow)">Conditional</animation>
+			<animation effect="slide" end="0,-19" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu) + !Skin.HasSetting(rsshomelow)">Conditional</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" end="100" time="240" />
+				<effect type="slide" start="0,-40" end="0,0" time="240" tween="cubic" easing="inout" />
+			</animation>
+			<animation type="Hidden" reversible="false">
+				<effect type="fade" start="100" end="0" time="240" />
+				<effect type="slide" end="0,-40" time="240" tween="cubic" easing="inout" />
+			</animation>
+			<visible>[!Control.HasFocus(9010) + ![Integer.IsGreater(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]] | Skin.HasSetting(rsshomelow)</visible>
+			<control type="group">
+				<visible>Skin.HasSetting(alternativerss)</visible>
+				<animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+				<control type="image">
+					<top>2</top>
+					<width>1920</width>
+					<height>87</height>
+					<texture flipy="true">$VAR[NavBarImageVar]</texture>
+					<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+					<animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+					<animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+				</control>
+				<control type="group">
+					<control type="rss">
+						<top>7</top>
+						<width>1920</width>
+						<height>50</height>
+						<font>Font_Reg26</font>
+						<textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+						<urlset>1</urlset>
+						<headlinecolor>grey</headlinecolor>
+						<titlecolor>$VAR[HomeMenuWidgetTextVar]</titlecolor>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!Skin.HasSetting(alternativerss)</visible>
+				<animation effect="slide" end="0,429" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+				<control type="image">
+					<left>81</left>
+					<width>1880</width>
+					<height>87</height>
+					<texture>home/rssbar_mid.png</texture>
+					<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+					<animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
+				</control>
+				<control type="rss">
+					<left>165</left>
+					<top>3</top>
+					<width>1880</width>
+					<height>86</height>
+					<font>Font_Reg26</font>
+					<textcolor>a9000000</textcolor>
+					<urlset>1</urlset>
+					<headlinecolor>a9000000</headlinecolor>
+					<titlecolor>dc2B60DE</titlecolor>
+				</control>
+				<control type="group">
+					<animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+					<control type="image">
+						<left>116</left>
+						<width>200</width>
+						<height>40</height>
+						<texture>home/rssbar_mid_fade.png</texture>
+						<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+					</control>
+					<control type="image">
+						<left>1785</left>
+						<width>165</width>
+						<height>40</height>
+						<texture>home/rssbar_begin_fade.png</texture>
+						<colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

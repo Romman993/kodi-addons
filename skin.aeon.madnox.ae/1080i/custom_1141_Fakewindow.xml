@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="1141" type="window">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<onload condition="String.IsEqual(Window(home).Property(activewindow),videos)">ReplaceWindow(videos,$ESCINFO[Window(home).Property(containerpath)],return)</onload>
+	<onload condition="String.IsEqual(Window(home).Property(activewindow),addonbrowser)">ReplaceWindow(addonbrowser)</onload>
+	<onload condition="String.IsEqual(Window(home).Property(activewindow),programs)">ReplaceWindow(programs)</onload>
+	<onload condition="String.IsEqual(Window(home).Property(activewindow),musiclibrary)">ReplaceWindow(music,$ESCINFO[Window(home).Property(containerpath)],return)</onload>
+	<onload condition="String.IsEqual(Window(home).Property(activewindow),musicplaylist)">ReplaceWindow(musicplaylist)</onload>
+	<onload condition="String.IsEqual(Window(home).Property(activewindow),videoplaylist)">ReplaceWindow(videoplaylist)</onload>
+	<coordinates>
+		<system>1</system>
+	</coordinates>
+	<controls>
+		<control type="button" id="9000">
+			<include>HiddenObject</include>
+		</control>
+		<control type="image">
+			<texture colordiffuse="black">common/white.png</texture>
+			<include>Animation_WindowFade200</include>
+			<include>FullscreenDimensions</include>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1156">
+	<defaultcontrol always="true">1000</defaultcontrol>
+	<onunload condition="!Window.IsActive(1115) + System.IdleTime(30) + Skin.HasSetting(musicvisinfomode) + ![Control.HasFocus(5012) | Control.HasFocus(6012) | Control.HasFocus(7012) | Control.HasFocus(8012) | Control.HasFocus(9012)]">SetFocus(7012)</onunload>
+	<onunload condition="!Window.IsActive(1115) + System.IdleTime(30) + Skin.HasSetting(musicvisinfomode)">Action(Right)</onunload>
+	<onunload condition="!Window.IsActive(1115) + System.IdleTime(30) + Skin.HasSetting(musicvisinfomode)">Control.Move(5010,1)</onunload>
+	<onunload condition="!Window.IsActive(1115) + System.IdleTime(30) + Skin.HasSetting(musicvisinfomode)">Control.Move(6010,1)</onunload>
+	<coordinates>
+		<system>1</system>
+	</coordinates>
+	<controls>
+		<control type="button" id="1000">
+			<include>HiddenObject</include>
+			<onfocus>Dialog.Close(1156)</onfocus>
+		</control>
+	</controls>
+</window>

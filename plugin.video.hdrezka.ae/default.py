@@ -351,8 +351,8 @@ class HdrezkaTV():
     def get_video_link_from_iframe(self, url, mainurl):
 
         playlist_domain = 'streamblast.cc'
-        playlist_domain2 = 'herotowe.org'
-        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0'
+        playlist_domain2 = 'annishan.com'
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
 
         headers = {
             "User-Agent": usr_agent,
@@ -363,12 +363,9 @@ class HdrezkaTV():
         response = urllib2.urlopen(request).read()
 
         src_urljs = "http://" + playlist_domain2 + response.split('<script src="')[-1].split('"></script>')[0]
-        wkey = response.split("window['")[-1].split("']")[0]
-        wvalue = response.split(wkey + "'] = '")[-1].split("';")[0]
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]
-        user_token = response.split("user_token: '")[-1].split("',")[0]
 
         headers = {
             "User-Agent": usr_agent,
@@ -380,14 +377,12 @@ class HdrezkaTV():
 
         values = {}
         attrs = {}
-
         attrs['purl'] = "/vs"
-        attrs['X-Access-Level'] = user_token
 
-        passkey = unhexlify('7316d0c4' + response.split('getVideoManifests:function(){var e="')[-1].split('"')[0])
-        ivkey = unhexlify(re.split('},[a-z]="', response)[-1].split('"')[0])
+        passkey = unhexlify('7316d0c4' + re.split('{var [a-z]="', response)[-1].split('"')[0])
+        ivkey = unhexlify('bab53281266c72142774ec6313521b49')
 
-        msg = '{"a":%s,"b":"%s","c":true,"d":"%s","e":"%s","f":"%s"}' % (partner_id, domain_id, wvalue, video_token, usr_agent)
+        msg = '{"a":%s,"b":"%s","c":true,"e":"%s","f":"%s"}' % (partner_id, domain_id, video_token, usr_agent)
         cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)
         ciphertext = cipher.update(msg) + cipher.final()
         values['q'] = b64encode(ciphertext)
@@ -407,6 +402,7 @@ class HdrezkaTV():
         request = urllib2.Request('http://' + playlist_domain2 + attrs["purl"], urllib.urlencode(values), headers)
         request.get_method = lambda: 'POST'
         response = urllib2.urlopen(request).read()
+        xbmc.log("*** [%s]" % response, xbmc.LOGNOTICE)
 
         data = json.loads(response.decode('unicode-escape'))
         playlisturl = data['m3u8']

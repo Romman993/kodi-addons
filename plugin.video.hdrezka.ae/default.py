@@ -379,8 +379,8 @@ class HdrezkaTV():
         attrs = {}
         attrs['purl'] = "/vs"
 
-        passkey = unhexlify('7316d0c4' + re.split('{var [a-z]="', response)[-1].split('"')[0])
-        ivkey = unhexlify('bab53281266c72142774ec6313521b49')
+        passkey = unhexlify('4d84b185684517790cbd7f4f27b3c67e3598541812f1d4e78e9f6f64ea527d71')
+        ivkey = unhexlify('79e4add175162a762071a11fe45d249f')
 
         msg = '{"a":%s,"b":"%s","c":true,"e":"%s","f":"%s"}' % (partner_id, domain_id, video_token, usr_agent)
         cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)

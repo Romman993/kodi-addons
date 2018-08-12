@@ -351,7 +351,7 @@ class HdrezkaTV():
     def get_video_link_from_iframe(self, url, mainurl):
 
         playlist_domain = 'streamblast.cc'
-        playlist_domain2 = 'annishan.com'
+        playlist_domain2 = 'liquinota.com'
         usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
 
         headers = {
@@ -379,7 +379,7 @@ class HdrezkaTV():
         attrs = {}
         attrs['purl'] = "/vs"
 
-        passkey = unhexlify('4d84b185684517790cbd7f4f27b3c67e3598541812f1d4e78e9f6f64ea527d71')
+        passkey = unhexlify('19f15a0031b8548acfa8da1f2cdf7f73179ac13f3c4938c8bad5a1c93dd8fe06')
         ivkey = unhexlify('79e4add175162a762071a11fe45d249f')
 
         msg = '{"a":%s,"b":"%s","c":true,"e":"%s","f":"%s"}' % (partner_id, domain_id, video_token, usr_agent)
@@ -402,7 +402,6 @@ class HdrezkaTV():
         request = urllib2.Request('http://' + playlist_domain2 + attrs["purl"], urllib.urlencode(values), headers)
         request.get_method = lambda: 'POST'
         response = urllib2.urlopen(request).read()
-        xbmc.log("*** [%s]" % response, xbmc.LOGNOTICE)
 
         data = json.loads(response.decode('unicode-escape'))
         playlisturl = data['m3u8']

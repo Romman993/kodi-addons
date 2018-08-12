@@ -1,55 +1,10 @@
-2.3.5
-[fix] changes on moonwalk
-
-2.3.4
-[fix] changes on moonwalk
-
-2.3.3
-[fix] changes on moonwalk
-
-2.3.2
-[fix] changes on moonwalk
-
-2.3.1
+2.3.1 - 2.3.7
 [fix] changes on moonwalk
 
 2.3.0
 [fix] changes on the site; add M2Crypto 
 
-2.2.9
-[fix] changes on the site
-
-2.2.8
-[fix] changes on the site
-
-2.2.7
-[fix] changes on the site
-
-2.2.6
-[fix] changes on the site
-
-2.2.5
-[fix] changes on the site
-
-2.2.4
-[fix] changes on the site
-
-2.2.3
-[fix] changes on the site
-
-2.2.2
-[fix] changes on the site
-
-2.2.1
-[fix] changes on the site
-
-2.2.0
-[fix] changes on the site
-
-2.1.9
-[fix] changes on the site and fix search
-
-2.1.8
+2.1.8 - 2.2.9
 [fix] changes on the site
 
 2.1.7

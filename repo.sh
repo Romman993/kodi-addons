@@ -29,7 +29,6 @@ if [ $FOR_SYS == "aml" ]; then
               repository.dandy.kodi \
               repository.evgen_dev \
               skin.aeon.nox.ae \
-              skin.aeon.madnox.ae \
               service.hyperion"
 elif [ $FOR_SYS == "pc" ]; then
   REPO_DIR="repo-pc"

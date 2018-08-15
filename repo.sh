@@ -26,6 +26,7 @@ if [ $FOR_SYS == "aml" ]; then
               script.torrent-tv.ae \
               plugin.video.zona.mobi.ae \
               plugin.video.hdrezka.ae \
+              plugin.video.torrserver \
               repository.dandy.kodi \
               repository.evgen_dev \
               skin.aeon.nox.ae \

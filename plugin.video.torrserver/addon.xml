@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.torrserver" name="TorrServer Video Client" version="1.0.0" provider-name="Nemiroff (Alex@ELEC)">
+<addon id="plugin.video.torrserver" name="TorrServer Video Client" version="1.0.1" provider-name="Nemiroff (Alex@ELEC)">
     <requires>
         <import addon="xbmc.addon" version="16.0.0" />
         <import addon="xbmc.python" version="2.24.0" />
@@ -20,6 +20,9 @@
             <icon>icon.png</icon>
             <fanart></fanart>
         </assets>
-        <news>Version: 1.0.0 (for Alex@ELEC)</news>
+        <news>
+            [1.0.1] search: fixed Cyrillic video titles; added All seasons
+            [1.0.0] for Alex@ELEC
+        </news>
     </extension>
 </addon>

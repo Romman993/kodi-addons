@@ -87,7 +87,7 @@ class HdrezkaTV():
         item = xbmcgui.ListItem("[COLOR=FF00FFF0]%s[/COLOR]" % self.language(1003), thumbnailImage=self.icon)
         xbmcplugin.addDirectoryItem(self.handle, uri, item, True)
 
-        self.index(self.url + '/films', 1)
+        self.index(self.url + '/new', 1)
 
     def categories(self):
         response = common.fetchPage({"link": self.url})

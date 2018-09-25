@@ -21,8 +21,8 @@
             <fanart></fanart>
         </assets>
         <news>
-            [1.0.1] search: fixed Cyrillic video titles; added All seasons
-            [1.0.0] for Alex@ELEC
+[1.0.1] search: fixed Cyrillic video titles; added All seasons
+[1.0.0] for Alex@ELEC
         </news>
     </extension>
 </addon>

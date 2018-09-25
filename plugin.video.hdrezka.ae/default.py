@@ -107,27 +107,6 @@ class HdrezkaTV():
         xbmcplugin.setContent(self.handle, 'files')
         xbmcplugin.endOfDirectory(self.handle, True)
 
-    def sub_categories(self, category_id):
-        response = common.fetchPage({"link": self.url})
-        genres = common.parseDOM(response["content"], "ul", attrs={"id": "topnav-menu"})
-
-        titles = common.parseDOM(genres, "a")
-        links = common.parseDOM(genres, "a", ret='href')
-
-        for i, title in enumerate(titles):
-            if 'http' in links[i]:
-                link = links[i]
-            else:
-                link = self.url + links[i]
-
-            uri = sys.argv[0] + '?mode=%s&url=%s' % ("index", link)
-            item = xbmcgui.ListItem(title, thumbnailImage=self.icon)
-            xbmcplugin.addDirectoryItem(self.handle, uri, item, True)
-
-        xbmcplugin.setContent(self.handle, 'files')
-        xbmcplugin.endOfDirectory(self.handle, True)
-
-
     def index(self, url, page):
         if(page == 1):
             page_url = url

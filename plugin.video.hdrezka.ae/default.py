@@ -518,8 +518,9 @@ class HdrezkaTV():
         else:
             self.menu()
 
-    def play(self, url, subtitles = None):
-        item = xbmcgui.ListItem(path = url)
+    def play(self, url, title, image, subtitles = None):
+        item = xbmcgui.ListItem(path = url, iconImage=image)
+        item.setInfo(type='Video', infoLabels={'title': title, 'overlay': xbmcgui.ICON_OVERLAY_WATCHED, 'playCount': 0})
         if subtitles:
             urls = re.compile('http:\/\/.*?\.srt').findall(subtitles)
             item.setSubtitles(urls)

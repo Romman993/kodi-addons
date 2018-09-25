@@ -40,6 +40,7 @@ class HdrezkaTV():
         self.url = 'http://' + self.addon.getSetting('domain')
 
         self.quality = self.addon.getSetting('quality')
+        self.deepscan = self.addon.getSetting('deepscan') if self.addon.getSetting('deepscan') else "false"
         self.translator = self.addon.getSetting('translator') if self.addon.getSetting('translator') else "default"
         self.description = self.addon.getSetting('description') if self.addon.getSetting('translator') else "true"
 
@@ -129,9 +130,14 @@ class HdrezkaTV():
         country_years = common.parseDOM(link_containers, "div")
         items_count = 0
 
+        usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+        headers = {
+            "User-Agent": usr_agent,
+            "Referer": url
+        }
+
         for i, title in enumerate(titles):
             items_count += 1
-
             infos = self.get_item_description(url, post_ids[i])
 
             country_year = country_years[i].split(',')[0].replace('.', '').replace('-', '').replace(' ', '')
@@ -141,9 +147,24 @@ class HdrezkaTV():
             uri = sys.argv[0] + '?mode=show&url=%s' % links[i]
             item = xbmcgui.ListItem(title, iconImage=image, thumbnailImage=image)
             item.setInfo(type='Video', infoLabels={'title': title, 'genre': country_years[i], 'plot': infos['description'], 'rating': infos['rating']})
-            if (self.quality != 'select') and (not ('/series/' in url)) and (not ('/show/' in url)):
-                item.setProperty('IsPlayable', 'true')
-                xbmcplugin.addDirectoryItem(self.handle, uri, item, False)
+
+            if (self.quality != 'select'):
+                if self.deepscan == "true":
+                    request = urllib2.Request(links[i], "", headers)
+                    request.get_method = lambda: 'GET'
+                    response = urllib2.urlopen(request).read()
+                    src_url_iframe = response.split('<iframe ')[-1].split('>')[0]
+                    if (not 'season' in src_url_iframe) or ('season=&' in src_url_iframe):
+                        item.setProperty('IsPlayable', 'true')
+                        xbmcplugin.addDirectoryItem(self.handle, uri, item, False)
+                    else:
+                        xbmcplugin.addDirectoryItem(self.handle, uri, item, True)
+                else:
+                    if (not ('/series/' in url)) and (not ('/show/' in url)):
+                        item.setProperty('IsPlayable', 'true')
+                        xbmcplugin.addDirectoryItem(self.handle, uri, item, False)
+                    else:
+                        xbmcplugin.addDirectoryItem(self.handle, uri, item, True)
             else:
                 xbmcplugin.addDirectoryItem(self.handle, uri, item, True)
 

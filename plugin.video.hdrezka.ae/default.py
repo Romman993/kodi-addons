@@ -157,36 +157,26 @@ class HdrezkaTV():
         xbmc.log('HDREZKA: end index', xbmc.LOGNOTICE)
 
     def selectQuality(self, links, title, image, subtitles = None):
-        if self.quality != 'select': 
-            try:
-                urllib2.urlopen(links[int(self.quality[:-1])])
-                work_links = links[int(self.quality[:-1])]
-            except:
-                try:
-                    urllib2.urlopen(links[720])
-                    work_links = links[720]
-                except:
-                    urllib2.urlopen(links[480])
-                    work_links = links[480]
-
-            try:
-                self.play(work_links, subtitles)
-            except:
-                self.play(links[360], subtitles)
-        else:
-            list = sorted(links.iteritems(), key=itemgetter(0))
-            for quality, link in list:
-                print "quality: %s link %s" % (quality, link)
+        list = sorted(links.iteritems(), key=itemgetter(0))
+        i = 0
+        for quality, link in list:
+            i += 1
+            if self.quality != 'select':
+                if quality > int(self.quality[:-1]):
+                    self.play(links[quality_prev], title, image, subtitles)
+                    break
+                elif (len(list) == i):
+                    self.play(links[quality], title, image, subtitles)
+            else:
                 film_title = "%s (%s)" % (title, str(quality) + 'p')
                 uri = sys.argv[0] + '?mode=play&url=%s' % urllib.quote(link)
                 item = xbmcgui.ListItem(film_title, iconImage=image)
                 item.setInfo(type='Video', infoLabels={'title': film_title, 'overlay': xbmcgui.ICON_OVERLAY_WATCHED, 'playCount': 0})
                 item.setProperty('IsPlayable', 'true')
                 if subtitles: 
-                    urls = re.compile('http:\/\/.*?\.srt').findall(subtitles)
-                    item.setSubtitles(urls)
+                    item.setSubtitles([subtitles])
                 xbmcplugin.addDirectoryItem(self.handle, uri, item, False)
-
+            quality_prev = quality
 
     def selectTranslator(self, content, post_id):
         iframe0 = common.parseDOM(content, 'iframe', ret='src')[0]

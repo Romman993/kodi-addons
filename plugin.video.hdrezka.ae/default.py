@@ -341,7 +341,7 @@ class HdrezkaTV():
     def get_video_link_from_iframe(self, url, mainurl):
 
         playlist_domain = 'streamblast.cc'
-        playlist_domain2 = 'sezoku.com'
+        playlist_domain2 = 'buchome.com'
         usr_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
 
         headers = {
@@ -369,8 +369,8 @@ class HdrezkaTV():
         attrs = {}
         attrs['purl'] = "/vs"
 
-        passkey = unhexlify('19f15a0031b8548acfa8da1f2cdf7f73179aa13f3c4938c8bad5a1c93dd8fe06')
-        ivkey = unhexlify('79e4add175162a762071a11fe45d249f')
+        passkey = unhexlify('ae3539058f0bf09378324b70f9e549e01c7ed59f08e38fa627dcd2f29991d222')
+        ivkey = unhexlify('f7b4e772e74ccacb1dda2acbb6be38fa')
 
         msg = '{"a":%s,"b":"%s","c":true,"e":"%s","f":"%s"}' % (partner_id, domain_id, video_token, usr_agent)
         cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)

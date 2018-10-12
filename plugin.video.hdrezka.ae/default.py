@@ -38,6 +38,7 @@ class HdrezkaTV():
         self.handle = int(sys.argv[1])
         self.domain = self.addon.getSetting('domain')
         self.url = 'http://' + self.addon.getSetting('domain')
+        self.keyfile = os.path.join(self.path, 'keys.dat')
 
         self.quality = self.addon.getSetting('quality')
         self.deepscan = self.addon.getSetting('deepscan') if self.addon.getSetting('deepscan') else "false"
@@ -293,7 +294,11 @@ class HdrezkaTV():
                 print "GET LINK FROM IFRAME"
                 videoplayer = common.parseDOM(content, 'div', attrs={'id': 'videoplayer'})
                 iframe = common.parseDOM(content, 'iframe', ret='src')[0]
-                links, subtitles = self.get_video_link_from_iframe(iframe, url)
+                try:
+                    links, subtitles = self.get_video_link_from_iframe(iframe, url)
+                except:
+                    self.getkeys_value()
+                    links, subtitles = self.get_video_link_from_iframe(iframe, url)
                 self.selectQuality(links, title, image)
 
         xbmcplugin.setContent(self.handle, 'episodes')
@@ -365,21 +370,35 @@ class HdrezkaTV():
         request.get_method = lambda: 'GET'
         response = urllib2.urlopen(request).read()
 
+        subtitles = None
+        if 'subtitles: {"master_vtt":"' in response:
+            subtitles = response.split('subtitles: {"master_vtt":"')[-1].split('"')[0]
+
         values = {}
         attrs = {}
         attrs['purl'] = "/vs"
 
-        passkey = unhexlify('ae3539058f0bf09378324b70f9e549e01c7ed59f08e38fa627dcd2f29991d222')
-        ivkey = unhexlify('f7b4e772e74ccacb1dda2acbb6be38fa')
+        raw_passkey = None
+        raw_ivkey = None
+
+        if not os.path.isfile(self.keyfile):
+            self.getkeys_value()
+
+        with open(self.keyfile, 'r') as keys_file:
+            for line in keys_file:
+                if "value1" in line:
+                    raw_passkey = line.split("value1=")[1].strip()
+                if "value2" in line:
+                    raw_ivkey = line.split("value2=")[1]
+                    break
+
+        passkey = unhexlify(raw_passkey)
+        ivkey = unhexlify(raw_ivkey)        
 
         msg = '{"a":%s,"b":"%s","c":true,"e":"%s","f":"%s"}' % (partner_id, domain_id, video_token, usr_agent)
         cipher = Cipher(alg='aes_256_cbc', key=passkey, iv=ivkey, op=1)
         ciphertext = cipher.update(msg) + cipher.final()
         values['q'] = b64encode(ciphertext)
-
-        subtitles = None
-        if 'subtitles: {"master_vtt":"' in response:
-            subtitles = response.split('subtitles: {"master_vtt":"')[-1].split('"')[0]
 
         headers = {
             "Host": playlist_domain2,
@@ -558,7 +577,11 @@ class HdrezkaTV():
         except:
             print "GET LINK FROM IFRAME"
             url_episode = url + "?nocontrols=1&season=%s&episode=%s" % (season_id, episode_id)
-            links, subtitles = self.get_video_link_from_iframe(url_episode, referer)
+            try:
+                links, subtitles = self.get_video_link_from_iframe(url_episode, referer)
+            except:
+                self.getkeys_value()
+                links, subtitles = self.get_video_link_from_iframe(url_episode, referer)
             self.selectQuality(links, title, image, subtitles)
             xbmcplugin.setContent(self.handle, 'episodes')
             xbmcplugin.endOfDirectory(self.handle, True)
@@ -581,6 +604,19 @@ class HdrezkaTV():
             return s.group(0).encode('latin1').decode('utf8')
         except:
             return s.group(0)
+
+    def getkeys_value(self):
+        i = 3
+        while (i > 0): 
+            response = common.fetchPage({"link": 'http://www.u2csp01.ml/hdrez/hdr_key.php'})
+            if response["status"] == 200:
+                data = response["content"]
+                if data and "value1" in data:
+                    with open(self.keyfile, 'w') as keys_file:
+                        keys_file.write(data)
+                    break  
+            i-=1
+            
 
 plugin = HdrezkaTV()
 plugin.main()

@@ -361,6 +361,7 @@ class HdrezkaTV():
         video_token = response.split("video_token: '")[-1].split("',")[0]
         partner_id = response.split("partner_id: ")[-1].split(",")[0] 
         domain_id = response.split("domain_id: ")[-1].split(",")[0]
+        ref = re.compile('ref: \'(.+?)\'').findall(response)[0]
 
         headers = {
             "User-Agent": usr_agent,
@@ -377,6 +378,7 @@ class HdrezkaTV():
         values = {}
         attrs = {}
         attrs['purl'] = "/vs"
+        values["ref"] = ref
 
         raw_passkey = None
         raw_ivkey = None

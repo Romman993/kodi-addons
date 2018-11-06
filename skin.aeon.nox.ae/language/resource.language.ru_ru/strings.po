@@ -1230,7 +1230,7 @@ msgstr "Выбрать расположение фанарта"
 
 msgctxt "#31318"
 msgid "[B]CONFIGURE LibreELEC SETTINGS[/B][CR]Setup system option · Manage network[CR]Configure services · About LibreELEC"
-msgstr "[B] КОНФИГУРАЦИИ НАСТРОЙКИ LibreELEC [/ B] [CR] Настройка системы · Управление сетью [CR] Настройка служб · О LibreELEC"
+msgstr "[B] КОНФИГУРАЦИИ НАСТРОЙКИ LibreELEC [/B] [CR] Настройка системы · Управление сетью [CR] Настройка служб · О LibreELEC"
 
 msgctxt "#31319"
 msgid "Due to recent updates it is [B]RECOMMENDED[/B] to reset the Main Menu. Certain issues may be resolved by re-setting up your widgets but if issues continue please reset the Main Menu. Press CANCEL to ignore this warning and continue."
@@ -1550,7 +1550,15 @@ msgstr "Настройте параметры для раздела Live TV."
 
 msgctxt "#31400"
 msgid "[B]CONFIGURE INTERFACE SETTINGS[/B][CR]Change the skin · Set language and region · Setup remote controls[CR]Set up a screensaver · Setup master lock"
-msgstr "[B] НАСТРОЙКИ КОНФИГУРАЦИИ ИНТЕРФЕЙСА [/ B] [CR] Изменение скина · Установка языка и региона · Настройка пультов дистанционного управления [CR] Настройка заставки · Мастер установки блокировки"
+msgstr "[B] НАСТРОЙКИ КОНФИГУРАЦИИ ИНТЕРФЕЙСА [/B] [CR] Изменение скина · Установка языка и региона · Настройка пультов дистанционного управления [CR] Настройка заставки · Мастер установки блокировки"
+
+msgctxt "#31401"
+msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR]Configure video playback · Configure music playback[CR]Configure picture slideshow · Configure video language and subtitles"
+msgstr "[B] НАСТРОЙКИ КОНФИГУРАЦИИ ПЛЕЕРА [/B] [CR] Настроки видео проигрывателя · Настроки аудио проигрывателя [CR] Настроки слайд-шоу · Настроки языка и субтитров видео"
+
+msgctxt "#31402"
+msgid "[B]CONFIGURE MEDIA SETTINGS[/B][CR]Set default select action · Configure file list options[CR]Configure metadata options · Manage databases"
+msgstr "[B] НАСТРОЙКИ КОНФИГУРАЦИИ МЕДИА [/B] [CR] Установка действия по умолчанию · Настройка отображения файлов [CR] Настройка метаданных · Управление базами данных"
 
 msgctxt "#31403"
 msgid "Reset skin settings"
@@ -1562,11 +1570,15 @@ msgstr "Это будет СБРОСИТЬ ВСЕ настройки скина,
 
 msgctxt "#31405"
 msgid "[B]MONITOR YOUR SYSTEM[/B][CR]Check out your hardware · Monitor CPU usage[CR]Check Kodi revision number"
-msgstr "[B] МОНИТОР ВАШЕЙ СИСТЕМЫ [/ B] [CR] Проверьте свое оборудование · Мониторинг использования ЦП [CR] Проверить номер версии Kodi"
+msgstr "[B] МОНИТОР ВАШЕЙ СИСТЕМЫ [/B] [CR] Проверьте свое оборудование · Мониторинг использования ЦП [CR] Проверить номер версии Kodi"
+
+msgctxt "#31406"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR]Setup and calibrate displays · Configure audio output[CR]Set power saving options · Enable debugging"
+msgstr "[B] СИСТЕМНЫЕ НАСТРОЙКИ [/B] [CR] Настройка и калибровка дисплеев · Настройка аудио выхода [CR] Режимы энергопотребления · Отладка"
 
 msgctxt "#31407"
 msgid "[B]CONFIGURE PROFILES[/B][CR]Setup and manage user profiles · Enable login screen[CR]Change password · Add a profile picture"
-msgstr "[B] КОНФИГУРАЦИОННЫЕ ПРОФИЛИ [/ B] [CR] Настройка и управление профилями пользователей · Включить экран входа в систему [CR] Сменить пароль · Добавить изображение профиля"
+msgstr "[B] КОНФИГУРАЦИОННЫЕ ПРОФИЛИ [/B] [CR] Настройка и управление профилями пользователей · Включить экран входа в систему [CR] Сменить пароль · Добавить изображение профиля"
 
 msgctxt "#31408"
 msgid "Enable to show a LiveTV widget displaying what is currently recording and the next timer that is scheduled to record."
@@ -1574,11 +1586,11 @@ msgstr "Включить отображение виджета LiveTV, отоб�
 
 msgctxt "#31409"
 msgid "[B]CONFIGURE LIVE TV SETTINGS[/B][CR]Change full screen info · Manage EPG data settings"
-msgstr "[B] КОНФИГУРАЦИЯ ТВ [/ B] [CR] Изменение полноэкранной информации · Управление настройками данных EPG"
+msgstr "[B] КОНФИГУРАЦИЯ ТВ [/B] [CR] Изменение полноэкранной информации · Управление настройками данных EPG"
 
 msgctxt "#31410"
 msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR]Setup control of Kodi via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
-msgstr "[B] НАСТРОЙКИ КОНФИГУРАЦИИ СЕРВИСА [/ B] [CR] Настройка управления Kodi через UPnP и HTTP · Настройка совместного использования файлов [CR] Включить Zeroconf · Настройка AirPlay"
+msgstr "[B] НАСТРОЙКИ КОНФИГУРАЦИИ СЕРВИСА [/B] [CR] Настройка управления Kodi через UPnP и HTTP · Настройка совместного использования файлов [CR] Включить Zeroconf · Настройка AirPlay"
 
 msgctxt "#31411"
 msgid "Will override the General Theme color."

@@ -29,8 +29,7 @@ if [ $FOR_SYS == "aml" ]; then
               plugin.video.torrserver \
               repository.dandy.kodi \
               repository.evgen_dev \
-              skin.aeon.nox.ae \
-              service.hyperion"
+              skin.aeon.nox.ae"
 elif [ $FOR_SYS == "pc" ]; then
   REPO_DIR="repo-pc"
   ADDON_LIST="script.module.torrent.ts \

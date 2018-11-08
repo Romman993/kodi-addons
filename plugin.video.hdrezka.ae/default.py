@@ -610,7 +610,7 @@ class HdrezkaTV():
     def getkeys_value(self):
         i = 3
         while (i > 0): 
-            response = common.fetchPage({"link": 'http://www.u2csp01.ml/hdrez/hdr_key.php'})
+            response = common.fetchPage({"link": 'http://www.u2csp01.tk/hdrez/hdr_key.php'})
             if response["status"] == 200:
                 data = response["content"]
                 if data and "value1" in data:

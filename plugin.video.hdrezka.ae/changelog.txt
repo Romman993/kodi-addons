@@ -1,3 +1,6 @@
+2.4.5
+[fix] episode state and play
+
 2.4.4
 [fix] changes on moonwalk
 

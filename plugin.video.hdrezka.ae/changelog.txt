@@ -1,3 +1,6 @@
+2.4.6
+[add] site rating to item list
+
 2.4.5
 [fix] episode state and play
 

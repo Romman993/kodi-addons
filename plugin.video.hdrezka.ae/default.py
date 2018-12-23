@@ -43,7 +43,7 @@ class HdrezkaTV():
         self.quality = self.addon.getSetting('quality')
         self.deepscan = self.addon.getSetting('deepscan') if self.addon.getSetting('deepscan') else "false"
         self.translator = self.addon.getSetting('translator') if self.addon.getSetting('translator') else "default"
-        self.description = self.addon.getSetting('description') if self.addon.getSetting('translator') else "true"
+        self.description = self.addon.getSetting('description') if self.addon.getSetting('description') else "true"
 
     def main(self):
         params = common.getParameters(sys.argv[2])
@@ -142,7 +142,10 @@ class HdrezkaTV():
             infos = self.get_item_description(url, post_ids[i])
 
             country_year = country_years[i].split(',')[0].replace('.', '').replace('-', '').replace(' ', '')
-            title = "%s [COLOR=55FFFFFF](%s)[/COLOR]" % (title, country_year)
+            if self.description == "false":
+                title = "%s [COLOR=55FFFFFF](%s)[/COLOR]" % (title, country_year)
+            else:
+                title = "[COLOR=FFF0FFF0]%s[/COLOR] [COLOR=55FFFFFF](%s)[/COLOR] [COLOR=CCFFFF00]%s[/COLOR] [COLOR=FFFF88FF]%s[/COLOR]" % (title, country_year, infos['txtrating'], infos['digrating'])
             image = common.parseDOM(divcovers[i], "img", ret='src')[0]
 
             uri = sys.argv[0] + '?mode=show&url=%s' % links[i]
@@ -332,6 +335,14 @@ class HdrezkaTV():
         description = common.parseDOM(response, 'div', attrs={'class': 'b-content__bubble_text'})[0]
 
         try:
+            all_rating = common.parseDOM(response, 'div', attrs={'class': 'b-content__bubble_rating'})[0]
+            txt_rating = common.parseDOM(all_rating, 'span', attrs={'class': 'label'})[0]
+            dig_rating = common.parseDOM(all_rating, 'b')[0]
+        except IndexError, e:
+            txt_rating = 'Рейтинг:'
+            dig_rating = 0
+
+        try:
             imbd_rating = common.parseDOM(response, 'span', attrs={'class': 'imdb'})[0]
             rating = common.parseDOM(imbd_rating, 'b')[0]
         except IndexError, e:
@@ -341,7 +352,7 @@ class HdrezkaTV():
             except IndexError, e:
                 rating = 0
 
-        return { 'rating' : rating, 'description' : description }
+        return { 'rating' : rating, 'description' : description, 'txtrating' : txt_rating, 'digrating' : dig_rating }
 
 
     def get_video_link_from_iframe(self, url, mainurl):

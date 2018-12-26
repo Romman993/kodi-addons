@@ -29,6 +29,7 @@ if [ $FOR_SYS == "aml" ]; then
               plugin.video.torrserver \
               repository.dandy.kodi \
               repository.evgen_dev \
+              skin.arctic.zephyr.ae \
               skin.aeon.nox.ae"
 elif [ $FOR_SYS == "pc" ]; then
   REPO_DIR="repo-pc"

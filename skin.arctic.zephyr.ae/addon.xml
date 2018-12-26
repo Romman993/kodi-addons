@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+    id="skin.arctic.zephyr.ae"
+    version="2.3.16"
+    name="Arctic: Zephyr AE"
+    provider-name="jurialmunkey (AlexELEC)">
+    <requires>
+        <import addon="xbmc.gui" version="5.13.0"/>
+        <import addon="script.skinshortcuts" version="0.4.0"/>
+    </requires>
+    <extension
+    point="xbmc.gui.skin"
+    defaultthemename="Textures.xbt"
+    debugging="false"
+    effectslowdown="1">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Clean, minimal, elegant, simple, light.</summary>
+        <summary lang="ru">Опрятный, минималистичный, элегантный, простой, светлый.</summary>
+        <description lang="en">Arctic: Zephyr AE is the third iteration of the Arctic skin created by jurialmunkey. Arctic focuses on being simple, clean and minimalistic with a light spin.</description>
+        <description lang="ru">Arctic: Zephyr AE это третий виток обложки Arctic, созданной jurialmunkey. Arctic старается быть простой, опрятной и минималистичной.</description>
+        <platform>all</platform>
+        <license>Creative Commons Non Commercial 3.0 License</license>
+        <forum>http://forum.kodi.tv/forumdisplay.php?fid=221</forum>
+        <source>https://github.com/jurialmunkey/skin.arctic.zephyr</source>
+        <assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news>
+v2.3.16 - for AlexELEC
+        </news>
+    </extension>
+</addon>

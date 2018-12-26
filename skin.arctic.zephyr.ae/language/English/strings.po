@@ -773,3 +773,7 @@ msgstr ""
 msgctxt "#31282"
 msgid "Special Features"
 msgstr ""
+
+msgctxt "#31300"
+msgid "Cancel Timer"
+msgstr ""

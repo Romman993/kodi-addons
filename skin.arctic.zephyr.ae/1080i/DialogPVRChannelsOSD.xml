@@ -31,11 +31,11 @@
             <control type="label">
                 <posx>33</posx>
                 <posy>10</posy>
-                <width>400</width>
+                <width>500</width>
                 <align>left</align>
                 <textcolor>$VAR[OSDPanelWhite100]</textcolor>
                 <font>MediumBold</font>
-                <label>$INFO[VideoPlayer.ChannelGroup]</label>
+                <label>$INFO[VideoPlayer.ChannelGroup]$INFO[System.Time,  |  ,]</label>
             </control>
             <control type="label">
                 <posx>33</posx>
@@ -63,7 +63,7 @@
                         <aspectratio aligny="top">center</aspectratio>
                         <animation effect="fade" start="100" end="15" condition="true">Conditional</animation>
                         <visible>ListItem.IsPlaying</visible>
-                        <colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
+                        <colordiffuse>Selected</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>22</posx>

@@ -757,3 +757,7 @@ msgstr "[B]Настройка параметров проигрывателя[/B
 msgctxt "#31278"
 msgid "Use extended info for cast details in video info dialog"
 msgstr "Использовать расширенную информацию для детализации в диалоговом окне видео"
+
+msgctxt "#31300"
+msgid "Cancel Timer"
+msgstr "Отменить таймер"

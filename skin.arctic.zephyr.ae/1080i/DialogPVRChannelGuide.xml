@@ -49,11 +49,11 @@
             <control type="label">
                 <posx>33</posx>
                 <posy>43</posy>
-                <width>400</width>
+                <width>500</width>
                 <align>left</align>
                 <textcolor>$VAR[OSDPanelWhite70]</textcolor>
                 <font>TinyBold</font>
-                <label>$INFO[Container(11).ListItem.StartDate]</label>
+                <label>$INFO[Container(11).ListItem.StartDate]$INFO[System.Time,  ,]</label>
             </control>
 
             <control type="fixedlist" id="11">

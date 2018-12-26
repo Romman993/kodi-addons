@@ -134,7 +134,7 @@
             <visible>Player.HasVideo + Skin.HasSetting(global.showvideo)</visible>
         </control>
         <control type="videowindow">
-            <visible>Skin.HasSetting(global.showvideo)</visible>
+            <visible>!Window.IsVisible(MyPVRChannels.xml) + Skin.HasSetting(global.showvideo)</visible>
             <include>Dimensions_Fullscreen</include>
         </control>
     </include>

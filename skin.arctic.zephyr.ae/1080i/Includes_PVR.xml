@@ -109,8 +109,6 @@
     </include>
 
     <include name="PVRInfoPanel">
-
-
         <control type="group">
             <left>70</left>
             <width>645</width>
@@ -130,7 +128,7 @@
                     <bottom>10</bottom>
                     <fadetime>200</fadetime>
                     <texture border="10" colordiffuse="ff000000">diffuse/pvrinfo.png</texture>
-                    <visible>Player.HasVideo + !Skin.HasSetting(global.showvideo)</visible>
+                    <visible>Player.HasVideo</visible>
                 </control>
                 <control type="videowindow">
                     <left>10</left>
@@ -138,7 +136,7 @@
                     <right>10</right>
                     <bottom>10</bottom>
                     <animation effect="zoom" start="100" end="1" time="0">WindowClose</animation>
-                    <visible>Player.HasVideo + !Skin.HasSetting(global.showvideo)</visible>
+                    <visible>Player.HasVideo</visible>
                 </control>
                 <control type="image">
                     <left>10</left>
@@ -147,8 +145,8 @@
                     <bottom>10</bottom>
                     <fadetime>200</fadetime>
                     <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-                    <texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$VAR[PVRThumb]</texture>
-                    <visible>!Player.HasVideo | Skin.HasSetting(global.showvideo)</visible>
+                    <texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/fallback_movies.jpg">$VAR[PVRThumb]</texture>
+                    <visible>!Player.HasVideo</visible>
                 </control>
             </control>
             <control type="group">

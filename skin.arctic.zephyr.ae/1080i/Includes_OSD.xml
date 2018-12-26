@@ -167,6 +167,7 @@
             <label>$VAR[OSDChapterLabel]</label>
         </control>
         <control type="label" description="Total Time">
+            <visible>!VideoPlayer.Content(livetv)</visible>
             <right>0</right>
             <align>right</align>
             <width>400</width>
@@ -176,7 +177,19 @@
             <textcolor>$VAR[OSDPanelWhite70]</textcolor>
             <label>$INFO[Player.Time]  /  $INFO[Player.Duration]</label>
         </control>
+        <control type="label" description="Total Time PVR">
+            <visible>VideoPlayer.Content(livetv)</visible>
+            <right>0</right>
+            <align>right</align>
+            <width>400</width>
+            <bottom>30</bottom>
+            <height>40</height>
+            <font>Tiny</font>
+            <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+            <label>$INFO[VideoPlayer.StartTime]$INFO[VideoPlayer.EndTime,  /  ,]</label>
+        </control>
         <control type="progress" description="cache">
+            <visible>!VideoPlayer.Content(livetv)</visible>
             <description>Progress Bar</description>
             <width>100%</width>
             <bottom>10</bottom>
@@ -189,11 +202,20 @@
             <righttexture colordiffuse="Highlight2">osd/progress-end.png</righttexture>
         </control>
         <control type="progress" id="23">
+            <visible>!VideoPlayer.Content(livetv)</visible>
             <description>Progress Bar</description>
             <width>100%</width>
             <bottom>10</bottom>
             <height>8</height>
             <info>Player.Progress</info>
+        </control>
+        <control type="progress" id="24">
+            <visible>VideoPlayer.Content(livetv)</visible>
+            <description>Progress Bar PVR</description>
+            <width>100%</width>
+            <bottom>10</bottom>
+            <height>8</height>
+            <info>PVR.EpgEventProgress</info>
         </control>
     </include>
     <include name="DefOSDButtons">
@@ -250,7 +272,7 @@
             <description>EPG</description>
             <align>right</align>
             <label>$LOCALIZE[19030] / $LOCALIZE[19031]</label>
-            <onclick>ActivateWindow(pvrosdguide)</onclick>
+            <onclick>ActivateWindow(pvrchannelguide)</onclick>
             <include>DefOSDButtons</include>
         </control>
 
@@ -1130,6 +1152,7 @@
                     <visible>Player.HasVideo</visible>
                 </control>
                 <control type="label">
+                    <visible>!VideoPlayer.Content(livetv)</visible>
                     <right>80</right>
                     <left>55%</left>
                     <height>100%</height>
@@ -1138,6 +1161,18 @@
                     <font>Small</font>
                     <textcolor>$VAR[OSDPanelWhite70]</textcolor>
                     <label>$INFO[Player.FinishTime]</label>
+                    <visible>Player.HasVideo</visible>
+                </control>
+                <control type="label">
+                    <visible>VideoPlayer.Content(livetv)</visible>
+                    <right>80</right>
+                    <left>55%</left>
+                    <height>100%</height>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>Small</font>
+                    <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                    <label>$INFO[VideoPlayer.EndTime]</label>
                     <visible>Player.HasVideo</visible>
                 </control>
 

@@ -119,6 +119,7 @@
                         <label>$VAR[OSDChapterLabel]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
+                        <visible>!VideoPlayer.Content(livetv)</visible>
                         <right>0</right>
                         <align>right</align>
                         <width>400</width>
@@ -128,8 +129,19 @@
                         <textcolor>$VAR[OSDPanelWhite70]</textcolor>
                         <label>$INFO[Player.Time]$INFO[Player.Duration,  /  ,]</label>
                     </control>
-
+                    <control type="label" description="Duration Total Time PVR">
+                        <visible>VideoPlayer.Content(livetv)</visible>
+                        <right>0</right>
+                        <align>right</align>
+                        <width>400</width>
+                        <bottom>30</bottom>
+                        <height>40</height>
+                        <font>Tiny</font>
+                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <label>$INFO[VideoPlayer.StartTime]$INFO[VideoPlayer.EndTime,  /  ,]</label>
+                    </control>
                     <control type="progress" description="cache">
+                        <visible>!VideoPlayer.Content(livetv)</visible>
                         <description>Progress Bar</description>
                         <width>100%</width>
                         <bottom>10</bottom>
@@ -142,6 +154,7 @@
                         <righttexture colordiffuse="Highlight2">osd/progress-end.png</righttexture>
                     </control>
                     <control type="progress" id="23">
+                        <visible>!VideoPlayer.Content(livetv)</visible>
                         <description>Progress Bar</description>
                         <width>100%</width>
                         <bottom>10</bottom>
@@ -150,11 +163,20 @@
                         <visible>!Player.Seeking</visible>
                     </control>
                     <control type="progress" id="401">
+                        <visible>!VideoPlayer.Content(livetv)</visible>
                         <description>Progress Bar</description>
                         <width>100%</width>
                         <bottom>10</bottom>
                         <height>8</height>
                         <visible>Player.Seeking</visible>
+                    </control>
+                    <control type="progress" id="24">
+                        <visible>VideoPlayer.Content(livetv)</visible>
+                        <description>Progress Bar</description>
+                        <width>100%</width>
+                        <bottom>10</bottom>
+                        <height>8</height>
+                        <info>PVR.EpgEventProgress</info>
                     </control>
                 </control>
             </control>

@@ -11,7 +11,6 @@
         <value condition="!String.IsEmpty(Container(300).ListItem.Property(Background))">noop</value>
         <value condition="!String.IsEmpty(Skin.String(home.slideshowpath)) + String.IsEmpty(Container(300).ListItem.Property(widget))">noop</value>
         <value condition="!String.IsEmpty(Skin.String(home.fallbackwidget))">$INFO[Skin.String(home.fallbackwidget)]</value>
-        <value>plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
     </variable>
 
     <variable name="DefWidgetTarget">
@@ -344,6 +343,19 @@
         <height>70</height>
         <font>Tiny</font>
         <align>left</align>
+        <textcolor>Black70</textcolor>
+        <textureradiofocus colordiffuse="Black70">buttons/radio-on.png</textureradiofocus>
+        <textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
+        <focusedcolor>Selected</focusedcolor>
+        <alttexturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</alttexturefocus>
+        <texturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</texturefocus>
+    </include>
+    <include name="DefContextButtonPW">
+        <radioposx>400</radioposx>
+        <width>450</width>
+        <height>70</height>
+        <font>Small</font>
+        <align>center</align>
         <textcolor>Black70</textcolor>
         <textureradiofocus colordiffuse="Black70">buttons/radio-on.png</textureradiofocus>
         <textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>

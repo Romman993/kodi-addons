@@ -758,6 +758,22 @@ msgctxt "#31278"
 msgid "Use extended info for cast details in video info dialog"
 msgstr "Использовать расширенную информацию для детализации в диалоговом окне видео"
 
+msgctxt "#31279"
+msgid "Video decoder"
+msgstr "Видео декодер"
+
+msgctxt "#31280"
+msgid "Pixel format"
+msgstr "Пиксельный формат"
+
+msgctxt "#31281"
+msgid "Play Speed"
+msgstr "Скорость воспроизведения"
+
+msgctxt "#31282"
+msgid "Special Features"
+msgstr "Особые возможности"
+
 msgctxt "#31300"
 msgid "Cancel Timer"
 msgstr "Отменить таймер"

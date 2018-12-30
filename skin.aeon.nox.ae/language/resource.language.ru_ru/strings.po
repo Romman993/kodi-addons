@@ -2491,3 +2491,7 @@ msgstr "Поддельный диск"
 msgctxt "#31994"
 msgid "Vertical Menu"
 msgstr "Вертикальное меню"
+
+msgctxt "#31995"
+msgid "Reboot to eMMC/NAND"
+msgstr "Перезагрузить в eMMC/NAND"

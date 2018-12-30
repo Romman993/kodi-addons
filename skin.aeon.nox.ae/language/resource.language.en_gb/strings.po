@@ -2717,3 +2717,7 @@ msgstr ""
 msgctxt "#31994"
 msgid "Vertical Menu"
 msgstr ""
+
+msgctxt "#31995"
+msgid "Reboot to eMMC/NAND"
+msgstr ""

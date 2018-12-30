@@ -130,6 +130,23 @@
                 <align>center</align>
 			</control>
 			<control type="button" id="16">
+				<description>Reboot to NAND</description>
+				<width>510</width>
+				<height>60</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textwidth>435</textwidth>
+				<textoffsetx>45</textoffsetx>
+				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
+				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
+				<onclick>System.ExecWait("/usr/sbin/rebootfromnand")</onclick>
+				<onclick>Reset()</onclick>
+				<visible>!System.IsNandInstall</visible>
+				<font>font14</font>
+				<label>$LOCALIZE[31995]</label>
+                <align>center</align>
+			</control>
+			<control type="button" id="17">
 				<description>Reboot button</description>
 				<width>510</width>
 				<height>60</height>
@@ -145,7 +162,7 @@
 				<label>13013</label>
                 <align>center</align>
 			</control>
-			<control type="image" id="16">
+			<control type="image" id="18">
 				<width>510</width>
 				<height>34</height>
 				<texture border="30,2,30,20">dialog_bottom2.png</texture>

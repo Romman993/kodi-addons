@@ -777,3 +777,7 @@ msgstr "Особые возможности"
 msgctxt "#31300"
 msgid "Cancel Timer"
 msgstr "Отменить таймер"
+
+msgctxt "#31301"
+msgid "Reboot to eMMC/NAND"
+msgstr "Перезагрузить в eMMC/NAND"

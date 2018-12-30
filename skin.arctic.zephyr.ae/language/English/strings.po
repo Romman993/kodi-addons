@@ -777,3 +777,7 @@ msgstr ""
 msgctxt "#31300"
 msgid "Cancel Timer"
 msgstr ""
+
+msgctxt "#31301"
+msgid "Reboot to eMMC/NAND"
+msgstr ""

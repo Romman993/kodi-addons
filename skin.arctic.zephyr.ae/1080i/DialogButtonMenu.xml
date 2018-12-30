@@ -113,6 +113,14 @@
                     <onclick>ReloadSkin()</onclick>
                 </control>
 
+                <control type="button" id="3125">
+                    <include>DefContextButtonPW</include>
+                    <label>$LOCALIZE[31301]</label>
+                    <onclick>System.ExecWait("/usr/sbin/rebootfromnand")</onclick>
+                    <onclick>Reset()</onclick>
+                    <visible>!System.IsNandInstall</visible>
+                </control>
+
                 <control type="button" id="3118">
                     <description>Reboot button</description>
                     <include>DefContextButtonPW</include>

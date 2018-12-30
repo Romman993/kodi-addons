@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
     id="skin.arctic.zephyr.ae"
-    version="2.3.16"
+    version="2.3.17"
     name="Arctic: Zephyr AE"
     provider-name="jurialmunkey (AlexELEC)">
     <requires>
@@ -29,6 +29,7 @@
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
+v2.3.17 - add Reboot to NAND
 v2.3.16 - for AlexELEC
         </news>
     </extension>

@@ -1,3 +1,6 @@
+[B]2.3.17[/B]
+Add Reboot to NAND button
+
 [B]2.3.16[/B]
 Update for Alex@ELEC
 
